@@ -1,0 +1,12 @@
+.system {
+  position: relative;
+
+  header {
+    height: 20px;
+    padding: 3px;
+    background: rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

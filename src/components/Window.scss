@@ -1,0 +1,30 @@
+.window {
+  height: 400px;
+  width: 350px;
+  background: rgba(#fff, 0.5);
+  box-shadow: 5px 5px 5px lightgrey;
+  border: 1px solid lightgrey;
+  position: absolute;
+  top: 60px;
+  overflow: hidden;
+  left: 40px;
+  // border-radius: 15px;
+  .title {
+    padding: 7px;
+    background: tomato;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .content {
+    padding: 10px;
+  }
+}
+.m-icon {
+  padding: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2);
+  }
+}

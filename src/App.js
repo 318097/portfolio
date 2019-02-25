@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.scss";
+
+import System from "./components/System";
+import Dock from "./components/Dock";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeWindows: []
+    };
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="container">
+        <div className="dock">
+          <Dock />
+        </div>
+        <div className="system">
+          <System />
+        </div>
       </div>
     );
   }
