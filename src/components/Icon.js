@@ -1,14 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from 'react-router-dom';
 import "./Icon.scss";
-const Icon = ({ info, clickHandler }) => {
-  const classList = `${info.icon}`;
-
-  const handleClick = () => console.log("a");
-
+const Icon = ({ info }) => {
   return (
-    <div className="icon">
-      <i onClick={handleClick} className={classList} title={info.name} />
-    </div>
+    <Link className="icon" to={`/${info.action}`} title={info.name}>
+      {info.name.toUpperCase()}
+    </Link>
   );
 };
 export default Icon;

@@ -3,6 +3,7 @@ import "./App.scss";
 
 import System from "./components/System";
 import Dock from "./components/Dock";
+import { BrowserRouter } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -13,14 +14,16 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="container">
-        <div className="dock">
-          <Dock />
+      <BrowserRouter>
+        <div className="container">
+          <div className="dock">
+            <Dock />
+          </div>
+          <div className="system">
+            <System />
+          </div>
         </div>
-        <div className="system">
-          <System />
-        </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }

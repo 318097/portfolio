@@ -5,9 +5,14 @@
   "homepage": "https://318097.github.io/portfolio/",
   "dependencies": {
     "gh-pages": "^2.0.1",
+    "konva": "^3.1.6",
     "node-sass": "^4.11.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
+    "react-konva": "^16.8.3",
+    "react-map-gl": "^4.0.14",
+    "react-pose": "^4.0.7",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5"
   },
   "scripts": {

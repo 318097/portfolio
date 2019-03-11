@@ -1,30 +1,284 @@
-.window {
-  height: 400px;
-  width: 350px;
-  background: rgba(#fff, 0.5);
-  box-shadow: 5px 5px 5px lightgrey;
-  border: 1px solid lightgrey;
+::-webkit-scrollbar {
+display: none;
+}
+$white : #FFF;
+.glass {
+  box-sizing: border-box;
+  padding: 0;
   position: absolute;
-  top: 60px;
-  overflow: hidden;
-  left: 50px;
-  // border-radius: 15px;
-  .title {
-    padding: 7px;
-    background: tomato;
+  height: 80vh;
+  width: 70vw;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  perspective: 700px;
+  .window{
+    box-sizing: border-box;
+    border: 2px solid white;
+    background: rgba(0, 0, 0, .8);
+    padding: 30px 20px;
+    margin: 0;
+    color: $white;
+    height: 100%;
+    width: 100%;
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .content {
-    padding: 10px;
+    flex-direction: column;
+    // overflow: auto;
+    transform-style: preserve-3d;
+    transition: 1s;
+    &:hover{
+      transform: rotateY(5deg);
+    }
+    .title {
+      flex: 0 0 auto;
+      font-family: font4;
+      text-transform: capitalize;
+      font-size: 27px;
+      text-align: center;
+      h4::before{
+        content: '> ';
+        font-size: 20px;
+        animation: blink .7s infinite;
+      }
+    }
+    .content {
+      overflow: auto;
+      flex: 1 1 auto;
+      font-family: font4;
+      text-transform: capitalize;
+      padding: 20px 0;
+      .profile{
+        .text{
+          text-align: center;
+          flex: 0 0 50%;
+          font-size: 30px;
+          span{
+            font-weight: bold;
+            color: grey;
+            position: relative;
+          }
+          .role:hover:before{
+            content: '<';
+            font-size: 19px;
+            position: relative;
+            top: -5px;
+          }
+          .role:hover:after {
+            content: '/>';
+            font-size: 19px;
+            position: relative;
+            top: -5px;
+          }
+        }
+      }
+      .skills{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px;
+        align-items: center;
+        justify-content: space-between;
+        .item{
+          margin: 10px 0;
+          width: 28%;
+          font-size: 25px;
+          padding: 30px 10px;
+          background: rgb(24, 24, 24);
+          color: $white;
+          text-align: center;
+        }
+      }
+      .contact{
+        .email{
+          font-size: 40px;
+          text-align: center;
+        }
+        .social{
+          display: flex;
+          align-items: center;
+          width: 250px;
+          margin: 0px auto;
+          justify-content: center;
+          a i{
+            font-size: 30px;
+            margin: 7px;
+            color: $white;
+            transition: .5s;
+            &:hover{
+              color: rgb(194, 193, 193);
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+      .about{
+        height: 100%;
+        .timeline{
+          height: 100%;
+          position: relative;
+          .block{
+            margin-bottom: 25px;
+            display: flex;
+            .left, .right{
+              flex: 1 1 50%;
+              position: relative;
+            }
+            .left:after{
+              // font-family: "FontAwesome";
+              // content: "\f066";
+              content: '';
+              display: block;
+              width: 11px;
+              position: absolute;
+              right: -6px;
+              top: 37px;
+              height: 11px;
+              border-radius: 50%;
+              background: white;
+            }
+            .right:before{
+              content: '';
+              display: block;
+              width: 7px;
+              position: absolute;
+              left: -3px;
+              top: 61px;
+              height: 7px;
+              border-radius: 50%;
+              background: white;
+            }
+            .card{
+              padding: 5px;
+              // border-radius: 10px;
+              width: 80%;
+              margin: 10px auto;    
+              background:rgba(36, 36, 36, 0.5);
+              
+            }
+            .left .card{
+              text-align: center;
+              border-left: 2px solid rgb(122, 122, 122);          
+            }
+            .right .card{
+              margin-top: 30px;
+              border-right: 2px solid rgb(122, 122, 122);          
+            }
+          }
+        }
+        .timeline:after{
+          content: '';
+          height: 100%;
+          width: 1px;
+          background: white;
+          position: absolute;
+          left: 50%;
+          top: 0;
+        }
+      }
+    }
   }
 }
-.m-icon {
-  padding: 5px;
-  transition: 0.5s;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.2);
+
+@keyframes blink{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+// @keyframes glow{
+//   from{
+//   border-top: 1px solid rgb(250, 250, 248);
+//   border-left: 1px solid rgb(250, 250, 248);
+//   }
+//   to{
+//   border-top: 1px solid rgb(71, 71, 70);
+//   border-left: 1px solid rgb(71, 71, 70);
+//   }
+// }
+@keyframes horizontal-scale{
+  from{
+    transform: scale(0);
+    opacity: 0;
+    background: transparent;
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+    background:  $white;
+  }
+}
+@keyframes vertical-scale{
+  from{
+    transform: scale(0);
+    opacity: 0;
+    background: transparent;
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+    background: $white;
+  }
+}
+.close-icon{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+  animation: spin 8s linear infinite;
+}
+@media screen and (max-width: 500px){
+  .glass{
+    height:  100vh;
+    width: 100vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    right: 0;
+    .window{
+      padding: 10px 0;
+      .content{
+        .skills{
+          flex-direction: column;
+          margin: 10px;
+          .item{
+            flex: 1 1 auto;
+            width: 80%;
+            margin: 3px auto;
+          }
+        }
+        .about{
+          .timeline{
+            .block{
+              flex-direction: column;
+              .left, .right{
+                flex: 0 0 auto;
+              }
+              .left:after{
+                right: 5px;
+              }
+               .right:before{
+                 right: 7px;
+                 left: auto;
+               }
+            }
+          }
+          .timeline:after{
+              right: 10px;
+              top: 0;
+              left: auto;
+          }
+        }
+      }
+    }
+  }
+  .close-icon{
+    bottom: 6px;
+    right: 2px;
+    font-size: 18px;
   }
 }
