@@ -32,6 +32,7 @@ const Profile = () => {
     </div>
   );
 }
+
 const Work = () => {
   return (
     <div className="about">
@@ -55,8 +56,7 @@ const Work = () => {
                         return (
                           <div key={i + j} className="">
                             <h3>{project.name}</h3>
-                            <h4>{project.description}</h4>
-                            <h4>Stack: {project.stack.join(' | ')}</h4>
+                            <h4>{project.description.join("\n")}</h4>
                             <br />
                           </div>
                         )

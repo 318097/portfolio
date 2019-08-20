@@ -1,29 +1,34 @@
 import React, { Component } from "react";
 import "./System.scss";
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Window from "./Window";
 import { Stage, Layer, Circle } from 'react-konva';
-// import Konva from 'konva';
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
       shapeInfo: [],
-      colorList: ['#BE2623', '#FFCE4D', '#C0EB6A', '#43E8E4', '#FFA45B', '#FFDA77', '#8A4C55', '#FFAC1D', '#BBD38B', '#FF6838', '#524545', '#8BAFED', '#FF7100', '#AAD1D9', '#FF7B2D', '#4A50B2', '#354739', '#CE8523', '#B35417', '#FED361'],
-      darkColorList: ['#B9C5C5', '#E7E5E4', '#D4CFCA', '#AEA77C', '#C8D7D2', '#C8D7D2', '#EBE5DB'],
+      colorList: [
+        '#BE2623', '#FFCE4D', '#C0EB6A', '#43E8E4', '#FFA45B',
+        '#FFDA77', '#8A4C55', '#FFAC1D', '#BBD38B', '#FF6838',
+        '#524545', '#8BAFED', '#FF7100', '#AAD1D9', '#FF7B2D',
+        '#4A50B2', '#354739', '#CE8523', '#B35417', '#FED361'
+      ],
+      darkColorList: [
+        '#B9C5C5', '#E7E5E4', '#D4CFCA', '#AEA77C', '#C8D7D2',
+        '#C8D7D2', '#EBE5DB'
+      ],
     };
   }
+
   componentDidMount = () => {
     this.createShapeData();
     this.startAnimation();
   }
-  startAnimation = () => {
-    // var amplitude = 1;
-    // var period = 500;
 
-    // var anim = new Konva.Animation(frame => {
-    console.log(window.innerWidth, window.innerHeight);
+  startAnimation = () => {
+    // console.log(window.innerWidth, window.innerHeight);
     setInterval(() => {
       const { shapeInfo } = this.state;
       const updatedShapeInfo = shapeInfo.map((el) => {
@@ -36,9 +41,8 @@ class Header extends Component {
         shapeInfo: updatedShapeInfo
       });
     }, 50);
-    // });
-    // anim.start();
   }
+
   detectCollision = (el) => {
     let { x, y, speedX, speedY } = el;
     if (x > window.innerWidth) {
@@ -55,6 +59,7 @@ class Header extends Component {
     y += speedY;
     return { ...el, x, y, speedX, speedY };
   }
+
   createShapeData = () => {
     const width = window.innerWidth;
     const height = window.innerHeight;
@@ -75,10 +80,8 @@ class Header extends Component {
       shapeInfo: info
     });
   }
-  generateRandomCircles = () => {
-    const shapeInfo = this.state.shapeInfo;
-    return shapeInfo.map((prop, ind) => <Circle key={ind} {...prop} ></Circle >);
-  }
+
+  generateRandomCircles = () => this.state.shapeInfo.map((prop, ind) => <Circle key={ind} {...prop} ></Circle >);
 
   render() {
     return (
@@ -93,4 +96,5 @@ class Header extends Component {
     );
   }
 }
+
 export default Header;

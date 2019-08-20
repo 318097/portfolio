@@ -14,10 +14,10 @@ $white : #FFF;
   perspective: 700px;
   .window{
     box-sizing: border-box;
-    border: 2px solid white;
+    border: 3px solid white;
+    border-left: 7px solid white;
     background: rgba(0, 0, 0, .8);
     padding: 30px 20px;
-    margin: 0;
     color: $white;
     height: 100%;
     width: 100%;
@@ -27,9 +27,9 @@ $white : #FFF;
     // overflow: auto;
     transform-style: preserve-3d;
     transition: 1s;
-    &:hover{
-      transform: rotateY(5deg);
-    }
+    // &:hover{
+    //   transform: rotateY(2deg);
+    // }
     .title {
       flex: 0 0 auto;
       font-family: font4;
@@ -38,7 +38,7 @@ $white : #FFF;
       text-align: center;
       h4::before{
         content: '> ';
-        font-size: 20px;
+        font-size: 12px;
         animation: blink .7s infinite;
       }
     }
@@ -57,18 +57,6 @@ $white : #FFF;
             font-weight: bold;
             color: grey;
             position: relative;
-          }
-          .role:hover:before{
-            content: '<';
-            font-size: 19px;
-            position: relative;
-            top: -5px;
-          }
-          .role:hover:after {
-            content: '/>';
-            font-size: 19px;
-            position: relative;
-            top: -5px;
           }
         }
       }
@@ -124,8 +112,6 @@ $white : #FFF;
               position: relative;
             }
             .left:after{
-              // font-family: "FontAwesome";
-              // content: "\f066";
               content: '';
               display: block;
               width: 11px;
@@ -149,7 +135,6 @@ $white : #FFF;
             }
             .card{
               padding: 5px;
-              // border-radius: 10px;
               width: 80%;
               margin: 10px auto;    
               background:rgba(36, 36, 36, 0.5);
@@ -190,40 +175,7 @@ $white : #FFF;
     opacity: 0;
   }
 }
-// @keyframes glow{
-//   from{
-//   border-top: 1px solid rgb(250, 250, 248);
-//   border-left: 1px solid rgb(250, 250, 248);
-//   }
-//   to{
-//   border-top: 1px solid rgb(71, 71, 70);
-//   border-left: 1px solid rgb(71, 71, 70);
-//   }
-// }
-@keyframes horizontal-scale{
-  from{
-    transform: scale(0);
-    opacity: 0;
-    background: transparent;
-  }
-  to{
-    opacity: 1;
-    transform: scale(1);
-    background:  $white;
-  }
-}
-@keyframes vertical-scale{
-  from{
-    transform: scale(0);
-    opacity: 0;
-    background: transparent;
-  }
-  to{
-    opacity: 1;
-    transform: scale(1);
-    background: $white;
-  }
-}
+
 .close-icon{
   position: absolute;
   bottom: 10px;
@@ -231,6 +183,7 @@ $white : #FFF;
   z-index: 2;
   animation: spin 8s linear infinite;
 }
+
 @media screen and (max-width: 500px){
   .glass{
     height:  100vh;

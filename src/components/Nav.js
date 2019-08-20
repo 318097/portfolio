@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Icon from "./Icon";
-export default class Dock extends Component {
+export default class Nav extends Component {
   render() {
     const iconInfo = [
       { id: 1, name: "Home", action: "me" },
@@ -8,9 +8,8 @@ export default class Dock extends Component {
       { id: 3, name: "Skills", action: "skills" },
       { id: 4, name: "Contact", action: "contact" }
     ];
-    const icons = iconInfo.map(icon => {
-      return <Icon key={icon.name} info={icon} />;
-    });
+    const icons = iconInfo.map(icon => <Icon key={icon.name} info={icon} />);
+    
     return <React.Fragment>{icons}</React.Fragment>;
   }
 }

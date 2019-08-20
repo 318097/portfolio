@@ -29,7 +29,7 @@ exports.profile = {
       graduation_year: 2011
     },
     {
-      course: 'Bachelor in Engineering (CSE)',
+      course: 'Bachelor\'s in Computer Science Engineering (CSE)',
       university: 'Visvesvaraya Technological University, Belgavi (VTU)',
       score: '52.1%',
       name: 'T John Institute of Technology',
@@ -38,35 +38,43 @@ exports.profile = {
   ],
   work: [
     {
+      name: 'Pesto Career Accelerator',
+      role: 'Student',
+      start_date: 'Feb \'19',
+      end_date: 'Apr \'19',
+      description: "Pesto is a 12-week intensive full-stack developer training program for India’s top software engineers.",
+      projects: []
+    },
+    {
       name: 'Ideaplunge Solutions',
-      role: 'Front end developer',
+      role: 'Application developer',
       start_date: 'Feb \'18',
       end_date: 'Dec \'18',
+      description: "A software development consultancy.",
       projects: [
         {
-          name: 'CDFI',
-          description: 'Goverment Scheme management application',
-          stack: ['Mongodb', 'Nodejs', 'Javascript', 'Angular']
+          name: 'Center for Digital Financial Inclusion (CDFI)',
+          description: ['Created a custom drill-down feature in amCharts to automatically create new charts by clicking on sections of an existing chart.'],
         },
         {
-          name: 'Shimadzu',
-          description: 'CMS based application',
-          stack: ['Mongodb', 'Nodejs', 'Javascript', 'Angular']
+          name: 'Essilor & Shimazdu',
+          description: [
+            'Developed a custom CMS application in Angular 2+ that allowed us to rebuild a complex frontend by making changes to a backend JSON file. This included dynamically rendering forms and accepting that data via a REST API.',
+            'Designed the CMS to be modular so that it could be re-used across two of our different clients, Essilor and Shimazdu.'
+          ],
         },
         {
-          name: 'Essilor',
-          description: 'CMS based application',
-          stack: ['Mongodb', 'Nodejs', 'Javascript', 'Angular']
-        },
-        {
-          name: 'P&G Reports',
-          description: 'CMS based application',
-          stack: ['Mongodb', 'Nodejs', 'Javascript', 'Angular']
+          name: 'P&G Internal Report Management System',
+          description: [
+            'Implemented cross-browser compatibility (IE, Firefox, etc) and responsive design fixes.',
+            'Implemented data management and fetching for reports using @ngrx.'
+          ],
         },
         {
           name: 'CPS',
-          description: 'CMS based application',
-          stack: ['Mongodb', 'Nodejs', 'Javascript', 'Angular']
+          description: [
+            'Finished remaining backend REST API endpoints and refactored existing code to be more maintainable and readable.'
+          ],
         }
       ]
     },
@@ -75,31 +83,49 @@ exports.profile = {
       role: 'Full stack developer',
       start_date: 'Aug \'17',
       end_date: 'Dec \'17',
+      description: "A software development consultancy.",
       projects: [
         {
-          name: 'iWish',
-          description: 'Bidder to customer application',
-          stack: ['Mongodb', 'Nodejs', 'Javascript']
+          name: 'iWish bids',
+          description: [
+            'Developed REST APIs endpoints',
+            'Worked on the responsiveness of the application',
+            'Built a complex frontend using vanilla Javascript'
+          ],
         }
       ]
     }
   ],
   skills: [
-    { name: 'Angular' },
-    { name: 'JS' },
+    { name: 'Javascript' },
+    { name: 'Angular 2+' },
+    { name: 'Angular Material' },
+    { name: 'GIT' },
     { name: 'HTML' },
     { name: 'CSS' },
     { name: 'Node.js' },
-    { name: 'MongoDb' },
-    { name: 'My Sql' }
+    { name: 'Express.js' },
+    { name: 'Mongo DB' },
+    { name: 'SQL' },
+    { name: 'RxJS' },
+    { name: 'TypeScript' },
+    { name: 'React' },
+    { name: 'PHP' }
   ],
   secondary_skills: [
-    { name: 'Git' },
-    { name: 'Angular Material' },
-    { name: 'JSON' },
-    { name: 'RxJs' },
+    { name: 'C' },
+    { name: 'Java' },
+    { name: 'amCharts' },
+    { name: 'Heroku' },
+    { name: 'AngularJS' },
     { name: 'Gulp' },
-    { name: 'Php' }
+    { name: 'Bootstrap' },
+    { name: 'Socket.IO' },
+    { name: 'ngrx' },
+    { name: 'Redux' },
+    { name: 'AJAX' },
+    { name: 'SASS' },
+    { name: 'JEST' }
   ],
   social: [
     { name: 'GITHUB', url: 'https: //github.com/318097' },
