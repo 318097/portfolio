@@ -9,7 +9,7 @@ export default class Nav extends Component {
       { id: 4, name: "Contact", action: "contact" }
     ];
     const icons = iconInfo.map(icon => <Icon key={icon.name} info={icon} />);
-    
+
     return <React.Fragment>{icons}</React.Fragment>;
   }
 }

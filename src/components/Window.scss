@@ -1,7 +1,7 @@
 ::-webkit-scrollbar {
-display: none;
+  display: none;
 }
-$white : #FFF;
+$white: #fff;
 .glass {
   box-sizing: border-box;
   padding: 0;
@@ -12,11 +12,11 @@ $white : #FFF;
   right: 5%;
   transform: translateY(-50%);
   perspective: 700px;
-  .window{
+  .window {
     box-sizing: border-box;
     border: 3px solid white;
     border-left: 7px solid white;
-    background: rgba(0, 0, 0, .8);
+    background: rgba(0, 0, 0, 0.8);
     padding: 30px 20px;
     color: $white;
     height: 100%;
@@ -36,10 +36,10 @@ $white : #FFF;
       text-transform: capitalize;
       font-size: 27px;
       text-align: center;
-      h4::before{
-        content: '> ';
+      h4::before {
+        content: "> ";
         font-size: 12px;
-        animation: blink .7s infinite;
+        animation: blink 0.7s infinite;
       }
     }
     .content {
@@ -48,25 +48,25 @@ $white : #FFF;
       font-family: font4;
       text-transform: capitalize;
       padding: 20px 0;
-      .profile{
-        .text{
+      .profile {
+        .text {
           text-align: center;
           flex: 0 0 50%;
           font-size: 30px;
-          span{
+          span {
             font-weight: bold;
             color: grey;
             position: relative;
           }
         }
       }
-      .skills{
+      .skills {
         display: flex;
         flex-wrap: wrap;
         margin: 20px;
         align-items: center;
         justify-content: space-between;
-        .item{
+        .item {
           margin: 10px 0;
           width: 28%;
           font-size: 25px;
@@ -76,43 +76,44 @@ $white : #FFF;
           text-align: center;
         }
       }
-      .contact{
-        .email{
+      .contact {
+        .email {
           font-size: 40px;
           text-align: center;
         }
-        .social{
+        .social {
           display: flex;
           align-items: center;
           width: 250px;
           margin: 0px auto;
           justify-content: center;
-          a i{
+          a i {
             font-size: 30px;
             margin: 7px;
             color: $white;
-            transition: .5s;
-            &:hover{
+            transition: 0.5s;
+            &:hover {
               color: rgb(194, 193, 193);
               transform: scale(1.2);
             }
           }
         }
       }
-      .about{
+      .about {
         height: 100%;
-        .timeline{
+        .timeline {
           height: 100%;
           position: relative;
-          .block{
+          .block {
             margin-bottom: 25px;
             display: flex;
-            .left, .right{
+            .left,
+            .right {
               flex: 1 1 50%;
               position: relative;
             }
-            .left:after{
-              content: '';
+            .left:after {
+              content: "";
               display: block;
               width: 11px;
               position: absolute;
@@ -122,8 +123,8 @@ $white : #FFF;
               border-radius: 50%;
               background: white;
             }
-            .right:before{
-              content: '';
+            .right:before {
+              content: "";
               display: block;
               width: 7px;
               position: absolute;
@@ -133,25 +134,24 @@ $white : #FFF;
               border-radius: 50%;
               background: white;
             }
-            .card{
+            .card {
               padding: 5px;
               width: 80%;
-              margin: 10px auto;    
-              background:rgba(36, 36, 36, 0.5);
-              
+              margin: 10px auto;
+              background: rgba(36, 36, 36, 0.5);
             }
-            .left .card{
+            .left .card {
               text-align: center;
-              border-left: 2px solid rgb(122, 122, 122);          
+              border-left: 2px solid rgb(122, 122, 122);
             }
-            .right .card{
+            .right .card {
               margin-top: 30px;
-              border-right: 2px solid rgb(122, 122, 122);          
+              border-right: 2px solid rgb(122, 122, 122);
             }
           }
         }
-        .timeline:after{
-          content: '';
+        .timeline:after {
+          content: "";
           height: 100%;
           width: 1px;
           background: white;
@@ -164,19 +164,19 @@ $white : #FFF;
   }
 }
 
-@keyframes blink{
-  0%{
+@keyframes blink {
+  0% {
     opacity: 0;
   }
-  50%{
+  50% {
     opacity: 1;
   }
-  100%{
+  100% {
     opacity: 0;
   }
 }
 
-.close-icon{
+.close-icon {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -184,52 +184,53 @@ $white : #FFF;
   animation: spin 8s linear infinite;
 }
 
-@media screen and (max-width: 500px){
-  .glass{
-    height:  100vh;
+@media screen and (max-width: 500px) {
+  .glass {
+    height: 100vh;
     width: 100vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     right: 0;
-    .window{
+    .window {
       padding: 10px 0;
-      .content{
-        .skills{
+      .content {
+        .skills {
           flex-direction: column;
           margin: 10px;
-          .item{
+          .item {
             flex: 1 1 auto;
             width: 80%;
             margin: 3px auto;
           }
         }
-        .about{
-          .timeline{
-            .block{
+        .about {
+          .timeline {
+            .block {
               flex-direction: column;
-              .left, .right{
+              .left,
+              .right {
                 flex: 0 0 auto;
               }
-              .left:after{
+              .left:after {
                 right: 5px;
               }
-               .right:before{
-                 right: 7px;
-                 left: auto;
-               }
+              .right:before {
+                right: 7px;
+                left: auto;
+              }
             }
           }
-          .timeline:after{
-              right: 10px;
-              top: 0;
-              left: auto;
+          .timeline:after {
+            right: 10px;
+            top: 0;
+            left: auto;
           }
         }
       }
     }
   }
-  .close-icon{
+  .close-icon {
     bottom: 6px;
     right: 2px;
     font-size: 18px;

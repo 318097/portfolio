@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./System.scss";
-import { Route } from 'react-router-dom';
+import { Route } from "react-router-dom";
 import Window from "./Window";
-import { Stage, Layer, Circle } from 'react-konva';
+import { Stage, Layer, Circle } from "react-konva";
 
 class Header extends Component {
   constructor(props) {
@@ -10,28 +10,49 @@ class Header extends Component {
     this.state = {
       shapeInfo: [],
       colorList: [
-        '#BE2623', '#FFCE4D', '#C0EB6A', '#43E8E4', '#FFA45B',
-        '#FFDA77', '#8A4C55', '#FFAC1D', '#BBD38B', '#FF6838',
-        '#524545', '#8BAFED', '#FF7100', '#AAD1D9', '#FF7B2D',
-        '#4A50B2', '#354739', '#CE8523', '#B35417', '#FED361'
+        "#BE2623",
+        "#FFCE4D",
+        "#C0EB6A",
+        "#43E8E4",
+        "#FFA45B",
+        "#FFDA77",
+        "#8A4C55",
+        "#FFAC1D",
+        "#BBD38B",
+        "#FF6838",
+        "#524545",
+        "#8BAFED",
+        "#FF7100",
+        "#AAD1D9",
+        "#FF7B2D",
+        "#4A50B2",
+        "#354739",
+        "#CE8523",
+        "#B35417",
+        "#FED361"
       ],
       darkColorList: [
-        '#B9C5C5', '#E7E5E4', '#D4CFCA', '#AEA77C', '#C8D7D2',
-        '#C8D7D2', '#EBE5DB'
-      ],
+        "#B9C5C5",
+        "#E7E5E4",
+        "#D4CFCA",
+        "#AEA77C",
+        "#C8D7D2",
+        "#C8D7D2",
+        "#EBE5DB"
+      ]
     };
   }
 
   componentDidMount = () => {
     this.createShapeData();
     this.startAnimation();
-  }
+  };
 
   startAnimation = () => {
     // console.log(window.innerWidth, window.innerHeight);
     setInterval(() => {
       const { shapeInfo } = this.state;
-      const updatedShapeInfo = shapeInfo.map((el) => {
+      const updatedShapeInfo = shapeInfo.map(el => {
         const mod = this.detectCollision(el);
         return {
           ...mod
@@ -41,9 +62,9 @@ class Header extends Component {
         shapeInfo: updatedShapeInfo
       });
     }, 50);
-  }
+  };
 
-  detectCollision = (el) => {
+  detectCollision = el => {
     let { x, y, speedX, speedY } = el;
     if (x > window.innerWidth) {
       speedX = -speedX;
@@ -58,13 +79,13 @@ class Header extends Component {
     x += speedX;
     y += speedY;
     return { ...el, x, y, speedX, speedY };
-  }
+  };
 
   createShapeData = () => {
     const width = window.innerWidth;
     const height = window.innerHeight;
     const arr = Array(55).fill(null);
-    const sign = () => Math.random() < .5 ? -1 : 1;
+    const sign = () => (Math.random() < 0.5 ? -1 : 1);
     const colorList = this.state.colorList;
     const info = arr.map((el, ind) => {
       return {
@@ -73,25 +94,28 @@ class Header extends Component {
         speedX: ((Math.random() * 10) % 3) * sign(),
         speedY: ((Math.random() * 10) % 3) * sign(),
         radius: Math.floor(((Math.random() * 10) % 5) + 3),
-        fill: colorList[Math.floor((Math.random() * 10) % colorList.length)],
+        fill: colorList[Math.floor((Math.random() * 10) % colorList.length)]
       };
     });
     this.setState({
       shapeInfo: info
     });
-  }
+  };
 
-  generateRandomCircles = () => this.state.shapeInfo.map((prop, ind) => <Circle key={ind} {...prop} ></Circle >);
+  generateRandomCircles = () =>
+    this.state.shapeInfo.map((prop, ind) => (
+      <Circle key={ind} {...prop}></Circle>
+    ));
 
   render() {
     return (
       <div className="system">
         <Stage width={window.innerWidth} height={window.innerHeight}>
-          <Layer ref={node => this.layer = node}>
+          <Layer ref={node => (this.layer = node)}>
             {this.generateRandomCircles()}
           </Layer>
         </Stage>
-        <Route path='/:type' component={Window} />
+        <Route path="/:type" component={Window} />
       </div>
     );
   }

@@ -10,27 +10,23 @@
   }
   .nav {
     position: absolute;
-    // transform: rotate(-90deg) translate(-112%, -371%);
-    // height: 70vh;
     display: flex;
     flex-direction: column;
-    // justify-content: flex-end;
     top: 50%;
     left: -19px;
     transform: translateY(-50%);
-    // background: rgba($color: #000000, $alpha: 0.5);
     z-index: 1;
   }
 }
-h1{
+h1 {
   margin: 14px;
   font-size: 25px;
 }
-h2{
-margin: 11px;
-font-size: 22px;
+h2 {
+  margin: 11px;
+  font-size: 22px;
 }
-h3{
+h3 {
   margin: 9px;
   font-size: 20px;
 }
@@ -38,11 +34,11 @@ h4 {
   margin: 7px;
   font-size: 18px;
 }
-h5{
-margin: 5px;
-font-size: 16px;
+h5 {
+  margin: 5px;
+  font-size: 16px;
 }
-h6{
+h6 {
   margin: 2px;
   font-size: 14px;
 }
@@ -56,31 +52,31 @@ h6{
   }
 }
 
-@font-face{
+@font-face {
   font-family: font1;
-  src: url('./assets/fonts/AmaticSC-Bold.ttf');
+  src: url("./assets/fonts/AmaticSC-Bold.ttf");
 }
-@font-face{
+@font-face {
   font-family: font2;
-  src: url('./assets/fonts/ArchitectsDaughter-Regular.ttf');
+  src: url("./assets/fonts/ArchitectsDaughter-Regular.ttf");
 }
-@font-face{
+@font-face {
   font-family: font3;
-  src: url('./assets/fonts/MajorMonoDisplay-Regular.ttf');
+  src: url("./assets/fonts/MajorMonoDisplay-Regular.ttf");
 }
-@font-face{
+@font-face {
   font-family: font4;
-  src: url('./assets/fonts/NanumPenScript-Regular.ttf');
+  src: url("./assets/fonts/NanumPenScript-Regular.ttf");
 }
-@font-face{
+@font-face {
   font-family: font5;
-  src: url('./assets/fonts/PoiretOne-Regular.ttf');
+  src: url("./assets/fonts/PoiretOne-Regular.ttf");
 }
-@font-face{
+@font-face {
   font-family: font6;
-  src: url('./assets/fonts/AnnieUseYourTelescope-Regular.ttf');
+  src: url("./assets/fonts/AnnieUseYourTelescope-Regular.ttf");
 }
-@font-face{
+@font-face {
   font-family: font7;
-  src: url('./assets/fonts/CoveredByYourGrace.ttf');
+  src: url("./assets/fonts/CoveredByYourGrace.ttf");
 }
