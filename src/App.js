@@ -1,21 +1,19 @@
 import React, { Component } from "react";
-import "./App.scss";
-
-import System from "./components/System";
-import Nav from "./components/Nav";
 import { BrowserRouter } from "react-router-dom";
+
+// import Background from "./components/Background";
+import Navigation from "./components/Navigation";
+import Content from "./components/Content";
+import "./App.scss";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="container">
-          <div className="nav">
-            <Nav />
-          </div>
-          <div className="system">
-            <System />
-          </div>
+          <Navigation />
+          <Content />
+          {/* <Background /> */}
         </div>
       </BrowserRouter>
     );

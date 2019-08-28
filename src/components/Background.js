@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./System.scss";
-import { Route } from "react-router-dom";
-import Window from "./Window";
+import "./Background.scss";
+// import { Route } from "react-router-dom";
+// import Content from "./Content";
 import { Stage, Layer, Circle } from "react-konva";
 
-class Header extends Component {
+class Background extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -49,7 +49,6 @@ class Header extends Component {
   };
 
   startAnimation = () => {
-    // console.log(window.innerWidth, window.innerHeight);
     setInterval(() => {
       const { shapeInfo } = this.state;
       const updatedShapeInfo = shapeInfo.map(el => {
@@ -109,16 +108,16 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="system">
-        <Stage width={window.innerWidth} height={window.innerHeight}>
+      <div className="background">
+        {/* <Stage width={window.innerWidth} height={window.innerHeight}>
           <Layer ref={node => (this.layer = node)}>
             {this.generateRandomCircles()}
           </Layer>
-        </Stage>
-        <Route path="/:type" component={Window} />
+        </Stage> */}
+        {/* <Route path="/:type" component={Content} /> */}
       </div>
     );
   }
 }
 
-export default Header;
+export default Background;
