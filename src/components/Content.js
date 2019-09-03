@@ -41,7 +41,7 @@ const Content = props => {
   return (
     <Div className="box">
       <div className="contentx">
-        <section>
+        <section className="profile">
           <h2>Profile</h2>
           <div className="profile">
             <div className="text">
@@ -54,8 +54,8 @@ const Content = props => {
         </section>
 
         <section>
-          <h2>Profile</h2>
-          <div className="about">
+          <h2>Work</h2>
+          <div className="work">
             <div className="timeline">
               {profile.work.map((el, i) => {
                 return (
@@ -71,12 +71,12 @@ const Content = props => {
                     </div>
                     <div className="right">
                       <div className="card">
-                        <h3 style={{ textAlign: "center" }}>Projects</h3>
+                        <h3>Projects</h3>
                         {el.projects.map((project, j) => {
                           return (
                             <div key={i + j} className="">
                               <h3>{project.name}</h3>
-                              <h4>{project.description.join("\n")}</h4>
+                              <p>{project.description.join("\n")}</p>
                               <br />
                             </div>
                           );
@@ -90,12 +90,13 @@ const Content = props => {
           </div>
         </section>
 
-        <section>
+        <section className="skills">
           <h2>Skills</h2>
-
-          <div className="skills">
+          <div className="">
             {list.map(item => (
-              <div key={item.name}>{item.name}</div>
+              <div className="skill" key={item.name}>
+                {item.name}
+              </div>
             ))}
           </div>
         </section>

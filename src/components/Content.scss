@@ -8,36 +8,143 @@ $white: #fff;
   padding: 0;
   position: absolute;
   height: 80vh;
-  width: 70vw;
+  width: 80vw;
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.8);
+  background: url("../assets/backgrounds/concrete-texture.png");
+  clip-path: polygon(0 0, 100% 2%, 96% 99%, 2% 100%);
   .title {
     text-transform: capitalize;
     text-align: center;
   }
   .contentx {
-    .profile {
-      .text {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    section {
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      h2 {
+        position: relative;
+        top: -20px;
+        left: -20px;
+        width: 100%;
+        padding: 20px;
         text-align: center;
-        flex: 0 0 50%;
-        span {
-          color: grey;
+        background: rgba($color: #000000, $alpha: 0.1);
+        font-family: font5;
+        font-size: 26px;
+      }
+      div {
+        padding: 20px;
+        text-align: center;
+        font-size: 22px;
+        font-family: font3;
+      }
+    }
+    .profile {
+      span {
+        font-weight: bold;
+        color: rgb(0, 97, 153);
+      }
+    }
+    .work {
+      height: 100%;
+      overflow: auto;
+
+      $timeline: rgb(255, 128, 9);
+      $timelineStops: rgb(187, 85, 2);
+
+      .timelineStops {
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        background: $timelineStops;
+        z-index: 2;
+      }
+
+      .timeline {
+        height: 100%;
+        position: relative;
+        .block {
+          margin-bottom: 15px;
+          display: flex;
+          .left,
+          .right {
+            flex: 1 1 50%;
+            position: relative;
+          }
+          .left:after {
+            @extend .timelineStops;
+            width: 11px;
+            right: -6px;
+            top: 37px;
+            height: 11px;
+          }
+          .right:before {
+            @extend .timelineStops;
+            width: 7px;
+            left: -3px;
+            top: 61px;
+            height: 7px;
+          }
+          .left .card {
+            text-align: center;
+            border-left: 2px solid rgb(47, 47, 47);
+            h2 {
+              font-size: 20px;
+            }
+            h4 {
+              font-size: 14px;
+            }
+          }
+          .right .card {
+            margin-top: 30px;
+            border-right: 2px solid rgb(56, 56, 56);
+            h3 {
+              text-align: center;
+              font-size: 12px;
+            }
+            p {
+              font-size: 15px;
+              font-family: font2;
+            }
+          }
+          .card {
+            padding: 5px;
+            width: 80%;
+            margin: 10px auto;
+            background: rgb(46, 46, 46);
+            color: white;
+          }
         }
+      }
+      .timeline:after {
+        content: "";
+        height: 100%;
+        width: 1px;
+        background: $timeline;
+        position: absolute;
+        left: 50%;
+        top: 0;
       }
     }
     .skills {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 20px;
-      align-items: center;
-      justify-content: space-between;
       div {
-        margin: 10px 0;
-        width: 28%;
-        padding: 30px 10px;
-        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px;
+        align-items: center;
+        justify-content: space-between;
+        div.skill {
+          margin: 10px 0;
+          width: 28%;
+          text-align: center;
+          border: 1px solid black;
+        }
       }
     }
     .contact {
@@ -51,66 +158,6 @@ $white: #fff;
             transform: scale(1.2);
           }
         }
-      }
-    }
-    .about {
-      .timeline {
-        height: 100%;
-        position: relative;
-        .block {
-          margin-bottom: 25px;
-          display: flex;
-          .left,
-          .right {
-            flex: 1 1 50%;
-            position: relative;
-          }
-          .left:after {
-            content: "";
-            display: block;
-            width: 11px;
-            position: absolute;
-            right: -6px;
-            top: 37px;
-            height: 11px;
-            border-radius: 50%;
-            background: white;
-          }
-          .right:before {
-            content: "";
-            display: block;
-            width: 7px;
-            position: absolute;
-            left: -3px;
-            top: 61px;
-            height: 7px;
-            border-radius: 50%;
-            background: white;
-          }
-          .card {
-            padding: 5px;
-            width: 80%;
-            margin: 10px auto;
-            background: rgba(36, 36, 36, 0.5);
-          }
-          .left .card {
-            text-align: center;
-            border-left: 2px solid rgb(122, 122, 122);
-          }
-          .right .card {
-            margin-top: 30px;
-            border-right: 2px solid rgb(122, 122, 122);
-          }
-        }
-      }
-      .timeline:after {
-        content: "";
-        height: 100%;
-        width: 1px;
-        background: white;
-        position: absolute;
-        left: 50%;
-        top: 0;
       }
     }
   }
