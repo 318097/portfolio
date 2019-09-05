@@ -2,6 +2,9 @@
   display: none;
 }
 $white: #fff;
+$primary: rgb(2, 74, 116);
+$secondary: black;
+$black: rgb(36, 36, 36);
 
 .box {
   box-sizing: border-box;
@@ -23,10 +26,10 @@ $white: #fff;
     width: 100%;
     overflow: auto;
     section {
-      height: 100%;
+      min-height: 100%;
       width: 100%;
       padding: 0;
-      h2 {
+      & > h2 {
         position: relative;
         top: -20px;
         left: -20px;
@@ -47,15 +50,13 @@ $white: #fff;
     .profile {
       span {
         font-weight: bold;
-        color: rgb(0, 97, 153);
+        color: $primary;
       }
     }
     .work {
-      height: 100%;
-      overflow: auto;
-
       $timeline: rgb(255, 128, 9);
       $timelineStops: rgb(187, 85, 2);
+      $blockBorders: rgb(187, 85, 2);
 
       .timelineStops {
         content: "";
@@ -67,7 +68,6 @@ $white: #fff;
       }
 
       .timeline {
-        height: 100%;
         position: relative;
         .block {
           margin-bottom: 15px;
@@ -93,7 +93,7 @@ $white: #fff;
           }
           .left .card {
             text-align: center;
-            border-left: 2px solid rgb(47, 47, 47);
+            border-left: 5px solid $blockBorders;
             h2 {
               font-size: 20px;
             }
@@ -103,7 +103,7 @@ $white: #fff;
           }
           .right .card {
             margin-top: 30px;
-            border-right: 2px solid rgb(56, 56, 56);
+            border-right: 5px solid $blockBorders;
             h3 {
               text-align: center;
               font-size: 12px;
@@ -117,33 +117,39 @@ $white: #fff;
             padding: 5px;
             width: 80%;
             margin: 10px auto;
-            background: rgb(46, 46, 46);
-            color: white;
+            background: $black;
+            color: $white;
           }
         }
       }
       .timeline:after {
         content: "";
-        height: 100%;
+        position: absolute;
         width: 1px;
         background: $timeline;
-        position: absolute;
         left: 50%;
         top: 0;
+        bottom: 20px;
       }
     }
     .skills {
-      div {
+      div.skill-list {
         display: flex;
         flex-wrap: wrap;
-        margin: 20px;
+        margin: 20px 30px;
         align-items: center;
         justify-content: space-between;
         div.skill {
           margin: 10px 0;
           width: 28%;
           text-align: center;
-          border: 1px solid black;
+          border: 1px solid $black;
+          &:hover {
+            background: $black;
+            border: 1px solid $white;
+            color: $white;
+            transition: 0.8s;
+          }
         }
       }
     }
@@ -151,10 +157,12 @@ $white: #fff;
       .social {
         margin: 0px auto;
         a i {
+          color: $black;
           margin: 7px;
+          font-size: 26px;
           transition: 0.5s;
           &:hover {
-            color: rgb(194, 193, 193);
+            color: $primary;
             transform: scale(1.2);
           }
         }

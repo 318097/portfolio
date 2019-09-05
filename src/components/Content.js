@@ -53,46 +53,44 @@ const Content = props => {
           </div>
         </section>
 
-        <section>
+        <section className="work">
           <h2>Work</h2>
-          <div className="work">
-            <div className="timeline">
-              {profile.work.map((el, i) => {
-                return (
-                  <div key={i} className="block">
-                    <div className="left">
-                      <div className="card">
-                        <h2>{el.name}</h2>
-                        <h4>{el.role}</h4>
-                        <h4>
-                          {el.start_date} - {el.end_date}
-                        </h4>
-                      </div>
-                    </div>
-                    <div className="right">
-                      <div className="card">
-                        <h3>Projects</h3>
-                        {el.projects.map((project, j) => {
-                          return (
-                            <div key={i + j} className="">
-                              <h3>{project.name}</h3>
-                              <p>{project.description.join("\n")}</p>
-                              <br />
-                            </div>
-                          );
-                        })}
-                      </div>
+          <div className="timeline">
+            {profile.work.map((el, i) => {
+              return (
+                <div key={i} className="block">
+                  <div className="left">
+                    <div className="card">
+                      <h3>{el.name}</h3>
+                      <h4>{el.role}</h4>
+                      <h4>
+                        {el.start_date} - {el.end_date}
+                      </h4>
                     </div>
                   </div>
-                );
-              })}
-            </div>
+                  <div className="right">
+                    <div className="card">
+                      <h3>Projects</h3>
+                      {el.projects.map((project, j) => {
+                        return (
+                          <div key={i + j} className="">
+                            <h3>{project.name}</h3>
+                            <p>{project.description.join("\n")}</p>
+                            <br />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
 
         <section className="skills">
           <h2>Skills</h2>
-          <div className="">
+          <div className="skill-list">
             {list.map(item => (
               <div className="skill" key={item.name}>
                 {item.name}
@@ -101,14 +99,14 @@ const Content = props => {
           </div>
         </section>
 
-        <section>
+        <section className="contact">
           <h2>Contact</h2>
 
-          <div className="contact">
-            {/* <ReactMapGL
+          {/* <ReactMapGL
         mapboxApiAccessToken={'pk.eyJ1IjoiMzE4MDk3IiwiYSI6ImNqdDJhbzhqZDB6YjkzeWxqbXpqZWVyNGgifQ._HOcF0YmpvJ7eAl4JQtFqA'}
         {...viewport}
       /> */}
+          <div>
             <h2 className="email">318097@gmail.com</h2>
             <div className="social">
               <a title="Facebook" href="https://www.facebook.com/ml.cr7">
