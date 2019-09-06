@@ -1,123 +1,110 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import "./Background.scss";
-// import { Route } from "react-router-dom";
-// import Content from "./Content";
 import { Stage, Layer, Circle } from "react-konva";
 
-class Background extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      shapeInfo: [],
-      colorList: [
-        "#BE2623",
-        "#FFCE4D",
-        "#C0EB6A",
-        "#43E8E4",
-        "#FFA45B",
-        "#FFDA77",
-        "#8A4C55",
-        "#FFAC1D",
-        "#BBD38B",
-        "#FF6838",
-        "#524545",
-        "#8BAFED",
-        "#FF7100",
-        "#AAD1D9",
-        "#FF7B2D",
-        "#4A50B2",
-        "#354739",
-        "#CE8523",
-        "#B35417",
-        "#FED361"
-      ],
-      darkColorList: [
-        "#B9C5C5",
-        "#E7E5E4",
-        "#D4CFCA",
-        "#AEA77C",
-        "#C8D7D2",
-        "#C8D7D2",
-        "#EBE5DB"
-      ]
-    };
-  }
+const colorList = [
+  "#BE2623",
+  "#FFCE4D",
+  "#C0EB6A",
+  "#43E8E4",
+  "#FFA45B",
+  "#FFDA77",
+  "#8A4C55",
+  "#FFAC1D",
+  "#BBD38B",
+  "#FF6838",
+  "#524545",
+  "#8BAFED",
+  "#FF7100",
+  "#AAD1D9",
+  "#FF7B2D",
+  "#4A50B2",
+  "#354739",
+  "#CE8523",
+  "#B35417",
+  "#FED361"
+];
 
-  componentDidMount = () => {
-    this.createShapeData();
-    this.startAnimation();
+const darkColorList = [
+  "#B9C5C5",
+  "#E7E5E4",
+  "#D4CFCA",
+  "#AEA77C",
+  "#C8D7D2",
+  "#C8D7D2",
+  "#EBE5DB"
+];
+
+const colorPalette = [...darkColorList];
+
+const direction = () => (Math.random() < 0.5 ? -1 : 1);
+
+const Background = () => {
+  const [shapeInfo, setShapeInfo] = useState([]);
+
+  useEffect(() => {
+    createShapeData();
+  }, []);
+
+  const startAnimation = () => {
+    const refreshRate = 500;
+    setTimeout(() => {
+      console.log(shapeInfo);
+      const updatedShapeInfo = shapeInfo.map(shape => {
+        const newData = updateBallStatus(shape);
+        return newData;
+      });
+      setShapeInfo(updatedShapeInfo);
+    }, refreshRate);
   };
 
-  startAnimation = () => {
-    setInterval(() => {
-      const { shapeInfo } = this.state;
-      const updatedShapeInfo = shapeInfo.map(el => {
-        const mod = this.detectCollision(el);
-        return {
-          ...mod
-        };
-      });
-      this.setState({
-        shapeInfo: updatedShapeInfo
-      });
-    }, 50);
-  };
+  const updateBallStatus = ({ x, y, speedX, speedY, ...rest }) => {
+    if (x > window.innerWidth) speedX = -speedX;
+    else if (x < 0) speedX = Math.abs(speedX);
 
-  detectCollision = el => {
-    let { x, y, speedX, speedY } = el;
-    if (x > window.innerWidth) {
-      speedX = -speedX;
-    } else if (x < 0) {
-      speedX = Math.abs(speedX);
-    }
-    if (y > window.innerHeight) {
-      speedY = -speedY;
-    } else if (y < 0) {
-      speedY = Math.abs(speedY);
-    }
+    if (y > window.innerHeight) speedY = -speedY;
+    else if (y < 0) speedY = Math.abs(speedY);
+
     x += speedX;
     y += speedY;
-    return { ...el, x, y, speedX, speedY };
+
+    return { ...rest, x, y, speedX, speedY };
   };
 
-  createShapeData = () => {
+  const createShapeData = () => {
     const width = window.innerWidth;
     const height = window.innerHeight;
-    const arr = Array(55).fill(null);
-    const sign = () => (Math.random() < 0.5 ? -1 : 1);
-    const colorList = this.state.colorList;
-    const info = arr.map((el, ind) => {
-      return {
-        x: Math.floor((Math.random() * 100000) % width),
-        y: Math.floor((Math.random() * 100000) % height),
-        speedX: ((Math.random() * 10) % 3) * sign(),
-        speedY: ((Math.random() * 10) % 3) * sign(),
-        radius: Math.floor(((Math.random() * 10) % 5) + 3),
-        fill: colorList[Math.floor((Math.random() * 10) % colorList.length)]
-      };
-    });
-    this.setState({
-      shapeInfo: info
-    });
+    const noOfBalls = 55;
+
+    const input = Array(noOfBalls).fill(null);
+
+    const info = input.map(() => ({
+      x: Math.floor((Math.random() * 100000) % width),
+      y: Math.floor((Math.random() * 100000) % height),
+      speedX: ((Math.random() * 10) % 3) * direction(),
+      speedY: ((Math.random() * 10) % 3) * direction(),
+      radius: Math.floor(((Math.random() * 10) % 5) + 3),
+      fill: colorPalette[Math.floor((Math.random() * 10) % colorPalette.length)]
+    }));
+    setShapeInfo([...info]);
+    // startAnimation();
   };
 
-  generateRandomCircles = () =>
-    this.state.shapeInfo.map((prop, ind) => (
-      <Circle key={ind} {...prop}></Circle>
-    ));
-
-  render() {
-    return (
-      <div className="background">
-        {/* <Stage width={window.innerWidth} height={window.innerHeight}>
-          <Layer ref={node => (this.layer = node)}>
-            {this.generateRandomCircles()}
-          </Layer>
-        </Stage> */}
-        {/* <Route path="/:type" component={Content} /> */}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="background">
+      <Stage
+        style={{ height: "100%", width: "100%" }}
+        width={window.innerWidth}
+        height={window.innerHeight}
+      >
+        <Layer>
+          {shapeInfo.map((prop, index) => (
+            <Circle key={index} {...prop}></Circle>
+          ))}
+        </Layer>
+      </Stage>
+    </div>
+  );
+};
 
 export default Background;

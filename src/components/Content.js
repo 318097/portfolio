@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import posed from "react-pose";
 import { withRouter } from "react-router-dom";
 // import ReactMapGL from 'react-map-gl';
@@ -16,7 +16,7 @@ const Div = posed.div({
 
 const Content = props => {
   useEffect(() => {
-    console.log(props);
+    // console.log(props);
   }, []);
 
   // const viewport = {
@@ -122,7 +122,7 @@ const Content = props => {
           </div>
         </section>
       </div>
-      <i className="close-icon fas fa-dharmachakra"></i>
+      <i className="spinner fas fa-dharmachakra"></i>
     </Div>
   );
 };

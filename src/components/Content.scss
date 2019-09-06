@@ -171,10 +171,10 @@ $black: rgb(36, 36, 36);
   }
 }
 
-.close-icon {
+.spinner {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 3%;
+  right: 5%;
   z-index: 2;
   animation: spin 8s linear infinite;
 }
@@ -225,7 +225,7 @@ $black: rgb(36, 36, 36);
       }
     }
   }
-  .close-icon {
+  .spinner {
     bottom: 6px;
     right: 2px;
     font-size: 18px;

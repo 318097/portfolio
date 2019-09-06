@@ -13,7 +13,7 @@ const Navigation = () => {
   return (
     <nav>
       {navItems.map(item => (
-        <Link className="item" to={`#${item.name}`}>
+        <Link key={item.id} className="item" to={`#${item.name}`}>
           {item.name.toUpperCase()}
         </Link>
       ))}
