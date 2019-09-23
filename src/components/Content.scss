@@ -47,16 +47,16 @@ $black: rgb(36, 36, 36);
         font-family: font3;
       }
     }
-    .profile {
+    #profile {
       span {
         font-weight: bold;
         color: $primary;
       }
     }
-    .work {
-      $timeline: rgb(255, 128, 9);
-      $timelineStops: rgb(187, 85, 2);
-      $blockBorders: rgb(187, 85, 2);
+    #work {
+      $timeline: rgb(18, 32, 93);
+      $timelineStops: rgb(2, 67, 187);
+      $blockBorders: rgb(2, 98, 187);
 
       .timelineStops {
         content: "";
@@ -132,7 +132,7 @@ $black: rgb(36, 36, 36);
         bottom: 20px;
       }
     }
-    .skills {
+    #skills {
       div.skill-list {
         display: flex;
         flex-wrap: wrap;
@@ -153,7 +153,7 @@ $black: rgb(36, 36, 36);
         }
       }
     }
-    .contact {
+    #contact {
       .social {
         margin: 0px auto;
         a i {
@@ -172,6 +172,7 @@ $black: rgb(36, 36, 36);
 }
 
 .spinner {
+  font-size: 22px;
   position: absolute;
   bottom: 3%;
   right: 5%;
@@ -228,6 +229,5 @@ $black: rgb(36, 36, 36);
   .spinner {
     bottom: 6px;
     right: 2px;
-    font-size: 18px;
   }
 }

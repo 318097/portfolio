@@ -7,13 +7,19 @@ import Content from "./components/Content";
 import "./App.scss";
 
 class App extends Component {
+  state = {
+    activeSection: ""
+  };
+
+  setActiveSection = section => this.setState({ activeSection: section });
+
   render() {
     return (
       <BrowserRouter>
         <div className="container">
-          <Navigation />
+          <Navigation activeSection={this.state.activeSection} />
           <Background />
-          <Content />
+          <Content setActiveSection={this.setActiveSection} />
         </div>
       </BrowserRouter>
     );

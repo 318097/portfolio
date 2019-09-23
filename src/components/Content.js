@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import posed from "react-pose";
 import { withRouter } from "react-router-dom";
+import Scroll from "react-scroll";
 // import ReactMapGL from 'react-map-gl';
 
 import "./Content.scss";
 import { profile } from "../info";
+
+const { scroller } = Scroll;
 
 const Div = posed.div({
   visible: {
@@ -14,10 +17,18 @@ const Div = posed.div({
   hidden: { opacity: 0 }
 });
 
-const Content = props => {
+const Content = ({ location, setActiveSection }) => {
   useEffect(() => {
-    // console.log(props);
-  }, []);
+    const elementId = location.hash.slice(1);
+    scroller.scrollTo(elementId, {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      containerId: "ContainerElement",
+      offset: -80
+    });
+    setActiveSection(elementId);
+  }, [location]);
 
   // const viewport = {
   //   width: 400,
@@ -40,8 +51,8 @@ const Content = props => {
 
   return (
     <Div className="box">
-      <div className="contentx">
-        <section className="profile">
+      <div id="ContainerElement" className="contentx">
+        <section id="profile">
           <h2>Profile</h2>
           <div className="profile">
             <div className="text">
@@ -53,7 +64,7 @@ const Content = props => {
           </div>
         </section>
 
-        <section className="work">
+        <section id="work" name="work">
           <h2>Work</h2>
           <div className="timeline">
             {profile.work.map((el, i) => {
@@ -88,7 +99,7 @@ const Content = props => {
           </div>
         </section>
 
-        <section className="skills">
+        <section id="skills" name="skills">
           <h2>Skills</h2>
           <div className="skill-list">
             {list.map(item => (
@@ -99,7 +110,7 @@ const Content = props => {
           </div>
         </section>
 
-        <section className="contact">
+        <section id="contact" name="contact">
           <h2>Contact</h2>
 
           {/* <ReactMapGL
