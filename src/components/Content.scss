@@ -15,6 +15,7 @@ $black: #242424;
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
+  opacity: 0.8 !important;
   background: url("../assets/backgrounds/concrete-texture.png");
   clip-path: polygon(0 0, 100% 2%, 96% 99%, 2% 100%);
   .title {
