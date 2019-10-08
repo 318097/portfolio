@@ -15,17 +15,18 @@ $black: #242424;
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
-  opacity: 0.8 !important;
+  // opacity: 0.8 !important;
   background: url("../assets/backgrounds/concrete-texture.png");
   clip-path: polygon(0 0, 100% 2%, 96% 99%, 2% 100%);
   .title {
     text-transform: capitalize;
     text-align: center;
   }
-  .contentx {
+  .content {
     height: 100%;
     width: 100%;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     section {
       min-height: 100%;
       width: 100%;
@@ -183,52 +184,56 @@ $black: #242424;
 
 @media screen and (max-width: 500px) {
   .box {
-    height: 100vh;
-    width: 100vw;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    right: 0;
+    height: 98%;
+    width: 86%;
+    right: 1%;
     .content {
-      padding: 10px 0;
-      .content {
-        .skills {
-          flex-direction: column;
-          margin: 10px;
-          .item {
-            flex: 1 1 auto;
-            width: 80%;
-            margin: 3px auto;
-          }
-        }
-        .about {
-          .timeline {
-            .block {
-              flex-direction: column;
-              .left,
-              .right {
-                flex: 0 0 auto;
-              }
-              .left:after {
-                right: 5px;
-              }
-              .right:before {
-                right: 7px;
-                left: auto;
-              }
+      section {
+        min-height: 50%;
+      }
+      #work {
+        .timeline {
+          padding: 0;
+          margin-bottom: 40px;
+          .block {
+            padding: 0;
+            flex-direction: column;
+            .left,
+            .right {
+              flex: 0 0 auto;
+              padding: 0;
+            }
+            .right .card {
+              margin-top: 0;
+            }
+            .left:after {
+              left: 5px;
+            }
+            .right:before {
+              left: 7px;
             }
           }
-          .timeline:after {
-            right: 10px;
-            top: 0;
-            left: auto;
+        }
+        .timeline:after {
+          top: 0;
+          left: 10px;
+        }
+      }
+      #skills {
+        div.skill-list {
+          flex-direction: column;
+          margin: 10px;
+          div.skill {
+            flex: 1 1 auto;
+            width: 85%;
+            margin: 3px auto;
           }
         }
       }
     }
   }
   .spinner {
-    bottom: 6px;
-    right: 2px;
+    bottom: 15px;
+    right: 25px;
   }
 }

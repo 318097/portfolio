@@ -51,16 +51,14 @@ const Content = ({ location, setActiveSection }) => {
 
   return (
     <CustomDiv className="box">
-      <div id="ContainerElement" className="contentx">
-        <section id="profile">
+      <div id="ContainerElement" className="content">
+        <section id="profile" name="profile">
           <h2>Profile</h2>
-          <div className="profile">
-            <div className="text">
-              <p>
-                Hi, My name is <span>Mehul Lakhanpal</span> and I am a{" "}
-                <span className="role">Web Developer</span>
-              </p>
-            </div>
+          <div className="text">
+            <p>
+              Hi, My name is <span>Mehul Lakhanpal</span> and I am a{" "}
+              <span className="role">Web Developer</span>
+            </p>
           </div>
         </section>
 
