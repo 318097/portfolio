@@ -8772,6 +8772,13 @@ react-map-gl@^4.0.14:
     react-virtualized-auto-sizer "^1.0.2"
     viewport-mercator-project "^6.1.0"
 
+react-particles-js@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/react-particles-js/-/react-particles-js-2.7.0.tgz#1b13a85d948e63016cb2b400f734758b0a985727"
+  integrity sha512-gsYIr55plOMB6nZW2iBjgXoqOZqBvggW9trNTk0mYHkvqQUpuxhcCDGwRwnts10XQ442PjzxZbklwMlhSOcfgA==
+  dependencies:
+    lodash "^4.17.11"
+
 react-pose@^4.0.7:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/react-pose/-/react-pose-4.0.7.tgz#8573b7d1bc3d03d0b758e5fa07d841484ad8d25d"

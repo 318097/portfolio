@@ -9,9 +9,9 @@ import { profile } from "../info";
 
 const { scroller } = Scroll;
 
-const Div = posed.div({
+const CustomDiv = posed.div({
   visible: {
-    opacity: 1,
+    opacity: 0.8,
     transition: { duration: 2000 }
   },
   hidden: { opacity: 0 }
@@ -50,7 +50,7 @@ const Content = ({ location, setActiveSection }) => {
   ];
 
   return (
-    <Div className="box">
+    <CustomDiv className="box">
       <div id="ContainerElement" className="contentx">
         <section id="profile">
           <h2>Profile</h2>
@@ -134,7 +134,7 @@ const Content = ({ location, setActiveSection }) => {
         </section>
       </div>
       <i className="spinner fas fa-dharmachakra"></i>
-    </Div>
+    </CustomDiv>
   );
 };
 
