@@ -165,6 +165,17 @@
     }
   }
 }
+.box::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: url("../assets/backgrounds/concrete-texture.png");
+}
 
 .spinner {
   font-size: 22px;
