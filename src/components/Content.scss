@@ -1,10 +1,8 @@
+@import "../theme.scss";
+
 ::-webkit-scrollbar {
   display: none;
 }
-$white: #fff;
-$primary: #024a74;
-$secondary: black;
-$black: #242424;
 
 .box {
   box-sizing: border-box;
@@ -15,9 +13,8 @@ $black: #242424;
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
-  // opacity: 0.8 !important;
-  background: url("../assets/backgrounds/concrete-texture.png");
   clip-path: polygon(0 0, 100% 2%, 96% 99%, 2% 100%);
+  z-index: 2;
   .title {
     text-transform: capitalize;
     text-align: center;
@@ -56,10 +53,6 @@ $black: #242424;
       }
     }
     #work {
-      $timeline: rgb(18, 32, 93);
-      $timelineStops: rgb(2, 67, 187);
-      $blockBorders: rgb(2, 98, 187);
-
       .timelineStops {
         content: "";
         display: block;
