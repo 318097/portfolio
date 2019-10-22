@@ -97,7 +97,8 @@
             }
             h4 {
               margin: 5px;
-              font-size: 16px;
+              color: rgb(255, 186, 59);
+              font-size: 18px;
             }
           }
           .right .card {
@@ -161,12 +162,13 @@
         margin: 0px auto;
         a i {
           color: $black;
-          margin: 7px;
-          font-size: 26px;
+          margin: 10px;
+          font-size: 28px;
+          font-weight: bold;
           transition: 0.5s;
           &:hover {
             color: $primary;
-            transform: scale(1.2);
+            transform: scale(1.5);
           }
         }
       }
@@ -187,7 +189,8 @@
 }
 
 .spinner {
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: bold;
   position: absolute;
   bottom: 3%;
   right: 5%;

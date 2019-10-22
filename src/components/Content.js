@@ -49,7 +49,7 @@ const Content = ({ location, setActiveSection }) => {
           <h2>Profile</h2>
           <div className="text">
             <p>
-              Hi, I am <span>{name}</span> from India with 2+ years of work experience as a <span>Web Developer</span>. I am interested in working on exciting projects along with best engineers from across the world. Apart from <span>coding</span>, I love to play <span>football</span>
+              Hi, I am <span>{name}</span> from India with 2+ years of work experience as a <span>Web Developer</span>. I am interested in working on exciting projects along with best engineers from across the world. Apart from <span>&lt;coding&#47;&gt;</span>, I <span style={{ color: 'tomato', fontSize: '120%' }}>&#9825;</span> to play <span>football</span>.
             </p>
           </div>
         </section>

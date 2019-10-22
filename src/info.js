@@ -124,24 +124,6 @@ exports.profile = {
   ],
   "skills": [
     {
-      "name": "HTML"
-    },
-    {
-      "name": "CSS"
-    },
-    {
-      "name": "Javascript"
-    },
-    {
-      "name": "React"
-    },
-    {
-      "name": "Ant Design"
-    },
-    {
-      "name": "Redux"
-    },
-    {
       "name": "Node.js"
     },
     {
@@ -151,10 +133,28 @@ exports.profile = {
       "name": "Mongo DB"
     },
     {
+      "name": "React"
+    },
+    {
       "name": "Angular"
     },
     {
+      "name": "HTML"
+    },
+    {
+      "name": "CSS"
+    },
+    {
+      "name": "Javascript"
+    },
+    {
+      "name": "Redux"
+    },
+    {
       "name": "Angular Material"
+    },
+    {
+      "name": "Ant Design"
     },
     {
       "name": "PHP"
