@@ -1,36 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow: hidden;
-  /* background: black; */
-}
-
-h1 {
-  margin: 14px;
-  font-size: 25px;
-}
-h2 {
-  margin: 11px;
-  font-size: 22px;
-}
-h3 {
-  margin: 9px;
-  font-size: 20px;
-}
-h4 {
-  margin: 7px;
-  font-size: 18px;
-}
-h5 {
-  margin: 5px;
-  font-size: 16px;
-}
-h6 {
-  margin: 2px;
-  font-size: 14px;
-}
-
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -62,9 +29,13 @@ h6 {
 }
 @font-face {
   font-family: font6;
-  src: url("./assets/fonts/AnnieUseYourTelescope-Regular.ttf");
+  src: url("./assets/fonts/LuckiestGuy-Regular.ttf");
 }
 @font-face {
   font-family: font7;
-  src: url("./assets/fonts/CoveredByYourGrace.ttf");
+  src: url("./assets/fonts/Neucha-Regular.ttf");
+}
+@font-face {
+  font-family: font8;
+  src: url("./assets/fonts/SairaExtraCondensed-Bold.ttf");
 }

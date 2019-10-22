@@ -7,6 +7,18 @@ import Navigation from "./components/Navigation";
 import Content from "./components/Content";
 import "./App.scss";
 
+const dark = {
+  balls: '#242424',
+  line: '#454545'
+};
+
+const light = {
+  balls: '#fff',
+  line: '#fff'
+};
+
+const particlesColorScheme = { ...light };
+
 class App extends Component {
   state = {
     activeSection: ""
@@ -32,10 +44,10 @@ class App extends Component {
                   value: 5
                 },
                 color: {
-                  value: "#242424"
+                  value: particlesColorScheme.balls
                 },
                 line_linked: {
-                  color: "#454545"
+                  color: particlesColorScheme.line
                 }
               },
               interactivity: {

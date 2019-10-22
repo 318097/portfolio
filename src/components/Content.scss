@@ -6,7 +6,7 @@
 
 .box {
   box-sizing: border-box;
-  padding: 0;
+  padding: 20px 0 40px 0;
   position: absolute;
   height: 80vh;
   width: 80vw;
@@ -15,10 +15,6 @@
   transform: translateY(-50%);
   clip-path: polygon(0 0, 100% 2%, 96% 99%, 2% 100%);
   z-index: 2;
-  .title {
-    text-transform: capitalize;
-    text-align: center;
-  }
   .content {
     height: 100%;
     width: 100%;
@@ -35,21 +31,27 @@
         width: 100%;
         padding: 20px;
         text-align: center;
-        background: rgba($color: #000000, $alpha: 0.1);
-        font-family: font5;
-        font-size: 26px;
+        // background: rgba($color: #272727, $alpha: 0.9);
+        font-family: font1;
+        text-decoration: overline;
+        font-size: 30px;
       }
-      div {
+      & > div {
         padding: 20px;
         text-align: center;
-        font-size: 22px;
-        font-family: font2;
+        font-size: 26px;
+        font-family: font4;
       }
     }
     #profile {
-      span {
-        font-weight: bold;
-        color: $primary;
+      .text{
+        width: 70%;
+        margin: 0 auto;
+        span {
+          font-weight: bold;
+          color: $primary;
+          font-size: 110%;
+        }
       }
     }
     #work {
@@ -89,23 +91,28 @@
           .left .card {
             text-align: center;
             border-left: 5px solid $blockBorders;
-            h2 {
-              font-size: 20px;
+            h3 {
+              font-size: 24px;
+              margin: 10px;
             }
             h4 {
-              font-size: 14px;
+              margin: 5px;
+              font-size: 16px;
             }
           }
           .right .card {
             margin-top: 30px;
             border-right: 5px solid $blockBorders;
+            font-family: font7;
             h3 {
               text-align: center;
-              font-size: 12px;
+              font-size: 18px;
+              margin: 10px;
             }
-            p {
+            ul li {
               font-size: 15px;
-              font-family: font2;
+              text-align: justify;
+              padding-right: 20px;
             }
           }
           .card {
@@ -131,17 +138,18 @@
       div.skill-list {
         display: flex;
         flex-wrap: wrap;
-        margin: 20px 30px;
+        margin: 10px;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
+        box-sizing: border-box;
         div.skill {
           margin: 10px 0;
-          width: 28%;
+          width: 23%;
           text-align: center;
-          border: 1px solid $black;
+          border: 3px solid $black;
+          padding: 15px 0;
           &:hover {
             background: $black;
-            border: 1px solid $white;
             color: $white;
             transition: 0.8s;
           }
@@ -149,7 +157,7 @@
       }
     }
     #contact {
-      .social {
+      div.social {
         margin: 0px auto;
         a i {
           color: $black;
@@ -169,12 +177,13 @@
   content: "";
   height: 100%;
   width: 100%;
-  opacity: 0.7;
+  opacity: 0.9;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  background: url("../assets/backgrounds/concrete-texture.png");
+  // background: url("../assets/backgrounds/concrete-texture.png");
+  background: url("../assets/backgrounds/funky-lines.png");
 }
 
 .spinner {
@@ -183,6 +192,7 @@
   bottom: 3%;
   right: 5%;
   z-index: 2;
+  color: $black;
   animation: spin 8s linear infinite;
 }
 

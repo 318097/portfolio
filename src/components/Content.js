@@ -18,7 +18,7 @@ const CustomDiv = posed.div({
 });
 
 const Content = ({ location, setActiveSection }) => {
-  const { name, email, work, skills, social } = profile;
+  const { basic: { name, email }, work, skills, social } = profile;
 
   useEffect(() => {
     const elementId = location.hash.slice(1);
@@ -49,8 +49,7 @@ const Content = ({ location, setActiveSection }) => {
           <h2>Profile</h2>
           <div className="text">
             <p>
-              Hi, My name is <span>{name}</span> and I am a{" "}
-              <span className="role">Web Developer</span>
+              Hi, I am <span>{name}</span> from India with 2+ years of work experience as a <span>Web Developer</span>. I am interested in working on exciting projects along with best engineers from across the world. Apart from <span>coding</span>, I love to play <span>football</span>
             </p>
           </div>
         </section>
@@ -58,36 +57,35 @@ const Content = ({ location, setActiveSection }) => {
         <section id="work" name="work">
           <h2>Work</h2>
           <div className="timeline">
-            {work.map((company, i) => {
-              const { name, role, start_date, end_date, projects } = company;
-              return (
-                <div key={i} className="block">
-                  <div className="left">
-                    <div className="card">
-                      <h3>{name}</h3>
-                      <h4>{role}</h4>
-                      <h4>
-                        {start_date} - {end_date}
-                      </h4>
-                    </div>
-                  </div>
-                  <div className="right">
-                    <div className="card">
-                      <h3>Projects</h3>
-                      {projects.map(({ name: projectName, description }, j) => {
-                        return (
-                          <div key={i + j}>
-                            <h3>{projectName}</h3>
-                            <p>{description.join("\n")}</p>
-                            <br />
-                          </div>
-                        );
-                      })}
-                    </div>
+            {work.map(({ name, role, start_date, end_date, projects }) => (
+              <div key={name} className="block">
+                <div className="left">
+                  <div className="card">
+                    <h3>{name}</h3>
+                    <h4>{role}</h4>
+                    <h4>
+                      {start_date} - {end_date}
+                    </h4>
                   </div>
                 </div>
-              );
-            })}
+                <div className="right">
+                  <div className="card">
+                    <h3>Projects</h3>
+                    {projects.map(({ name: projectName, description }) => {
+                      return (
+                        <div key={projectName}>
+                          <h3>{projectName}</h3>
+                          <ul>
+                            {description.map((list, i) => <li key={i}>{list}</li>)}
+                          </ul>
+                          <br />
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -113,7 +111,7 @@ const Content = ({ location, setActiveSection }) => {
             <h2 className="email">{email}</h2>
             <div className="social">
               {
-                social.map(({ name, url, classname }) => <a title={name} href={url}><i className={classname}></i></a>)
+                social.map(({ name, url, classname }) => <a key={name} title={name} href={url}><i className={classname}></i></a>)
               }
             </div>
           </div>
