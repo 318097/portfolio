@@ -46,31 +46,6 @@ const Background = () => {
     createShapeData();
   }, []);
 
-  const startAnimation = () => {
-    const refreshRate = 500;
-    setTimeout(() => {
-      console.log(shapeInfo);
-      const updatedShapeInfo = shapeInfo.map(shape => {
-        const newData = updateBallStatus(shape);
-        return newData;
-      });
-      setShapeInfo(updatedShapeInfo);
-    }, refreshRate);
-  };
-
-  const updateBallStatus = ({ x, y, speedX, speedY, ...rest }) => {
-    if (x > window.innerWidth) speedX = -speedX;
-    else if (x < 0) speedX = Math.abs(speedX);
-
-    if (y > window.innerHeight) speedY = -speedY;
-    else if (y < 0) speedY = Math.abs(speedY);
-
-    x += speedX;
-    y += speedY;
-
-    return { ...rest, x, y, speedX, speedY };
-  };
-
   const createShapeData = () => {
     const width = window.innerWidth;
     const height = window.innerHeight;
@@ -86,8 +61,29 @@ const Background = () => {
       radius: Math.floor(((Math.random() * 10) % 5) + 3),
       fill: colorPalette[Math.floor((Math.random() * 10) % colorPalette.length)]
     }));
-    setShapeInfo([...info]);
-    // startAnimation();
+    setShapeInfo(info);
+    setTimeout(() => startAnimation(), 2000);
+  };
+
+  const startAnimation = () => {
+    const refreshRate = 500;
+    setInterval(() => {
+      const updatedShapeInfo = shapeInfo.map(shape => updateBallStatus(shape));
+      setShapeInfo(updatedShapeInfo);
+    }, refreshRate);
+  };
+
+  const updateBallStatus = ({ x, y, speedX, speedY, ...rest }) => {
+    if (x > window.innerWidth) speedX = -speedX;
+    else if (x < 0) speedX = Math.abs(speedX);
+
+    if (y > window.innerHeight) speedY = -speedY;
+    else if (y < 0) speedY = Math.abs(speedY);
+
+    x += speedX;
+    y += speedY;
+
+    return { ...rest, x, y, speedX, speedY };
   };
 
   return (
