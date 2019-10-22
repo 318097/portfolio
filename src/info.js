@@ -44,9 +44,7 @@ exports.profile = {
       "role": "Full stack developer",
       "start_date": "17-06-2019",
       "end_date": "04-10-2019",
-      "projects": [
-        {}
-      ]
+      "projects": []
     },
     {
       "name": "Ideaplunge Solutions",
@@ -200,19 +198,23 @@ exports.profile = {
   "social": [
     {
       "name": "GITHUB",
-      "url": "https: //github.com/318097"
+      "url": "https: //github.com/318097",
+      "classname": "fab fa-github"
     },
     {
       "name": "FACEBOOK",
-      "url": "https: //www.facebook.com/ml.cr7"
+      "url": "https: //www.facebook.com/ml.cr7",
+      "classname": "fab fa-facebook-f"
     },
     {
       "name": "LINKEDIN",
-      "url": "https: //www.linkedin.com/in/318097/"
+      "url": "https: //www.linkedin.com/in/318097/",
+      "classname": "fab fa-linkedin"
     },
     {
       "name": "HACKEREARTH",
-      "url": "https: //www.hackerearth.com/@318097"
+      "url": "https: //www.hackerearth.com/@318097",
+      "classname": ""
     }
   ],
   "personal_projects": [

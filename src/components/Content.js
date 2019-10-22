@@ -18,6 +18,8 @@ const CustomDiv = posed.div({
 });
 
 const Content = ({ location, setActiveSection }) => {
+  const { name, email, work, skills, social } = profile;
+
   useEffect(() => {
     const elementId = location.hash.slice(1);
     scroller.scrollTo(elementId, {
@@ -40,15 +42,6 @@ const Content = ({ location, setActiveSection }) => {
   //   zoom: 12,
   // };
 
-  const list = [
-    { name: "HTML" },
-    { name: "CSS" },
-    { name: "Javascript" },
-    { name: "React" },
-    { name: "Angular" },
-    { name: "Node.js" }
-  ];
-
   return (
     <CustomDiv className="box">
       <div id="ContainerElement" className="content">
@@ -56,7 +49,7 @@ const Content = ({ location, setActiveSection }) => {
           <h2>Profile</h2>
           <div className="text">
             <p>
-              Hi, My name is <span>Mehul Lakhanpal</span> and I am a{" "}
+              Hi, My name is <span>{name}</span> and I am a{" "}
               <span className="role">Web Developer</span>
             </p>
           </div>
@@ -65,26 +58,27 @@ const Content = ({ location, setActiveSection }) => {
         <section id="work" name="work">
           <h2>Work</h2>
           <div className="timeline">
-            {profile.work.map((el, i) => {
+            {work.map((company, i) => {
+              const { name, role, start_date, end_date, projects } = company;
               return (
                 <div key={i} className="block">
                   <div className="left">
                     <div className="card">
-                      <h3>{el.name}</h3>
-                      <h4>{el.role}</h4>
+                      <h3>{name}</h3>
+                      <h4>{role}</h4>
                       <h4>
-                        {el.start_date} - {el.end_date}
+                        {start_date} - {end_date}
                       </h4>
                     </div>
                   </div>
                   <div className="right">
                     <div className="card">
                       <h3>Projects</h3>
-                      {el.projects.map((project, j) => {
+                      {projects.map(({ name: projectName, description }, j) => {
                         return (
-                          <div key={i + j} className="">
-                            <h3>{project.name}</h3>
-                            <p>{project.description.join("\n")}</p>
+                          <div key={i + j}>
+                            <h3>{projectName}</h3>
+                            <p>{description.join("\n")}</p>
                             <br />
                           </div>
                         );
@@ -100,9 +94,9 @@ const Content = ({ location, setActiveSection }) => {
         <section id="skills" name="skills">
           <h2>Skills</h2>
           <div className="skill-list">
-            {list.map(item => (
-              <div className="skill" key={item.name}>
-                {item.name}
+            {skills.map(({ name }) => (
+              <div className="skill" key={name}>
+                {name}
               </div>
             ))}
           </div>
@@ -116,17 +110,11 @@ const Content = ({ location, setActiveSection }) => {
         {...viewport}
       /> */}
           <div>
-            <h2 className="email">318097@gmail.com</h2>
+            <h2 className="email">{email}</h2>
             <div className="social">
-              <a title="Facebook" href="https://www.facebook.com/ml.cr7">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a title="Linkedin" href="https://www.linkedin.com/in/318097/">
-                <i className="fab fa-linkedin"></i>
-              </a>
-              <a title="Github" href="https://github.com/318097">
-                <i className="fab fa-github"></i>
-              </a>
+              {
+                social.map(({ name, url, classname }) => <a title={name} href={url}><i className={classname}></i></a>)
+              }
             </div>
           </div>
         </section>
