@@ -78,6 +78,17 @@ class App extends Component {
 
   setActiveSection = section => this.setState({ activeSection: section });
 
+  handleThemeChange = () => {
+    const { currentBackgroundIndex } = this.state;
+    const newBackgroundIndex =
+      currentBackgroundIndex === THEMES.length - 1
+        ? 0
+        : currentBackgroundIndex + 1;
+    this.setState({
+      currentBackgroundIndex: newBackgroundIndex
+    });
+  };
+
   render() {
     return (
       <BrowserRouter>
@@ -87,6 +98,10 @@ class App extends Component {
           <BackgroundChooser
             index={THEMES[this.state.currentBackgroundIndex]}
           />
+          <i
+            onClick={this.handleThemeChange}
+            className="theme-icon fas fa-palette"
+          ></i>
         </div>
       </BrowserRouter>
     );
