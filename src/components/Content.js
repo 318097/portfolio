@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import posed from "react-pose";
 import { withRouter } from "react-router-dom";
 import Scroll from "react-scroll";
+import moment from "moment";
 // import ReactMapGL from 'react-map-gl';
 
 import "./Content.scss";
@@ -18,7 +19,12 @@ const CustomDiv = posed.div({
 });
 
 const Content = ({ location, setActiveSection }) => {
-  const { basic: { name, email }, work, skills, social } = profile;
+  const {
+    basic: { name, email },
+    work,
+    skills,
+    social
+  } = profile;
 
   useEffect(() => {
     const elementId = location.hash.slice(1);
@@ -49,7 +55,12 @@ const Content = ({ location, setActiveSection }) => {
           <h2>Profile</h2>
           <div className="text">
             <p>
-              Hi, I am <span>{name}</span> from India with 2+ years of work experience as a <span>Web Developer</span>. I am interested in working on exciting projects along with best engineers from across the world. Apart from <span>&lt;coding&#47;&gt;</span>, I <span style={{ color: 'tomato', fontSize: '120%' }}>&#9825;</span> to play <span>football</span>.
+              Hi, I am <span>{name}</span> from India with 2+ years of work
+              experience as a <span>Full stack Developer</span>. I am interested
+              in working on exciting projects along with best engineers from
+              across the world. Apart from <span>&lt;coding&#47;&gt;</span>, I{" "}
+              <span style={{ color: "tomato", fontSize: "120%" }}>&#9825;</span>{" "}
+              to play <span>football</span>.
             </p>
           </div>
         </section>
@@ -57,35 +68,43 @@ const Content = ({ location, setActiveSection }) => {
         <section id="work" name="work">
           <h2>Work</h2>
           <div className="timeline">
-            {work.map(({ name, role, start_date, end_date, projects }) => (
-              <div key={name} className="block">
-                <div className="left">
-                  <div className="card">
-                    <h3>{name}</h3>
-                    <h4>{role}</h4>
-                    <h4>
-                      {start_date} - {end_date}
-                    </h4>
+            {work.map(
+              ({ name, location, role, start_date, end_date, projects }) => (
+                <div key={name} className="block">
+                  <div className="left">
+                    <div className="card">
+                      <h3>
+                        {name},<span>{location}</span>
+                      </h3>
+
+                      <h4>{role}</h4>
+                      <h4>
+                        {moment(start_date, "DD-MM-YYYY").format("MMM' YY")} -{" "}
+                        {moment(end_date, "DD-MM-YYYY").format("MMM' YY")}
+                      </h4>
+                    </div>
+                  </div>
+                  <div className="right">
+                    <div className="card">
+                      <h3>Projects</h3>
+                      {projects.map(({ name: projectName, description }) => {
+                        return (
+                          <div key={projectName}>
+                            <h3>{projectName}</h3>
+                            <ul>
+                              {description.map((list, i) => (
+                                <li key={i}>{list}</li>
+                              ))}
+                            </ul>
+                            <br />
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
-                <div className="right">
-                  <div className="card">
-                    <h3>Projects</h3>
-                    {projects.map(({ name: projectName, description }) => {
-                      return (
-                        <div key={projectName}>
-                          <h3>{projectName}</h3>
-                          <ul>
-                            {description.map((list, i) => <li key={i}>{list}</li>)}
-                          </ul>
-                          <br />
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </section>
 
@@ -108,11 +127,21 @@ const Content = ({ location, setActiveSection }) => {
         {...viewport}
       /> */}
           <div>
-            <h2 className="email">{email}</h2>
+            <div>
+              Reach out to me at:
+              <p className="email">{email}</p>
+            </div>
+            <br />
             <div className="social">
-              {
-                social.map(({ name, url, classname }) => <a key={name} title={name} href={url}><i className={classname}></i></a>)
-              }
+              {social.map(({ name, url, classname }) => (
+                <a key={name} title={name} href={url}>
+                  <i className={classname}></i>
+                </a>
+              ))}
+            </div>
+            <br />
+            <div>
+              <a href="www.brainbox.in">www.brainbox.in</a>
             </div>
           </div>
         </section>

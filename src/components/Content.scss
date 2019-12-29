@@ -44,7 +44,7 @@
       }
     }
     #profile {
-      .text{
+      .text {
         width: 70%;
         margin: 0 auto;
         span {
@@ -158,6 +158,11 @@
       }
     }
     #contact {
+      p {
+        margin: 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
       div.social {
         margin: 0px auto;
         a i {
