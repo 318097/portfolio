@@ -49,8 +49,26 @@
         margin: 0 auto;
         span {
           font-weight: bold;
-          color: $primary;
-          font-size: 110%;
+          color: $black;
+          white-space: nowrap;
+          padding: 0 1px;
+          position: relative;
+          &:after {
+            position: absolute;
+            top: 50%;
+            content: "";
+            left: 0;
+            transform: translateY(-50%);
+            height: 70%;
+            width: 100%;
+            z-index: -1;
+            background: lightgreen;
+          }
+        }
+        .icon {
+          font-size: 70%;
+          position: relative;
+          bottom: 2px;
         }
       }
     }
@@ -73,6 +91,7 @@
           .right {
             flex: 1 1 50%;
             position: relative;
+            font-family: font7;
           }
           .left:after {
             @extend .timelineStops;
@@ -92,19 +111,16 @@
             text-align: center;
             border-left: 5px solid $blockBorders;
             h3 {
-              font-size: 24px;
-              margin: 10px;
-            }
-            h4 {
-              margin: 5px;
-              color: rgb(255, 186, 59);
               font-size: 18px;
+            }
+            h5 {
+              font-size: 14px;
+              color: rgb(255, 186, 59);
             }
           }
           .right .card {
             margin-top: 30px;
             border-right: 5px solid $blockBorders;
-            font-family: font7;
             h3 {
               text-align: center;
               font-size: 18px;
@@ -144,8 +160,11 @@
         justify-content: space-around;
         box-sizing: border-box;
         div.skill {
-          margin: 10px 0;
+          margin: 4px 0;
           width: 23%;
+          height: 66px;
+          box-sizing: border-box;
+          overflow-y: auto;
           text-align: center;
           border: 3px solid $black;
           padding: 15px 0;
@@ -208,7 +227,6 @@
   top: 0;
   left: 0;
   z-index: -1;
-  // background: url("../assets/backgrounds/concrete-texture.png");
   background: url("../assets/backgrounds/funky-lines.png");
 }
 
@@ -216,8 +234,8 @@
   font-size: 24px;
   font-weight: bold;
   position: absolute;
-  bottom: 10px;
-  right: 26px;
+  bottom: 2%;
+  right: 4.5%;
   z-index: 2;
   color: $black;
   animation: spin 8s linear infinite;
