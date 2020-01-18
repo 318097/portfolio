@@ -140,7 +140,7 @@ const Content = ({ location, setActiveSection }) => {
               ))}
             </div>
             <br />
-            <div>
+            <div className="website">
               <a href="www.brainbox.in">www.brainbox.in</a>
             </div>
           </div>
