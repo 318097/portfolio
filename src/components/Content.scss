@@ -28,13 +28,9 @@
         position: relative;
         top: -20px;
         left: -20px;
-        width: 100%;
         padding: 20px;
-        text-align: center;
-        // background: rgba($color: #272727, $alpha: 0.9);
         font-family: font1;
         text-decoration: overline;
-        font-size: 30px;
       }
       & > div {
         padding: 20px;
@@ -110,22 +106,13 @@
           .left .card {
             text-align: center;
             border-left: 5px solid $blockBorders;
-            h3 {
-              font-size: 18px;
-            }
-            h5 {
-              font-size: 14px;
+            h4 {
               color: rgb(255, 186, 59);
             }
           }
           .right .card {
             margin-top: 30px;
             border-right: 5px solid $blockBorders;
-            h3 {
-              text-align: center;
-              font-size: 18px;
-              margin: 10px;
-            }
             ul li {
               font-size: 15px;
               text-align: justify;

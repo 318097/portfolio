@@ -81,11 +81,11 @@ const Content = ({ location, setActiveSection }) => {
                         {name}, <span>{location}</span>
                       </h3>
 
-                      <h5>{role}</h5>
-                      <h5>
+                      <h4>{role}</h4>
+                      <h4>
                         {moment(start_date, "DD-MM-YYYY").format("MMM' YY")} -{" "}
                         {moment(end_date, "DD-MM-YYYY").format("MMM' YY")}
-                      </h5>
+                      </h4>
                     </div>
                   </div>
                   <div className="right">
@@ -94,7 +94,7 @@ const Content = ({ location, setActiveSection }) => {
                       {projects.map(({ name: projectName, description }) => {
                         return (
                           <div key={projectName}>
-                            <h3>{projectName}</h3>
+                            <h4>{projectName}</h4>
                             <ul>
                               {description.map((list, i) => (
                                 <li key={i}>{list}</li>

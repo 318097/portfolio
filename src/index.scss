@@ -39,3 +39,26 @@
   font-family: font8;
   src: url("./assets/fonts/SairaExtraCondensed-Bold.ttf");
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 18px;
+  margin: 10px;
+}
+h4 {
+  margin: 5px;
+  font-size: 14px;
+}
