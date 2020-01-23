@@ -55,12 +55,14 @@ const Content = ({ location, setActiveSection }) => {
           <h2>Profile</h2>
           <div className="text">
             <p>
-              Hi, I am <span>{name}</span> from India with 2+ years of work
-              experience as a <span>Full-stack Developer</span>. I am interested
-              in working on exciting projects along with best engineers from
-              across the world. Apart from <span>&lt;coding&#47;&gt;</span>, I{" "}
+              Hi, I am <span className="highlight">{name}</span> from India with
+              2+ years of work experience as a{" "}
+              <span className="highlight">Full-stack Developer</span>. I am
+              interested in working on exciting projects along with best
+              engineers from across the world. Apart from{" "}
+              <span className="highlight">&lt;coding&#47;&gt;</span>, I{" "}
               <i style={{ color: "tomato" }} className="icon fas fa-heart"></i>{" "}
-              to play <span>football</span>{" "}
+              to play <span className="highlight">football</span>{" "}
               <i
                 style={{ color: "#1da1f2" }}
                 className="icon fas fa-futbol"
@@ -78,7 +80,9 @@ const Content = ({ location, setActiveSection }) => {
                   <div className="left">
                     <div className="card">
                       <h3>
-                        {name}, <span>{location}</span>
+                        <span>
+                          {name}, {location}
+                        </span>
                       </h3>
 
                       <h4>{role}</h4>

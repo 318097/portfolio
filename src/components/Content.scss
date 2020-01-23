@@ -1,9 +1,5 @@
 @import "../theme.scss";
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 .box {
   box-sizing: border-box;
   padding: 20px 0 40px 0;
@@ -35,32 +31,14 @@
       & > div {
         padding: 20px;
         text-align: center;
-        font-size: 26px;
-        font-family: font4;
+        font-size: 1.5rem;
+        font-family: font2;
       }
     }
     #profile {
       .text {
         width: 70%;
         margin: 0 auto;
-        span {
-          font-weight: bold;
-          color: $black;
-          white-space: nowrap;
-          padding: 0 1px;
-          position: relative;
-          &:after {
-            position: absolute;
-            top: 50%;
-            content: "";
-            left: 0;
-            transform: translateY(-50%);
-            height: 70%;
-            width: 100%;
-            z-index: -1;
-            background: lightgreen;
-          }
-        }
         .icon {
           font-size: 70%;
           position: relative;
@@ -87,7 +65,7 @@
           .right {
             flex: 1 1 50%;
             position: relative;
-            font-family: font7;
+            font-family: font3;
           }
           .left:after {
             @extend .timelineStops;
@@ -114,7 +92,7 @@
             margin-top: 30px;
             border-right: 5px solid $blockBorders;
             ul li {
-              font-size: 15px;
+              font-size: 0.9rem;
               text-align: justify;
               padding-right: 20px;
             }
@@ -167,6 +145,7 @@
       p {
         margin: 0;
         font-weight: bold;
+        text-transform: uppercase;
         font-size: 2rem;
       }
       div.social {
@@ -174,7 +153,7 @@
         a i {
           color: $black;
           margin: 10px;
-          font-size: 28px;
+          font-size: 2rem;
           font-weight: bold;
           transition: 0.5s;
           &:hover {
@@ -204,28 +183,27 @@
       }
     }
   }
-}
-.box::before {
-  content: "";
-  height: 100%;
-  width: 100%;
-  opacity: 0.9;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background: url("../assets/backgrounds/funky-lines.png");
-}
-
-.spinner {
-  font-size: 24px;
-  font-weight: bold;
-  position: absolute;
-  bottom: 2%;
-  right: 4.5%;
-  z-index: 2;
-  color: $black;
-  animation: spin 8s linear infinite;
+  .spinner {
+    font-size: 1.4rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: 2%;
+    right: 4.5%;
+    z-index: 2;
+    color: $black;
+    animation: spin 8s linear infinite;
+  }
+  &::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: url("../assets/backgrounds/funky-lines.png");
+  }
 }
 
 @media screen and (max-width: 500px) {
