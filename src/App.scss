@@ -5,12 +5,20 @@ body {
   padding: 0;
   height: 100vh;
   overflow: hidden;
-  background: url("./assets/backgrounds/country-quilt-dark.png");
   .container {
     width: 100vw;
     cursor: crosshair;
     height: 100vh;
     position: relative;
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $white;
+      font-size: 2rem;
+      animation: spin 0.9s infinite linear;
+    }
     nav {
       position: absolute;
       display: flex;

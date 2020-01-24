@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { BrowserRouter } from "react-router-dom";
 import Particles from "react-particles-js";
 
@@ -73,8 +73,13 @@ const THEMES = ["PARTICLES", "STACKED"];
 class App extends Component {
   state = {
     activeSection: "",
-    currentBackgroundIndex: 1
+    currentBackgroundIndex: 1,
+    loading: true
   };
+
+  componentDidMount() {
+    setTimeout(() => this.setState({ loading: false }), 3000);
+  }
 
   setActiveSection = section => this.setState({ activeSection: section });
 
@@ -93,15 +98,22 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="container">
-          <Navigation activeSection={this.state.activeSection} />
-          <Content setActiveSection={this.setActiveSection} />
+          {this.state.loading ? (
+            <i className="loader fas fa-spinner"></i>
+          ) : (
+            <Fragment>
+              <Navigation activeSection={this.state.activeSection} />
+              <Content setActiveSection={this.setActiveSection} />
+
+              <i
+                onClick={this.handleThemeChange}
+                className="theme-icon fas fa-palette"
+              ></i>
+            </Fragment>
+          )}
           <BackgroundChooser
             index={THEMES[this.state.currentBackgroundIndex]}
           />
-          <i
-            onClick={this.handleThemeChange}
-            className="theme-icon fas fa-palette"
-          ></i>
         </div>
       </BrowserRouter>
     );
