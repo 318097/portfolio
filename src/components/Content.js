@@ -149,7 +149,9 @@ const Content = ({ location, setActiveSection }) => {
             </div>
             <br />
             <div className="website">
-              <a href="www.brainbox.in">www.brainbox.in</a>
+              <a href="www.brainbox.in" target="__blank">
+                www.brainbox.in
+              </a>
             </div>
           </div>
         </section>
