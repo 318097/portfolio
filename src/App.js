@@ -1,73 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter } from "react-router-dom";
-import Particles from "react-particles-js";
 
-// import Background from "./components/Background";
 import Navigation from "./components/Navigation";
 import Content from "./components/Content";
+import Background from "./components/themes/Background";
+
 import "./App.scss";
-
-const BackgroundChooser = ({ theme }) => {
-  switch (theme) {
-    case "PARTICLES":
-      const dark = {
-        balls: "#242424",
-        line: "#454545"
-      };
-
-      const light = {
-        balls: "#fff",
-        line: "#fff"
-      };
-
-      const particlesColorScheme = { ...light };
-
-      return (
-        <Particles
-          style={{ background: "#171717" }}
-          height="100vh"
-          width="100vw"
-          params={{
-            particles: {
-              number: {
-                value: 70
-              },
-              size: {
-                value: 5
-              },
-              color: {
-                value: particlesColorScheme.balls
-              },
-              line_linked: {
-                color: particlesColorScheme.line
-              }
-            },
-            interactivity: {
-              events: {
-                onhover: {
-                  enable: true,
-                  mode: "bubble"
-                }
-              }
-            }
-          }}
-        />
-      );
-    case "STACKED":
-      return (
-        <div className="stacked-background">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      );
-    // case 'CUSTOM':
-    //   return <Background />;
-    default:
-      return <div></div>;
-  }
-};
 
 const THEMES = ["PARTICLES", "STACKED"];
 
@@ -113,7 +51,7 @@ class App extends Component {
               ></i>
             </Fragment>
           )}
-          <BackgroundChooser theme={THEMES[currentBackgroundIndex]} />
+          <Background theme={THEMES[currentBackgroundIndex]} />
         </div>
       </BrowserRouter>
     );

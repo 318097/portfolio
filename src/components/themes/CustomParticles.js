@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./Background.scss";
 import { Stage, Layer, Circle } from "react-konva";
+
+import "./CustomParticles.scss";
 
 const colorList = [
   "#BE2623",
@@ -39,7 +40,7 @@ const colorPalette = [...darkColorList];
 
 const direction = () => (Math.random() < 0.5 ? -1 : 1);
 
-const Background = () => {
+const CustomParticles = () => {
   const [shapeInfo, setShapeInfo] = useState([]);
 
   useEffect(() => {
@@ -87,7 +88,15 @@ const Background = () => {
   };
 
   return (
-    <div className="background">
+    <div
+      style={{
+        position: "absolute",
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0
+      }}
+    >
       <Stage
         style={{ height: "100%", width: "100%" }}
         width={window.innerWidth}
@@ -103,4 +112,4 @@ const Background = () => {
   );
 };
 
-export default Background;
+export default CustomParticles;
