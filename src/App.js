@@ -7,8 +7,8 @@ import Navigation from "./components/Navigation";
 import Content from "./components/Content";
 import "./App.scss";
 
-const BackgroundChooser = ({ index }) => {
-  switch (index) {
+const BackgroundChooser = ({ theme }) => {
+  switch (theme) {
     case "PARTICLES":
       const dark = {
         balls: "#242424",
@@ -24,6 +24,7 @@ const BackgroundChooser = ({ index }) => {
 
       return (
         <Particles
+          style={{ background: "#171717" }}
           height="100vh"
           width="100vw"
           params={{
@@ -95,14 +96,15 @@ class App extends Component {
   };
 
   render() {
+    const { loading, activeSection, currentBackgroundIndex } = this.state;
     return (
       <BrowserRouter>
         <div className="container">
-          {this.state.loading ? (
+          {loading ? (
             <i className="loader fas fa-spinner"></i>
           ) : (
             <Fragment>
-              <Navigation activeSection={this.state.activeSection} />
+              <Navigation activeSection={activeSection} />
               <Content setActiveSection={this.setActiveSection} />
 
               <i
@@ -111,9 +113,7 @@ class App extends Component {
               ></i>
             </Fragment>
           )}
-          <BackgroundChooser
-            index={THEMES[this.state.currentBackgroundIndex]}
-          />
+          <BackgroundChooser theme={THEMES[currentBackgroundIndex]} />
         </div>
       </BrowserRouter>
     );
