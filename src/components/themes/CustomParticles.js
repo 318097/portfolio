@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import { Stage, Layer, Circle } from "react-konva";
 
-import "./CustomParticles.scss";
-
-const colorList = [
+const RANDOM_COLORS = [
   "#BE2623",
   "#FFCE4D",
   "#C0EB6A",
@@ -26,7 +24,7 @@ const colorList = [
   "#FED361"
 ];
 
-const darkColorList = [
+const LIGHT_SHADES = [
   "#B9C5C5",
   "#E7E5E4",
   "#D4CFCA",
@@ -36,21 +34,23 @@ const darkColorList = [
   "#EBE5DB"
 ];
 
-const colorPalette = [...darkColorList];
+const THEMES = [RANDOM_COLORS, LIGHT_SHADES];
+
+const colorPalette = THEMES[0];
 
 const direction = () => (Math.random() < 0.5 ? -1 : 1);
 
-const CustomParticles = () => {
-  const [shapeInfo, setShapeInfo] = useState([]);
+class CustomParticles extends Component {
+  state = { shapeInfo: [] };
 
-  useEffect(() => {
-    createShapeData();
-  }, []);
+  componentDidMount() {
+    this.createShapeData();
+  }
 
-  const createShapeData = () => {
+  createShapeData = () => {
     const width = window.innerWidth;
     const height = window.innerHeight;
-    const noOfBalls = 55;
+    const noOfBalls = 100;
 
     const input = Array(noOfBalls).fill(null);
 
@@ -62,19 +62,19 @@ const CustomParticles = () => {
       radius: Math.floor(((Math.random() * 10) % 5) + 3),
       fill: colorPalette[Math.floor((Math.random() * 10) % colorPalette.length)]
     }));
-    setShapeInfo(info);
-    setTimeout(() => startAnimation(), 2000);
+    this.setState({ shapeInfo: info });
+    setTimeout(this.startAnimation, 1000);
   };
 
-  const startAnimation = () => {
-    const refreshRate = 500;
+  startAnimation = () => {
+    const refreshRate = 30;
     setInterval(() => {
-      const updatedShapeInfo = shapeInfo.map(shape => updateBallStatus(shape));
-      setShapeInfo(updatedShapeInfo);
+      const updatedShapeInfo = this.state.shapeInfo.map(this.updateBallStatus);
+      this.setState({ shapeInfo: updatedShapeInfo });
     }, refreshRate);
   };
 
-  const updateBallStatus = ({ x, y, speedX, speedY, ...rest }) => {
+  updateBallStatus = ({ x, y, speedX, speedY, ...rest }) => {
     if (x > window.innerWidth) speedX = -speedX;
     else if (x < 0) speedX = Math.abs(speedX);
 
@@ -87,29 +87,23 @@ const CustomParticles = () => {
     return { ...rest, x, y, speedX, speedY };
   };
 
-  return (
-    <div
-      style={{
-        position: "absolute",
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0
-      }}
-    >
-      <Stage
-        style={{ height: "100%", width: "100%" }}
-        width={window.innerWidth}
-        height={window.innerHeight}
-      >
-        <Layer>
-          {shapeInfo.map((prop, index) => (
-            <Circle key={index} {...prop}></Circle>
-          ))}
-        </Layer>
-      </Stage>
-    </div>
-  );
-};
+  render() {
+    return (
+      <div className="custom-particles">
+        <Stage
+          style={{ height: "100%", width: "100%" }}
+          width={window.innerWidth}
+          height={window.innerHeight}
+        >
+          <Layer>
+            {this.state.shapeInfo.map((prop, index) => (
+              <Circle key={index} {...prop}></Circle>
+            ))}
+          </Layer>
+        </Stage>
+      </div>
+    );
+  }
+}
 
 export default CustomParticles;

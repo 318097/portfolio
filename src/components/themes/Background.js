@@ -2,7 +2,7 @@ import React from "react";
 
 import ParticleJs from "./Particles";
 import Stacked from "./Stacked";
-// import CustomParticles from "./CustomParticles";
+import CustomParticles from "./CustomParticles";
 
 const Background = ({ theme }) => {
   switch (theme) {
@@ -10,8 +10,8 @@ const Background = ({ theme }) => {
       return <ParticleJs />;
     case "STACKED":
       return <Stacked />;
-    // case 'CUSTOM':
-    //   return <CustomParticles />;
+    case "CUSTOM_PARTICLES":
+      return <CustomParticles />;
     default:
       return <div></div>;
   }

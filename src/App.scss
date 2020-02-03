@@ -35,6 +35,7 @@ body {
       bottom: 7px;
       right: 7px;
       padding: 5px;
+      z-index: 999;
       font-size: 1.2rem;
       border-radius: 50%;
       background: $black;
@@ -77,4 +78,13 @@ body {
     flex: 2.2;
     background: #ff6f53;
   }
+}
+
+.custom-particles {
+  position: "absolute";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1b1b1b;
 }

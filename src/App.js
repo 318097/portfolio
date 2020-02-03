@@ -7,7 +7,7 @@ import Background from "./components/themes/Background";
 
 import "./App.scss";
 
-const THEMES = ["PARTICLES", "STACKED"];
+const THEMES = ["PARTICLES", "STACKED", "CUSTOM_PARTICLES"];
 
 class App extends Component {
   state = {
