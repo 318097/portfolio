@@ -11,16 +11,16 @@ const THEMES = ["PARTICLES", "STACKED", "CUSTOM_PARTICLES"];
 
 class App extends Component {
   state = {
-    activeSection: "",
+    activeSection: "profile",
     currentBackgroundIndex: 1,
-    loading: true
+    loading: true,
   };
 
   componentDidMount() {
     setTimeout(() => this.setState({ loading: false }), 3000);
   }
 
-  setActiveSection = section => this.setState({ activeSection: section });
+  setActiveSection = (section) => this.setState({ activeSection: section });
 
   handleThemeChange = () => {
     const { currentBackgroundIndex } = this.state;
@@ -29,7 +29,7 @@ class App extends Component {
         ? 0
         : currentBackgroundIndex + 1;
     this.setState({
-      currentBackgroundIndex: newBackgroundIndex
+      currentBackgroundIndex: newBackgroundIndex,
     });
   };
 

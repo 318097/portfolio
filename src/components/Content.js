@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import posed from "react-pose";
 import { withRouter } from "react-router-dom";
 import Scroll from "react-scroll";
@@ -13,18 +13,34 @@ const { scroller } = Scroll;
 const CustomDiv = posed.div({
   visible: {
     opacity: 0.8,
-    transition: { duration: 2000 }
+    transition: { duration: 2000 },
   },
-  hidden: { opacity: 0 }
+  hidden: { opacity: 0 },
 });
 
+const sections = ["profile", "work", "skills", "contact"];
+
 const Content = ({ location, setActiveSection }) => {
+  const scrollRef = useRef(null);
+
+  const inputRefs = {
+    profile: useRef(null),
+    work: useRef(null),
+    skills: useRef(null),
+    contact: useRef(null),
+  };
+
   const {
     basic: { name, email },
     work,
     skills,
-    social
+    social,
   } = profile;
+
+  useEffect(() => {
+    scrollRef.current.addEventListener("scroll", handleScroll);
+    return () => scrollRef.current.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const elementId = location.hash.slice(1);
@@ -33,11 +49,20 @@ const Content = ({ location, setActiveSection }) => {
       delay: 100,
       smooth: true,
       containerId: "ContainerElement",
-      offset: -80
+      offset: -80,
     });
     setActiveSection(elementId);
   }, [location]);
 
+  const handleScroll = () => {
+    const scrollPosition = scrollRef.current.scrollTop;
+    let activeTab = "profile";
+    sections.forEach((section) => {
+      const offset = inputRefs[section].current.offsetTop;
+      if (offset < scrollPosition + 30) activeTab = section;
+    });
+    setActiveSection(activeTab);
+  };
   // const viewport = {
   //   width: 400,
   //   height: 400,
@@ -50,8 +75,8 @@ const Content = ({ location, setActiveSection }) => {
 
   return (
     <CustomDiv className="box">
-      <div id="ContainerElement" className="content">
-        <section id="profile" name="profile">
+      <div ref={scrollRef} id="ContainerElement" className="content">
+        <section ref={inputRefs.profile} id="profile" name="profile">
           <h2>Profile</h2>
           <div className="text">
             <p>
@@ -71,7 +96,7 @@ const Content = ({ location, setActiveSection }) => {
           </div>
         </section>
 
-        <section id="work" name="work">
+        <section ref={inputRefs.work} id="work" name="work">
           <h2>Work</h2>
           <div className="timeline">
             {work.map(
@@ -116,7 +141,7 @@ const Content = ({ location, setActiveSection }) => {
           </div>
         </section>
 
-        <section id="skills" name="skills">
+        <section ref={inputRefs.skills} id="skills" name="skills">
           <h2>Skills</h2>
           <div className="skill-list">
             {skills.map(({ name }) => (
@@ -127,7 +152,7 @@ const Content = ({ location, setActiveSection }) => {
           </div>
         </section>
 
-        <section id="contact" name="contact">
+        <section ref={inputRefs.contact} id="contact" name="contact">
           <h2>Contact</h2>
 
           {/* <ReactMapGL

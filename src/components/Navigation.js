@@ -6,15 +6,15 @@ const navItems = [
   { id: 1, name: "profile" },
   { id: 2, name: "work" },
   { id: 3, name: "skills" },
-  { id: 4, name: "contact" }
+  { id: 4, name: "contact" },
 ];
 
 const Navigation = ({ activeSection }) => (
   <nav>
-    {navItems.map(item => (
+    {navItems.map((item) => (
       <Link
         key={item.id}
-        className={`item ${activeSection === item.name ? "active-link" : null}`}
+        className={`item ${activeSection === item.name ? "active-link" : ""}`}
         to={`#${item.name}`}
       >
         {item.name.toUpperCase()}
