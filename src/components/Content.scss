@@ -6,6 +6,7 @@
   position: absolute;
   height: 80vh;
   width: 80vw;
+  max-width: 1000px;
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
@@ -19,11 +20,12 @@
     section {
       min-height: 100%;
       width: 100%;
-      padding: 0;
+      margin: 30px 20px 0;
+      position: relative;
+      right: 20px;
       & > h2 {
         position: relative;
         top: -20px;
-        left: -20px;
         padding: 20px;
         font-family: font1;
         text-decoration: overline;
@@ -35,163 +37,6 @@
         font-family: font2;
       }
     }
-    #profile {
-      .text {
-        width: 70%;
-        margin: 0 auto;
-        .icon {
-          font-size: 70%;
-          position: relative;
-          bottom: 2px;
-        }
-      }
-    }
-    #work {
-      .timelineStops {
-        content: "";
-        display: block;
-        position: absolute;
-        border-radius: 50%;
-        background: $timelineStops;
-        z-index: 2;
-      }
-
-      .timeline {
-        position: relative;
-        .block {
-          margin-bottom: 15px;
-          display: flex;
-          .left,
-          .right {
-            flex: 1 1 50%;
-            position: relative;
-            font-family: font3;
-          }
-          .left:after {
-            @extend .timelineStops;
-            width: 11px;
-            right: -6px;
-            top: 37px;
-            height: 11px;
-          }
-          .right:before {
-            @extend .timelineStops;
-            width: 7px;
-            left: -3px;
-            top: 61px;
-            height: 7px;
-          }
-          .left .card {
-            text-align: center;
-            border-left: 5px solid $blockBorders;
-            h4 {
-              color: rgb(255, 186, 59);
-            }
-          }
-          .right .card {
-            margin-top: 30px;
-            border-right: 5px solid $blockBorders;
-            ul li {
-              font-size: 0.9rem;
-              text-align: justify;
-              padding-right: 20px;
-            }
-          }
-          .card {
-            padding: 5px;
-            width: 80%;
-            margin: 10px auto;
-            background: $black;
-            color: $white;
-          }
-        }
-      }
-      .timeline:after {
-        content: "";
-        position: absolute;
-        width: 1px;
-        background: $timeline;
-        left: 50%;
-        top: 0;
-        bottom: 20px;
-      }
-    }
-    #skills {
-      div.skill-list {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 10px;
-        align-items: center;
-        justify-content: space-around;
-        box-sizing: border-box;
-        div.skill {
-          margin: 4px 0;
-          width: 23%;
-          height: 66px;
-          box-sizing: border-box;
-          overflow-y: auto;
-          text-align: center;
-          border: 3px solid $black;
-          padding: 15px 0;
-          &:hover {
-            background: $black;
-            color: $white;
-            transition: 0.8s;
-          }
-        }
-      }
-    }
-    #contact {
-      p {
-        margin: 0;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 2rem;
-      }
-      div.social {
-        margin: 0px auto;
-        a i {
-          color: $black;
-          margin: 10px;
-          font-size: 2rem;
-          font-weight: bold;
-          transition: 0.5s;
-          &:hover {
-            color: $primary;
-            transform: scale(1.5);
-          }
-        }
-      }
-      .website {
-        a {
-          text-decoration: none;
-          font-weight: bold;
-          position: relative;
-          color: $black;
-          &:after {
-            content: "";
-            position: absolute;
-            bottom: 2px;
-            left: 15px;
-            width: 105%;
-            height: 100%;
-            opacity: 0.5;
-            z-index: -1;
-            background: rgb(107, 107, 107);
-          }
-        }
-      }
-    }
-  }
-  .spinner {
-    font-size: 1.4rem;
-    font-weight: bold;
-    position: absolute;
-    bottom: 2%;
-    right: 4.5%;
-    z-index: 2;
-    color: $black;
-    animation: spin 8s linear infinite;
   }
   &::before {
     content: "";
@@ -204,6 +49,163 @@
     z-index: -1;
     background: url("../assets/backgrounds/funky-lines.png");
   }
+}
+
+#profile {
+  .text {
+    width: 70%;
+    margin: 0 auto;
+    .icon {
+      font-size: 70%;
+      position: relative;
+      bottom: 2px;
+    }
+  }
+}
+
+#work {
+  .timelineStops {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background: $timelineStops;
+    z-index: 2;
+  }
+
+  .timeline {
+    position: relative;
+    .block {
+      margin-bottom: 15px;
+      display: flex;
+      .left,
+      .right {
+        flex: 1 1 50%;
+        position: relative;
+        font-family: font3;
+      }
+      .left:after {
+        @extend .timelineStops;
+        width: 11px;
+        right: -6px;
+        top: 37px;
+        height: 11px;
+      }
+      .right:before {
+        @extend .timelineStops;
+        width: 7px;
+        left: -3px;
+        top: 61px;
+        height: 7px;
+      }
+      .left .card {
+        text-align: center;
+        border-left: 5px solid $blockBorders;
+        h4 {
+          color: rgb(255, 186, 59);
+        }
+      }
+      .right .card {
+        margin-top: 30px;
+        border-right: 5px solid $blockBorders;
+        ul li {
+          font-size: 0.9rem;
+          text-align: justify;
+          padding-right: 20px;
+        }
+      }
+      .card {
+        padding: 5px;
+        width: 80%;
+        margin: 10px auto;
+        background: $black;
+        color: $white;
+      }
+    }
+  }
+  .timeline:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background: $timeline;
+    left: 50%;
+    top: 0;
+    bottom: 20px;
+  }
+}
+
+#skills {
+  div.skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 170px);
+    gap: 10px;
+    justify-content: center;
+    div.skill {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 90px;
+      border: 3px solid $black;
+      &:hover {
+        background: $black;
+        color: $white;
+        transition: 0.8s;
+      }
+    }
+  }
+}
+
+#contact {
+  p {
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+  div.social {
+    margin: 0px auto;
+    a i {
+      color: $black;
+      margin: 10px;
+      font-size: 2rem;
+      font-weight: bold;
+      transition: 0.5s;
+      &:hover {
+        color: $primary;
+        transform: scale(1.5);
+      }
+    }
+  }
+  .website {
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      color: $black;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        left: 15px;
+        width: 105%;
+        height: 100%;
+        opacity: 0.5;
+        z-index: -1;
+        background: rgb(107, 107, 107);
+      }
+    }
+  }
+}
+
+.spinner {
+  font-size: 1.4rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 2%;
+  right: 4.5%;
+  z-index: 2;
+  color: $black;
+  animation: spin 8s linear infinite;
 }
 
 @media screen and (max-width: 500px) {
