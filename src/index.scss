@@ -1,4 +1,4 @@
-@import "./theme.scss";
+@import "@codedrops/react-ui/dist/styles/colors.scss";
 
 @keyframes spin {
   from {
@@ -14,7 +14,6 @@
 }
 
 .highlight {
-  font-weight: bold;
   color: $black;
   white-space: nowrap;
   padding: 0 1px;
@@ -28,7 +27,7 @@
     height: 70%;
     width: 100%;
     z-index: -1;
-    background: lightgreen;
+    background: $orange;
   }
 }
 
@@ -48,6 +47,27 @@
   font-family: font4;
   src: url("./assets/fonts/LuckiestGuy-Regular.ttf");
 }
+
+/* Inter font */
+// @font-face {
+//   font-family: Inter-Bold;
+//   src: url("./assets/fonts/Inter/Inter-Bold.woff");
+// }
+
+// @font-face {
+//   font-family: Inter-Medium;
+//   src: url("./assets/fonts/Inter/Inter-Medium.woff");
+// }
+
+// @font-face {
+//   font-family: Inter-Regular;
+//   src: url("./assets/fonts/Inter/Inter-Regular.woff");
+// }
+
+// @font-face {
+//   font-family: Inter-SemiBold;
+//   src: url("./assets/fonts/Inter/Inter-SemiBold.woff");
+// }
 
 h1,
 h2,

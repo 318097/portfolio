@@ -1,4 +1,4 @@
-@import "./theme.scss";
+@import "@codedrops/react-ui/dist/styles/colors.scss";
 
 body {
   margin: 0;
@@ -7,7 +7,6 @@ body {
   overflow: hidden;
   .container {
     width: 100vw;
-    cursor: crosshair;
     height: 100vh;
     position: relative;
     .loader {
@@ -53,6 +52,7 @@ body {
     }
   }
 }
+
 .stacked-background {
   position: absolute;
   height: 100%;
@@ -87,4 +87,8 @@ body {
   left: 0;
   right: 0;
   background: #1b1b1b;
+}
+
+.neo {
+  background: whitesmoke;
 }

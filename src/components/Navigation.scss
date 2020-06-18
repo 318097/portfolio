@@ -1,4 +1,4 @@
-@import "../theme.scss";
+@import "@codedrops/react-ui/dist/styles/colors.scss";
 
 @mixin active-link {
   content: "";
@@ -9,7 +9,7 @@
   bottom: 9px;
   right: 0;
   opacity: 0.8;
-  background: $activeLink;
+  background: $orchid;
 }
 
 nav {

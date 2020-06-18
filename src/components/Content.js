@@ -3,6 +3,7 @@ import posed from "react-pose";
 import { withRouter } from "react-router-dom";
 import Scroll from "react-scroll";
 import moment from "moment";
+import { Icon } from "@codedrops/react-ui";
 // import ReactMapGL from 'react-map-gl';
 
 import "./Content.scss";
@@ -81,7 +82,7 @@ const Content = ({ location, setActiveSection }) => {
         <Skills ref={inputRefs.skills} skills={skills} />
         <Contact ref={inputRefs.contact} email={email} social={social} />
       </div>
-      <i className="spinner fas fa-dharmachakra"></i>
+      {/* <i className="spinner fas fa-dharmachakra"></i> */}
     </CustomDiv>
   );
 };
@@ -91,15 +92,15 @@ const Profile = forwardRef(({ name }, ref) => (
     <h2>Profile</h2>
     <div className="text">
       <p>
-        Hi, I am <span className="highlight">{name}</span> from India with 2+
-        years of work experience as a{" "}
+        Hi, I am <span className="highlight">{name}</span> from Bangalore, India
+        with 2.5 years of work experience as a{" "}
         <span className="highlight">Full-stack Developer</span>. I am interested
         in working on exciting projects along with best engineers from across
         the world. Apart from{" "}
         <span className="highlight">&lt;coding&#47;&gt;</span>, I{" "}
-        <i style={{ color: "tomato" }} className="icon fas fa-heart"></i> to
-        play <span className="highlight">football</span>{" "}
-        <i style={{ color: "#1da1f2" }} className="icon fas fa-futbol"></i>
+        <Icon size={18} type="heart-2" /> to play{" "}
+        <span className="highlight">football</span>{" "}
+        <Icon size={20} type="football" />
       </p>
     </div>
   </section>
