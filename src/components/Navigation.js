@@ -12,7 +12,7 @@ const Navigation = ({ activeSection }) => (
         className={`item ${activeSection === item ? "active-link" : ""}`}
         to={`#${item}`}
       >
-        {item.name.toUpperCase()}
+        {item.toUpperCase()}
       </Link>
     ))}
   </nav>
