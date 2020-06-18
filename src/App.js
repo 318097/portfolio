@@ -39,7 +39,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="container">
           {loading ? (
-            <Icon type="coding" />
+            <Icon size={70} className="loader" type="binary-code-2" />
           ) : (
             // <i className="loader fas fa-spinner"></i>
             <Fragment>
