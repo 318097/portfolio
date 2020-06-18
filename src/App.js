@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter } from "react-router-dom";
+import { Icon } from "@codedrops/react-ui";
 
 import Navigation from "./components/Navigation";
 import Content from "./components/Content";
 import Background from "./components/themes/Background";
-
 import "./App.scss";
 
 const THEMES = ["PARTICLES", "STACKED", "CUSTOM_PARTICLES", "NEO"];
@@ -13,7 +13,7 @@ class App extends Component {
   state = {
     activeSection: "profile",
     currentBackgroundIndex: 1,
-    loading: true,
+    // loading: true,
   };
 
   componentDidMount() {
@@ -39,19 +39,20 @@ class App extends Component {
       <BrowserRouter>
         <div className="container">
           {loading ? (
-            <i className="loader fas fa-spinner"></i>
+            <Icon type="coding" />
           ) : (
+            // <i className="loader fas fa-spinner"></i>
             <Fragment>
               <Navigation activeSection={activeSection} />
               <Content setActiveSection={this.setActiveSection} />
 
-              <i
+              {/* <i
                 onClick={this.handleThemeChange}
                 className="theme-icon fas fa-palette"
-              ></i>
+              ></i> */}
             </Fragment>
           )}
-          <Background theme={THEMES[currentBackgroundIndex]} />
+          <Background theme={THEMES[3]} />
         </div>
       </BrowserRouter>
     );
