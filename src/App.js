@@ -13,7 +13,7 @@ class App extends Component {
   state = {
     activeSection: "profile",
     currentBackgroundIndex: 1,
-    // loading: true,
+    loading: true,
   };
 
   componentDidMount() {
