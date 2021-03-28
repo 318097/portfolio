@@ -17,7 +17,8 @@ class App extends Component {
   };
 
   componentDidMount() {
-    setTimeout(() => this.setState({ loading: false }), 3000);
+    // setTimeout(() => this.setState({ loading: false }), 3000);
+    setTimeout(() => this.setState({ loading: false }), 100);
   }
 
   setActiveSection = (section) => this.setState({ activeSection: section });
@@ -41,18 +42,18 @@ class App extends Component {
           {loading ? (
             <Icon size={70} className="loader" type="binary-code-2" />
           ) : (
-            // <i className="loader fas fa-spinner"></i>
             <Fragment>
+              <i className="loader fas fa-spinner"></i>
               <Navigation activeSection={activeSection} />
               <Content setActiveSection={this.setActiveSection} />
 
-              {/* <i
+              <i
                 onClick={this.handleThemeChange}
                 className="theme-icon fas fa-palette"
-              ></i> */}
+              ></i>
             </Fragment>
           )}
-          <Background theme={THEMES[3]} />
+          <Background theme={THEMES[currentBackgroundIndex]} />
         </div>
       </BrowserRouter>
     );
