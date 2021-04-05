@@ -43,7 +43,6 @@ class App extends Component {
             <Icon size={70} className="loader" type="binary-code-2" />
           ) : (
             <Fragment>
-              <i className="loader fas fa-spinner"></i>
               <Navigation activeSection={activeSection} />
               <Content setActiveSection={this.setActiveSection} />
 

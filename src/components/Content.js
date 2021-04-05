@@ -7,7 +7,7 @@ import { Icon } from "@codedrops/react-ui";
 // import ReactMapGL from 'react-map-gl';
 
 import "./Content.scss";
-import { profile } from "../info";
+import DATA from "../DATA";
 
 const { scroller } = Scroll;
 
@@ -72,7 +72,7 @@ const Content = ({ location, setActiveSection }) => {
     work,
     skills,
     social,
-  } = profile;
+  } = DATA;
 
   return (
     <CustomDiv className="box">
