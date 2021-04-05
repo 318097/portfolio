@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://318097.github.io/portfolio/",
   "dependencies": {
-    "@codedrops/react-ui": "^0.26.0",
+    "@codedrops/react-ui": "^0.36.0",
     "gh-pages": "^2.0.1",
     "konva": "^3.1.6",
     "moment": "^2.24.0",
@@ -18,7 +18,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
     "react-scroll": "^1.7.14",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

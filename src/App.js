@@ -38,7 +38,7 @@ class App extends Component {
     const { loading, activeSection, currentBackgroundIndex } = this.state;
     return (
       <BrowserRouter>
-        <div className="container">
+        <div className="container react-ui">
           {loading ? (
             <Icon size={70} className="loader" type="binary-code-2" />
           ) : (

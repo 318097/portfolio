@@ -1,19 +1,13 @@
 @import "@codedrops/react-ui/dist/styles/colors.scss";
+@import "@codedrops/react-ui/dist/styles/defaults.scss";
+
+html {
+  font-size: 16px;
+}
 
 body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow: hidden;
   .container {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
     .loader {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       color: $white;
       font-size: 2rem;
     }
@@ -36,17 +30,17 @@ body {
       z-index: 999;
       font-size: 1.2rem;
       border-radius: 50%;
-      background: $black;
+      background: $bar;
       color: $white;
       cursor: pointer;
-      transition: 1s;
+      transition: 0.4s;
       @media screen and (max-width: 500px) {
         display: none;
       }
       &:hover {
         transform: scale(1.2);
         background: $white;
-        color: $black;
+        color: $bar;
       }
     }
   }
@@ -85,5 +79,5 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #1b1b1b;
+  background: $bar;
 }

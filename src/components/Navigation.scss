@@ -3,10 +3,10 @@
 @mixin active-link {
   content: "";
   display: block;
-  height: 7px;
+  height: 4px;
   width: 50%;
   position: absolute;
-  bottom: 9px;
+  bottom: 4px;
   right: 0;
   background: $yellow;
 }
