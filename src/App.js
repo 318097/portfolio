@@ -12,12 +12,12 @@ const THEMES = ["PARTICLES", "STACKED", "CUSTOM-PARTICLES", "NEO"];
 class App extends Component {
   state = {
     activeSection: "profile",
-    currentBackgroundIndex: 3,
+    currentBackgroundIndex: THEMES.length - 1,
     loading: true,
   };
 
   componentDidMount() {
-    setTimeout(() => this.setState({ loading: false }), 100);
+    setTimeout(() => this.setState({ loading: false }), 3000);
   }
 
   setActiveSection = (section) => this.setState({ activeSection: section });
@@ -36,7 +36,7 @@ class App extends Component {
   render() {
     const { loading, activeSection, currentBackgroundIndex } = this.state;
     const theme = THEMES[currentBackgroundIndex];
-    const themeWrapperClass = `${theme.toLowerCase()}-theme`;
+    const themeWrapperClass = theme ? `${theme.toLowerCase()}-theme` : "";
     return (
       <BrowserRouter>
         <div className={`app react-ui ${themeWrapperClass}`}>

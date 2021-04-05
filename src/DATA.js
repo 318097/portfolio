@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   basic: {
     name: "Mehul Lakhanpal",
     dob: "09-11-1993",

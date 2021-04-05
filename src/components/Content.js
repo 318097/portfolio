@@ -1,13 +1,19 @@
-import React, { useEffect, useRef, forwardRef, Fragment } from "react";
+import React, { useEffect, useRef, forwardRef } from "react";
 import posed from "react-pose";
 import { withRouter } from "react-router-dom";
 import Scroll from "react-scroll";
 import moment from "moment";
 import { Icon, Timeline } from "@codedrops/react-ui";
 // import ReactMapGL from 'react-map-gl';
-
 import "./Content.scss";
 import DATA from "../DATA";
+
+const {
+  basic: { name, email },
+  work,
+  skills,
+  social,
+} = DATA;
 
 const { scroller } = Scroll;
 
@@ -52,7 +58,10 @@ const Content = ({ location, setActiveSection }) => {
   }, [location]);
 
   const handleScroll = () => {
-    const scrollPosition = scrollRef.current.scrollTop;
+    const ref = scrollRef.current;
+    if (!ref) return;
+
+    const scrollPosition = ref.scrollTop;
     let activeTab = "profile";
     sections.forEach((section) => {
       const offset = inputRefs[section].current.offsetTop;
@@ -69,13 +78,6 @@ const Content = ({ location, setActiveSection }) => {
   //   // sprite: 'mapbox://styles/mapbox/dark-v9',
   //   zoom: 12,
   // };
-
-  const {
-    basic: { name, email },
-    work,
-    skills,
-    social,
-  } = DATA;
 
   return (
     <CustomDiv className="box">
