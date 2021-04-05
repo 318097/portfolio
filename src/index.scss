@@ -24,7 +24,7 @@
     content: "";
     left: 0;
     transform: translateY(-50%);
-    height: 70%;
+    height: 80%;
     width: 100%;
     z-index: -1;
     background: $orange;
@@ -37,15 +37,13 @@
 }
 @font-face {
   font-family: font2;
-  src: url("./assets/fonts/NanumPenScript-Regular.ttf");
+  // src: url("./assets/fonts/Righteous/Righteous-Regular.ttf");
+  // src: url("./assets/fonts/Fredoka_One/FredokaOne-Regular.ttf");
+  src: url("./assets/fonts/Concert_One/ConcertOne-Regular.ttf");
 }
 @font-face {
   font-family: font3;
-  src: url("./assets/fonts/Neucha-Regular.ttf");
-}
-@font-face {
-  font-family: font4;
-  src: url("./assets/fonts/LuckiestGuy-Regular.ttf");
+  src: url("./assets/fonts/Concert_One/ConcertOne-Regular.ttf");
 }
 
 h1,

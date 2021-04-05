@@ -187,8 +187,8 @@ const Contact = forwardRef(({ email, social }, ref) => (
       </div>
       <br />
       <div className="website">
-        <a href="www.brainbox.in" target="__blank">
-          www.brainbox.in
+        <a href="www.codedrops.tech" target="__blank">
+          www.codedrops.tech
         </a>
       </div>
     </div>
