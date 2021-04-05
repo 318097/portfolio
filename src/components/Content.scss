@@ -50,6 +50,23 @@
   }
 }
 
+.particles-theme .box {
+  &::before {
+    background: rgba($bar, 0.6);
+    backdrop-filter: blur(5px);
+  }
+}
+
+.neo-theme .box {
+  box-shadow: 8px 8px 8px rgba($color: $bar, $alpha: 0.2), -8px -8px 8px $white;
+  clip-path: none;
+  border-radius: 48% 46% 1% 53% / 2% 2% 42% 2%;
+  &:before {
+    background: $bg;
+    clip-path: none;
+  }
+}
+
 #profile {
   .intro {
     max-width: 70%;
@@ -65,34 +82,38 @@
 
 #work {
   .timeline {
-    .timeline-left-container .timeline-card {
-      background: #d5d6de;
-      padding: 20px;
-      h3 {
-        font-size: 1.6rem;
-        span.location {
-          font-size: 1.4rem;
-          color: $charcoal;
-          padding-left: 4px;
+    max-width: 600px;
+    .timeline-left-container {
+      margin-bottom: 20px;
+      .timeline-card {
+        background: #e4e7ea;
+        padding: 20px;
+        h3 {
+          font-size: 1.6rem;
+          span.location {
+            font-size: 1.4rem;
+            color: $charcoal;
+            padding-left: 4px;
+          }
         }
-      }
-      h4.role {
-        font-size: 1rem;
-      }
-      h4.date {
-        font-size: 0.8rem;
-      }
-      .project-container {
-        margin-top: 20px;
-        width: 100%;
-        .project-name {
-          font-size: 1.2rem;
-          text-align: left;
-          text-decoration: underline;
+        h4.role {
+          font-size: 1rem;
         }
-        .project-description {
-          .project-description-item {
-            font-size: 1rem;
+        h4.date {
+          font-size: 0.8rem;
+        }
+        .project-container {
+          margin-top: 20px;
+          width: 100%;
+          .project-name {
+            font-size: 1.2rem;
+            text-align: left;
+            text-decoration: underline;
+          }
+          .project-description {
+            .project-description-item {
+              font-size: 1rem;
+            }
           }
         }
       }

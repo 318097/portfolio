@@ -1,7 +1,7 @@
 import React from "react";
 
 const Stacked = () => (
-  <div className="stacked-background">
+  <div className="background">
     <div></div>
     <div></div>
     <div></div>

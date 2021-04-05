@@ -21,7 +21,7 @@ const RANDOM_COLORS = [
   "#354739",
   "#CE8523",
   "#B35417",
-  "#FED361"
+  "#FED361",
 ];
 
 const LIGHT_SHADES = [
@@ -31,7 +31,7 @@ const LIGHT_SHADES = [
   "#AEA77C",
   "#C8D7D2",
   "#C8D7D2",
-  "#EBE5DB"
+  "#EBE5DB",
 ];
 
 const THEMES = [RANDOM_COLORS, LIGHT_SHADES];
@@ -60,7 +60,8 @@ class CustomParticles extends Component {
       speedX: ((Math.random() * 10) % 3) * direction(),
       speedY: ((Math.random() * 10) % 3) * direction(),
       radius: Math.floor(((Math.random() * 10) % 5) + 3),
-      fill: colorPalette[Math.floor((Math.random() * 10) % colorPalette.length)]
+      fill:
+        colorPalette[Math.floor((Math.random() * 10) % colorPalette.length)],
     }));
     this.setState({ shapeInfo: info });
     setTimeout(this.startAnimation, 1000);
@@ -89,7 +90,7 @@ class CustomParticles extends Component {
 
   render() {
     return (
-      <div className="custom-particles">
+      <div className="background">
         <Stage
           style={{ height: "100%", width: "100%" }}
           width={window.innerWidth}

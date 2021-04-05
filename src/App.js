@@ -7,12 +7,12 @@ import Content from "./components/Content";
 import Background from "./components/themes/Background";
 import "./App.scss";
 
-const THEMES = ["PARTICLES", "STACKED", "CUSTOM_PARTICLES", "NEO"];
+const THEMES = ["PARTICLES", "STACKED", "CUSTOM-PARTICLES", "NEO"];
 
 class App extends Component {
   state = {
     activeSection: "profile",
-    currentBackgroundIndex: 1,
+    currentBackgroundIndex: 3,
     loading: true,
   };
 
@@ -35,23 +35,24 @@ class App extends Component {
 
   render() {
     const { loading, activeSection, currentBackgroundIndex } = this.state;
+    const theme = THEMES[currentBackgroundIndex];
+    const themeWrapperClass = `${theme.toLowerCase()}-theme`;
     return (
       <BrowserRouter>
-        <div className="container react-ui">
+        <div className={`app react-ui ${themeWrapperClass}`}>
           {loading ? (
             <Icon size={70} className="loader" type="binary-code-2" />
           ) : (
             <Fragment>
               <Navigation activeSection={activeSection} />
               <Content setActiveSection={this.setActiveSection} />
-
               <i
                 onClick={this.handleThemeChange}
                 className="theme-icon fas fa-palette"
               ></i>
             </Fragment>
           )}
-          <Background theme={THEMES[currentBackgroundIndex]} />
+          <Background theme={theme} />
         </div>
       </BrowserRouter>
     );
