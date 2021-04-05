@@ -20,20 +20,19 @@
     section {
       min-height: 100%;
       width: 100%;
-      margin: 30px 20px 0;
-      position: relative;
-      right: 20px;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
       & > h2 {
-        position: relative;
-        top: -20px;
-        padding: 20px;
         font-family: font1;
         text-decoration: overline;
+        margin-bottom: 20px;
       }
-      & > div {
-        padding: 20px;
-        text-align: center;
-        font-size: 1.5rem;
+      & > div,
+      .intro {
+        font-size: 1.2rem;
         font-family: font2;
       }
     }
@@ -52,9 +51,10 @@
 }
 
 #profile {
-  .text {
-    width: 70%;
-    margin: 0 auto;
+  .intro {
+    max-width: 70%;
+    margin: 0;
+
     .icon {
       font-size: 70%;
       position: relative;
@@ -64,78 +64,45 @@
 }
 
 #work {
-  .timelineStops {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 50%;
-    background: $bar;
-    z-index: 2;
-  }
-
   .timeline {
-    position: relative;
-    .block {
-      margin-bottom: 15px;
-      display: flex;
-      .left,
-      .right {
-        flex: 1 1 50%;
-        position: relative;
-        font-family: font2;
-      }
-      .left:after {
-        @extend .timelineStops;
-        width: 11px;
-        right: -6px;
-        top: 37px;
-        height: 11px;
-      }
-      .right:before {
-        @extend .timelineStops;
-        width: 7px;
-        left: -3px;
-        top: 61px;
-        height: 7px;
-      }
-      .left .card {
-        text-align: center;
-        border-left: 5px solid $bar;
-        h4 {
-          color: $feather;
+    .timeline-left-container .timeline-card {
+      background: #d5d6de;
+      padding: 20px;
+      h3 {
+        font-size: 1.6rem;
+        span.location {
+          font-size: 1.4rem;
+          color: $charcoal;
+          padding-left: 4px;
         }
       }
-      .right .card {
-        margin-top: 30px;
-        border-right: 5px solid $bar;
-        ul li {
-          font-size: 0.9rem;
-          text-align: justify;
-          padding-right: 20px;
-        }
+      h4.role {
+        font-size: 1rem;
       }
-      .card {
-        padding: 5px;
-        width: 80%;
-        margin: 10px auto;
-        background: $bar;
-        color: $white;
+      h4.date {
+        font-size: 0.8rem;
+      }
+      .project-container {
+        margin-top: 20px;
+        width: 100%;
+        .project-name {
+          font-size: 1.2rem;
+          text-align: left;
+          text-decoration: underline;
+        }
+        .project-description {
+          .project-description-item {
+            font-size: 1rem;
+          }
+        }
       }
     }
-  }
-  .timeline:after {
-    content: "";
-    position: absolute;
-    width: 1px;
-    background: $bar;
-    left: 50%;
-    top: 0;
-    bottom: 20px;
   }
 }
 
 #skills {
   div.skill-list {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, 170px);
     gap: 10px;
@@ -156,6 +123,12 @@
 }
 
 #contact {
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
   p {
     margin: 0;
     font-weight: bold;
@@ -163,15 +136,14 @@
     font-size: 2rem;
   }
   div.social {
-    margin: 0px auto;
+    margin: 20px 0;
     a i {
       color: $bar;
-      margin: 10px;
-      font-size: 2rem;
-      font-weight: bold;
+      margin: 0 10px;
+      font-size: 1.6rem;
       transition: 0.2s;
       &:hover {
-        color: $yellow;
+        color: $orange;
         transform: scale(1.2);
       }
     }
@@ -179,7 +151,6 @@
   .website {
     a {
       text-decoration: none;
-      font-weight: bold;
       position: relative;
       color: $bar;
       &:after {
@@ -187,11 +158,11 @@
         position: absolute;
         bottom: 2px;
         left: 15px;
-        width: 105%;
-        height: 100%;
+        width: 104%;
+        height: 102%;
         opacity: 0.5;
         z-index: -1;
-        background: rgb(107, 107, 107);
+        background: $yellow;
       }
     }
   }
@@ -215,34 +186,6 @@
     .content {
       section {
         min-height: 50%;
-      }
-      #work {
-        .timeline {
-          padding: 0;
-          margin-bottom: 40px;
-          .block {
-            padding: 0;
-            flex-direction: column;
-            .left,
-            .right {
-              flex: 0 0 auto;
-              padding: 0;
-            }
-            .right .card {
-              margin-top: 0;
-            }
-            .left:after {
-              left: 5px;
-            }
-            .right:before {
-              left: 7px;
-            }
-          }
-        }
-        .timeline:after {
-          top: 0;
-          left: 10px;
-        }
       }
       #skills {
         div.skill-list {
