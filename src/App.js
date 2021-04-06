@@ -41,7 +41,10 @@ class App extends Component {
       <BrowserRouter>
         <div className={`app react-ui ${themeWrapperClass}`}>
           {loading ? (
-            <Icon size={70} className="loader" type="binary-code-2" />
+            <div className="loader">
+              <Icon size={70} type="binary-code-2" />
+              <span className="text">Loading..</span>
+            </div>
           ) : (
             <Fragment>
               <Navigation activeSection={activeSection} />
