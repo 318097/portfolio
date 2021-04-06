@@ -44,7 +44,7 @@ body {
       font-size: 1.2rem;
       border-radius: 50%;
       background: $bar;
-      color: $white;
+      color: $feather;
       cursor: pointer;
       transition: 0.4s;
       @media screen and (max-width: 500px) {
@@ -52,7 +52,7 @@ body {
       }
       &:hover {
         transform: scale(1.2);
-        background: $white;
+        background: $feather;
         color: $bar;
       }
     }

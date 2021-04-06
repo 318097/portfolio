@@ -7,17 +7,24 @@ import Content from "./components/Content";
 import Background from "./components/themes/Background";
 import "./App.scss";
 
-const THEMES = ["STACKED", "NEO", "CUSTOM-PARTICLES"];
+const THEMES = ["CUSTOM-PARTICLES", "STACKED", "NEO"];
 
 class App extends Component {
-  state = {
-    activeSection: "profile",
-    currentBackgroundIndex: THEMES.length - 1,
-    loading: true,
-  };
+  constructor(props) {
+    super(props);
+
+    const savedTheme = localStorage.getItem("theme");
+    this.state = {
+      activeSection: "profile",
+      currentBackgroundIndex: savedTheme
+        ? THEMES.indexOf(Number(savedTheme))
+        : THEMES.length - 1,
+      loading: true,
+    };
+  }
 
   componentDidMount() {
-    setTimeout(() => this.setState({ loading: false }), 3000);
+    setTimeout(() => this.setState({ loading: false }), 300);
   }
 
   setActiveSection = (section) => this.setState({ activeSection: section });
@@ -28,6 +35,8 @@ class App extends Component {
       currentBackgroundIndex === THEMES.length - 1
         ? 0
         : currentBackgroundIndex + 1;
+
+    localStorage.setItem("theme", THEMES[newBackgroundIndex]);
     this.setState({
       currentBackgroundIndex: newBackgroundIndex,
     });
