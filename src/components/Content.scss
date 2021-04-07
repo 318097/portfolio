@@ -121,6 +121,64 @@
   }
 }
 
+#side_projects {
+  div.project-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: center;
+    div.project-item {
+      display: flex;
+      padding: 20px 8px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 320px;
+      border: 2px solid $bar;
+      box-shadow: 4px 4px $steel;
+      .logo {
+        max-width: 36px;
+        margin-bottom: 12px;
+      }
+      .name {
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+      }
+      .tagline {
+        font-size: 1rem;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
+        color: $iron;
+      }
+      .links-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 28px;
+        a {
+          font-size: 0.8rem;
+          text-decoration: none;
+          margin: 0 4px;
+          color: $blue;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .button {
+        font-size: 0.8rem;
+      }
+
+      &:hover {
+        background: $strokeOne;
+        transition: 0.4s;
+      }
+    }
+  }
+}
+
 #skills {
   div.skill-list {
     width: 100%;

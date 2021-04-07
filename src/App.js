@@ -9,6 +9,14 @@ import "./App.scss";
 
 const THEMES = ["CUSTOM-PARTICLES", "STACKED", "NEO"];
 
+const SECTIONS = [
+  { label: "Profile", value: "profile" },
+  { label: "Work", value: "work" },
+  { label: "Side Projects", value: "side_projects" },
+  { label: "Skills", value: "skills" },
+  { label: "Contact", value: "contact" },
+];
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -56,8 +64,11 @@ class App extends Component {
             </div>
           ) : (
             <Fragment>
-              <Navigation activeSection={activeSection} />
-              <Content setActiveSection={this.setActiveSection} />
+              <Navigation activeSection={activeSection} SECTIONS={SECTIONS} />
+              <Content
+                setActiveSection={this.setActiveSection}
+                SECTIONS={SECTIONS}
+              />
               <i
                 onClick={this.handleThemeChange}
                 className="theme-icon fas fa-palette"

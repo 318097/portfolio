@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, forwardRef } from "react";
+import React, { useEffect, useRef, forwardRef, useState } from "react";
 import posed from "react-pose";
 import { withRouter } from "react-router-dom";
 import Scroll from "react-scroll";
 import moment from "moment";
-import { Icon, Timeline } from "@codedrops/react-ui";
+import { Icon, Timeline, Button } from "@codedrops/react-ui";
 // import ReactMapGL from 'react-map-gl';
 import "./Content.scss";
 import DATA from "../DATA";
@@ -25,22 +25,25 @@ const CustomDiv = posed.div({
   hidden: { opacity: 0 },
 });
 
-const sections = ["profile", "work", "skills", "contact"];
-
 const formatDate = (date) =>
   date ? moment(date, "DD-MM-YYYY").format("MMM, YY") : "Present";
 
-const Content = ({ location, setActiveSection }) => {
+const Content = ({ location, setActiveSection, SECTIONS }) => {
   const scrollRef = useRef(null);
 
   const inputRefs = {
     profile: useRef(null),
     work: useRef(null),
+    side_projects: useRef(null),
     skills: useRef(null),
     contact: useRef(null),
   };
 
+  const [sideProjects, setSideProjects] = useState([]);
+
   useEffect(() => {
+    fetchSideProjects();
+
     scrollRef.current.addEventListener("scroll", handleScroll);
     return () => scrollRef.current.removeEventListener("scroll", handleScroll);
   }, []);
@@ -57,15 +60,25 @@ const Content = ({ location, setActiveSection }) => {
     setActiveSection(elementId);
   }, [location]);
 
+  const fetchSideProjects = () => {
+    const DATA_URL =
+      "https://raw.githubusercontent.com/318097/code-drops/master/src/DATA.json";
+    fetch(DATA_URL)
+      .then((res) => res.json())
+      .then((data) =>
+        setSideProjects(data.products.filter((product) => product.visible))
+      );
+  };
+
   const handleScroll = () => {
     const ref = scrollRef.current;
     if (!ref) return;
 
     const scrollPosition = ref.scrollTop;
     let activeTab = "profile";
-    sections.forEach((section) => {
-      const offset = inputRefs[section].current.offsetTop;
-      if (offset < scrollPosition + 30) activeTab = section;
+    SECTIONS.forEach((section) => {
+      const offset = inputRefs[section.value].current.offsetTop;
+      if (offset < scrollPosition + 30) activeTab = section.value;
     });
     setActiveSection(activeTab);
   };
@@ -78,12 +91,15 @@ const Content = ({ location, setActiveSection }) => {
   //   // sprite: 'mapbox://styles/mapbox/dark-v9',
   //   zoom: 12,
   // };
-
   return (
     <CustomDiv className="box">
       <div ref={scrollRef} id="ContainerElement" className="content">
         <Profile ref={inputRefs.profile} name={name} />
         <Work ref={inputRefs.work} work={work} />
+        <SideProjects
+          ref={inputRefs.side_projects}
+          sideProjects={sideProjects}
+        />
         <Skills ref={inputRefs.skills} skills={skills} />
         <Contact ref={inputRefs.contact} email={email} social={social} />
       </div>
@@ -159,6 +175,48 @@ const Work = forwardRef(({ work }, ref) => (
         );
       }}
     />
+  </section>
+));
+
+const SideProjects = forwardRef(({ sideProjects }, ref) => (
+  <section ref={ref} id="side_projects" name="side_projects">
+    <h2>Side Projects</h2>
+    <div className="project-list">
+      {sideProjects.map(
+        ({ id, name, tagline, logo, video, download, ph, github }) => {
+          const links = [
+            { label: "Demo", url: video },
+            { label: "Product Hunt", url: ph },
+            { label: "Github", url: github },
+          ].filter((item) => !!item.url);
+
+          return (
+            <div className="project-item" key={id}>
+              {logo && <img src={logo} alt="logo" className="logo" />}
+              <div className="name">{name}</div>
+              <div className="tagline">{tagline}</div>
+              <div className="links-container">
+                {links.map((item, idx) => (
+                  <>
+                    {idx > 0 && idx < links.length && <span>&#8226;</span>}
+                    <a className="link" href={item.url} target="__blank">
+                      {item.label}
+                    </a>
+                  </>
+                ))}
+              </div>
+              <Button
+                onClick={() =>
+                  window.open(`${download}?utm_source=portfolio`, "__blank")
+                }
+              >
+                Download
+              </Button>
+            </div>
+          );
+        }
+      )}
+    </div>
   </section>
 ));
 

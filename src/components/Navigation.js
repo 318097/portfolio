@@ -2,17 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.scss";
 
-const navItems = ["profile", "work", "skills", "contact"];
-
-const Navigation = ({ activeSection }) => (
+const Navigation = ({ activeSection, SECTIONS }) => (
   <nav>
-    {navItems.map((item) => (
+    {SECTIONS.map((item) => (
       <Link
-        key={item}
-        className={`item ${activeSection === item ? "active-link" : ""}`}
-        to={`#${item}`}
+        key={item.value}
+        className={`item ${activeSection === item.value ? "active-link" : ""}`}
+        to={`#${item.value}`}
       >
-        {item.toUpperCase()}
+        {item.label.toUpperCase()}
       </Link>
     ))}
   </nav>
