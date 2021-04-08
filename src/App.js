@@ -7,7 +7,7 @@ import Content from "./components/Content";
 import Background from "./components/themes/Background";
 import "./App.scss";
 
-const THEMES = ["CUSTOM-PARTICLES", "STACKED", "NEO"];
+const THEMES = ["CUSTOM-PARTICLES", "STACKED", "NEO", "DARK-NIGHT"];
 
 const SECTIONS = [
   { label: "Profile", value: "profile" },
@@ -25,7 +25,7 @@ class App extends Component {
     this.state = {
       activeSection: "profile",
       currentBackgroundIndex: savedTheme
-        ? THEMES.indexOf(Number(savedTheme))
+        ? THEMES.indexOf(savedTheme)
         : THEMES.length - 1,
       loading: true,
     };

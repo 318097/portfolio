@@ -67,6 +67,95 @@
   }
 }
 
+.dark-night-theme .box {
+  $colorList: 0 $blue, 1 $yellow, 2 $orange, 3 $watermelon;
+
+  @each $index, $color in $colorList {
+    .color-#{$index} {
+      color: $color;
+    }
+    .bg-#{$index} {
+      background: $color !important;
+    }
+    .border-#{$index} {
+      border-color: $color;
+    }
+  }
+
+  clip-path: none;
+  border-radius: 0;
+  &::before {
+    display: none;
+  }
+  color: $feather;
+  #profile {
+    .intro {
+      .highlight {
+        color: $feather;
+      }
+    }
+  }
+  #work {
+    .timeline {
+      .timeline-left-container {
+        .timeline-card {
+          border: 1px solid $orchid;
+          color: $orchid;
+          background: $bar;
+          span.location {
+            color: $orchid;
+          }
+        }
+        &::after {
+          background: $orchid;
+        }
+      }
+      &::after {
+        background: $orchid;
+      }
+    }
+  }
+  #side_projects {
+    .project-list .project-item {
+      border-color: $iron;
+      background: $bar;
+    }
+  }
+  #skills {
+    div.skill-list {
+      div.skill {
+        border-color: $iron;
+        background: $iron;
+        color: $bar;
+        &:hover {
+          background: $yellow;
+          border-color: $yellow;
+        }
+        &.highlight {
+          background: $yellow;
+          border-color: $yellow;
+        }
+      }
+    }
+  }
+
+  #contact {
+    div.social a i {
+      color: $strokeTwo;
+    }
+    .email {
+      color: $iron;
+    }
+    .website a {
+      color: $feather;
+      &:after {
+        background: $blue;
+        opacity: 1;
+      }
+    }
+  }
+}
+
 #profile {
   .intro {
     max-width: 70%;
@@ -106,13 +195,13 @@
           margin-top: 20px;
           width: 100%;
           .project-name {
-            font-size: 1.2rem;
+            font-size: 1rem;
             text-align: left;
             text-decoration: underline;
           }
           .project-description {
             .project-description-item {
-              font-size: 1rem;
+              font-size: 0.8rem;
             }
           }
         }
@@ -135,7 +224,7 @@
       align-items: center;
       justify-content: flex-start;
       height: 320px;
-      border: 2px solid $bar;
+      border: 4px solid $bar;
       box-shadow: 4px 4px $steel;
       .logo {
         max-width: 36px;

@@ -9,7 +9,7 @@ import "./Content.scss";
 import DATA from "../DATA";
 
 const {
-  basic: { name, email },
+  basic: { name, email, website },
   work,
   skills,
   social,
@@ -101,7 +101,12 @@ const Content = ({ location, setActiveSection, SECTIONS }) => {
           sideProjects={sideProjects}
         />
         <Skills ref={inputRefs.skills} skills={skills} />
-        <Contact ref={inputRefs.contact} email={email} social={social} />
+        <Contact
+          ref={inputRefs.contact}
+          email={email}
+          social={social}
+          website={website}
+        />
       </div>
       {/* <i className="spinner fas fa-dharmachakra"></i> */}
     </CustomDiv>
@@ -224,8 +229,8 @@ const Skills = forwardRef(({ skills }, ref) => (
   <section ref={ref} id="skills" name="skills">
     <h2>Skills</h2>
     <div className="skill-list">
-      {skills.map(({ name }) => (
-        <div className="skill" key={name}>
+      {skills.map(({ name, highlight }) => (
+        <div className={`skill${highlight ? " highlight" : ""}`} key={name}>
           {name}
         </div>
       ))}
@@ -233,7 +238,7 @@ const Skills = forwardRef(({ skills }, ref) => (
   </section>
 ));
 
-const Contact = forwardRef(({ email, social }, ref) => (
+const Contact = forwardRef(({ email, social, website }, ref) => (
   <section ref={ref} id="contact" name="contact">
     <h2>Contact</h2>
     {/* <ReactMapGL
@@ -247,16 +252,18 @@ const Contact = forwardRef(({ email, social }, ref) => (
       </div>
 
       <div className="social">
-        {social.map(({ name, url, classname }) => (
-          <a key={name} title={name} href={url} target="__blank">
-            <i className={classname}></i>
-          </a>
-        ))}
+        {social
+          .filter((item) => item.visible)
+          .map(({ name, url, classname }) => (
+            <a key={name} title={name} href={url} target="__blank">
+              <i className={classname}></i>
+            </a>
+          ))}
       </div>
 
       <div className="website">
-        <a href="https://www.codedrops.tech" target="__blank">
-          www.codedrops.tech
+        <a href={website.url} target="__blank">
+          {website.label}
         </a>
       </div>
     </div>

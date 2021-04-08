@@ -11,7 +11,10 @@ export default {
     city: "Bangalore",
     state: "Karnataka",
     pincode: "560005",
-    website: "https://www.codedrops.tech",
+    website: {
+      url: "https://www.codedrops.tech",
+      label: "www.codedrops.tech",
+    },
   },
   education: [
     {
@@ -123,71 +126,96 @@ export default {
   ],
   skills: [
     {
+      visible: true,
       name: "Node.js",
+      highlight: true,
     },
     {
+      visible: true,
       name: "Express.js",
+      highlight: true,
     },
     {
+      visible: true,
       name: "Mongo DB",
+      highlight: true,
     },
     {
+      visible: true,
       name: "React",
+      highlight: true,
     },
     {
+      visible: true,
       name: "Angular",
     },
     {
+      visible: true,
       name: "HTML",
     },
     {
+      visible: true,
       name: "CSS",
     },
     {
+      visible: true,
       name: "Javascript",
     },
     {
+      visible: true,
       name: "Redux",
+      highlight: true,
     },
     {
+      visible: true,
       name: "Angular Material",
     },
     {
+      visible: true,
       name: "Ant Design",
     },
     {
+      visible: true,
       name: "Heroku",
     },
-  ],
-  secondary_skills: [
     {
+      visible: true,
       name: "C",
     },
     {
+      visible: true,
       name: "Firebase",
     },
     {
+      visible: true,
       name: "Typescript",
     },
     {
+      visible: true,
       name: "Socket.IO",
     },
     {
+      visible: true,
       name: "SASS",
     },
     {
+      visible: true,
       name: "Jest",
     },
     {
+      visible: true,
       name: "GIT",
     },
     {
+      visible: true,
       name: "RxJS",
     },
     {
+      visible: true,
       name: "SQL",
     },
     {
+      visible: true,
       name: "PHP",
     },
   ],
@@ -196,23 +224,62 @@ export default {
       name: "GITHUB",
       url: "https://github.com/318097",
       classname: "fab fa-github",
-    },
-    {
-      name: "FACEBOOK",
-      url: "https://www.facebook.com/ml.cr7",
-      classname: "fab fa-facebook-f",
+      visible: true,
     },
     {
       name: "LINKEDIN",
       url: "https://www.linkedin.com/in/318097/",
       classname: "fab fa-linkedin",
+      visible: true,
     },
     {
       name: "HACKEREARTH",
       url: "https://www.hackerearth.com/@318097",
       classname: "",
+      visible: false,
+    },
+    {
+      name: "MEDIUM",
+      url: "https://medium.com/@318097",
+      classname: "fab fa-medium",
+      visible: true,
+    },
+    {
+      name: "DEV.TO",
+      url: "https://dev.to/318097",
+      classname: "fab fa-dev",
+      visible: true,
+    },
+    {
+      name: "PRODUCT HUNT",
+      url: "https://www.producthunt.com/@ml318097",
+      classname: "fab fa-product-hunt",
+      visible: true,
+    },
+    {
+      name: "FACEBOOK",
+      url: "https://www.facebook.com/ml.cr7",
+      classname: "fab fa-facebook-f",
+      visible: true,
+    },
+    {
+      name: "INSTAGRAM",
+      url: "https://www.instagram.com/ml318097/",
+      classname: "fab fa-instagram",
+      visible: true,
+    },
+    {
+      name: "TWITTER",
+      url: "https://twitter.com/318097",
+      classname: "fab fa-twitter",
+      visible: true,
+    },
+    {
+      name: "INDIE HACKER",
+      url: "https://www.indiehackers.com/ml318097",
+      classname: "",
+      visible: false,
     },
   ],
-  personal_projects: [{}],
   resume: "url",
 };
