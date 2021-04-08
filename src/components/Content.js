@@ -129,56 +129,64 @@ const Profile = forwardRef(({ name }, ref) => (
   </section>
 ));
 
+const TimelineItem = ({ item }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  const { name, location, role, start_date, end_date, projects } = item;
+
+  const date = `${formatDate(start_date)} - ${formatDate(end_date)}`;
+
+  return (
+    <div key={name} className="timeline-left-container">
+      <div className="timeline-card">
+        <h3>
+          {name}
+          <span className="location">{`(${location})`}</span>
+        </h3>
+
+        <h4 className="role">{role}</h4>
+        <h4 className="date">{date}</h4>
+
+        {expanded && !!projects.length && (
+          <div className="project-container">
+            {/* <h5 className="project-title">Projects</h5> */}
+            {projects.map(({ name: projectName, description }) => {
+              return (
+                <div key={projectName}>
+                  <h4 className="project-name">{projectName}</h4>
+                  <div className="project-description">
+                    {description.map((list, i) => (
+                      <div className="project-description-item" key={i}>
+                        {`- ${list}`}
+                      </div>
+                    ))}
+                  </div>
+                  <br />
+                </div>
+              );
+            })}
+          </div>
+        )}
+        {!!projects.length && (
+          <Icon
+            type="caret"
+            size={10}
+            className="expand-icon"
+            direction={expanded ? "up" : "down"}
+            onClick={() => setExpanded((prev) => !prev)}
+          />
+        )}
+      </div>
+    </div>
+  );
+};
+
 const Work = forwardRef(({ work }, ref) => (
   <section ref={ref} id="work" name="work">
     <h2>Work</h2>
     <Timeline
       items={work}
-      renderItem={({
-        name,
-        location,
-        role,
-        start_date,
-        end_date,
-        projects,
-      }) => {
-        const date = `${formatDate(start_date)} - ${formatDate(end_date)}`;
-
-        return (
-          <div key={name} className="timeline-left-container">
-            <div className="timeline-card">
-              <h3>
-                {name}
-                <span className="location">{`(${location})`}</span>
-              </h3>
-
-              <h4 className="role">{role}</h4>
-              <h4 className="date">{date}</h4>
-
-              {!!projects.length && (
-                <div className="project-container">
-                  {/* <h5 className="project-title">Projects</h5> */}
-                  {projects.map(({ name: projectName, description }) => {
-                    return (
-                      <div key={projectName}>
-                        <h4 className="project-name">{projectName}</h4>
-                        <div className="project-description">
-                          {description.map((list, i) => (
-                            <div className="project-description-item" key={i}>
-                              {`- ${list}`}
-                            </div>
-                          ))}
-                        </div>
-                        <br />
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          </div>
-        );
-      }}
+      renderItem={(item) => <TimelineItem item={item} />}
     />
   </section>
 ));

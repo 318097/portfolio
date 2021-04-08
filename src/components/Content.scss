@@ -109,7 +109,8 @@
       a i {
         color: $steel;
         &:hover {
-          color: $orange;
+          color: $bar;
+          transform: none;
         }
       }
     }
@@ -243,6 +244,7 @@
       margin-bottom: 20px;
       .timeline-card {
         background: #e4e7ea;
+        position: relative;
         padding: 20px;
         h3 {
           font-size: 1.2rem;
@@ -272,6 +274,12 @@
               font-size: 1rem;
             }
           }
+        }
+        .expand-icon {
+          position: absolute;
+          bottom: 6px;
+          right: 6px;
+          cursor: pointer;
         }
       }
     }
