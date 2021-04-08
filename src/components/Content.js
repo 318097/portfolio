@@ -238,6 +238,18 @@ const Skills = forwardRef(({ skills }, ref) => (
   </section>
 ));
 
+const SocialIcons = ({ type }) => (
+  <div className="social">
+    {social
+      .filter((item) => item.visible && item.type === type)
+      .map(({ name, url, classname }) => (
+        <a key={name} title={name} href={url} target="__blank">
+          <i className={classname}></i>
+        </a>
+      ))}
+  </div>
+);
+
 const Contact = forwardRef(({ email, social, website }, ref) => (
   <section ref={ref} id="contact" name="contact">
     <h2>Contact</h2>
@@ -251,15 +263,8 @@ const Contact = forwardRef(({ email, social, website }, ref) => (
         <p className="email">{email}</p>
       </div>
 
-      <div className="social">
-        {social
-          .filter((item) => item.visible)
-          .map(({ name, url, classname }) => (
-            <a key={name} title={name} href={url} target="__blank">
-              <i className={classname}></i>
-            </a>
-          ))}
-      </div>
+      <SocialIcons type="work" />
+      <SocialIcons type="casual" />
 
       <div className="website">
         <a href={website.url} target="__blank">
