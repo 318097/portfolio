@@ -13,24 +13,6 @@
   display: none;
 }
 
-.highlight {
-  color: $bar;
-  white-space: nowrap;
-  padding: 0 1px;
-  position: relative;
-  &:after {
-    position: absolute;
-    top: 50%;
-    content: "";
-    left: 0;
-    transform: translateY(-50%);
-    height: 80%;
-    width: 100%;
-    z-index: -1;
-    background: $orange;
-  }
-}
-
 @font-face {
   font-family: font1;
   src: url("./assets/fonts/AmaticSC-Bold.ttf");

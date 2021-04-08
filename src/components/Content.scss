@@ -58,12 +58,58 @@
 }
 
 .neo-theme .box {
-  box-shadow: 8px 8px 8px rgba($color: $bar, $alpha: 0.2), -8px -8px 8px $white;
+  @mixin neo-shadow($size: 8px) {
+    $negativeSize: -$size;
+    box-shadow: $size $size $size rgba($color: $bar, $alpha: 0.2),
+      $negativeSize $negativeSize $size $white;
+    border: none;
+  }
+  @include neo-shadow;
   clip-path: none;
   border-radius: 48% 46% 1% 53% / 2% 2% 42% 2%;
   &:before {
     background: $bg;
     clip-path: none;
+  }
+  #work {
+    .timeline {
+      .timeline-left-container {
+        .timeline-card {
+          @include neo-shadow;
+          background: $strokeOne;
+        }
+      }
+    }
+  }
+  #side_projects {
+    .project-list .project-item {
+      @include neo-shadow;
+    }
+  }
+  #skills {
+    div.skill-list {
+      div.skill {
+        @include neo-shadow(4px);
+        &:hover,
+        &.highlight {
+          background: $strokeOne;
+          color: $steel;
+        }
+      }
+    }
+  }
+  #contact {
+    p.email {
+      color: $bar;
+    }
+    div.social {
+      a i {
+        color: $steel;
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
   }
 }
 
@@ -140,17 +186,19 @@
   }
 
   #contact {
-    div.social a i {
-      color: $strokeTwo;
-    }
-    .email {
-      color: $iron;
-    }
-    .website a {
-      color: $feather;
-      &:after {
-        background: $blue;
-        opacity: 1;
+    div.contact-details {
+      div.social a i {
+        color: $strokeTwo;
+      }
+      .email {
+        color: $iron;
+      }
+      .website a {
+        color: $feather;
+        &:after {
+          background: $blue;
+          opacity: 1;
+        }
       }
     }
   }
@@ -160,7 +208,23 @@
   .intro {
     max-width: 70%;
     margin: 0;
-
+    .highlight {
+      color: $bar;
+      white-space: nowrap;
+      padding: 0 1px;
+      position: relative;
+      &:after {
+        position: absolute;
+        top: 50%;
+        content: "";
+        left: 0;
+        transform: translateY(-50%);
+        height: 80%;
+        width: 100%;
+        z-index: -1;
+        background: $orange;
+      }
+    }
     .icon {
       font-size: 70%;
       position: relative;
@@ -296,15 +360,15 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 20px;
   }
-  p {
+  p.email {
     margin: 0;
-    font-weight: bold;
     text-transform: uppercase;
     font-size: 2rem;
   }
   div.social {
-    margin: 20px 0;
+    margin: 30px 0 40px;
     a i {
       color: $bar;
       margin: 0 10px;
