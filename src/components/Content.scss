@@ -314,6 +314,7 @@
       height: 320px;
       border: 4px solid $bar;
       box-shadow: 4px 4px $steel;
+      position: relative;
       .logo {
         max-width: 36px;
         margin-bottom: 12px;
@@ -347,6 +348,19 @@
       .button {
         font-size: 0.8rem;
         font-family: font2;
+      }
+      .status {
+        position: absolute;
+        bottom: 6px;
+        left: 6px;
+        color: $bar;
+        font-size: 12px;
+      }
+      .custom-messages {
+        position: absolute;
+        bottom: 6px;
+        right: 6px;
+        font-size: 14px;
       }
 
       &:hover {
