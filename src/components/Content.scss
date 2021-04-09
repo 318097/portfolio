@@ -163,6 +163,9 @@
           span.location {
             color: $white;
           }
+          svg {
+            fill: $white;
+          }
         }
         &::after {
           background: $primary;
@@ -175,7 +178,8 @@
   }
   #side_projects {
     .project-list .project-item {
-      border-color: $iron;
+      border-color: $blue;
+      box-shadow: 4px 4px $primary;
       background: rgba($iron, 0.1);
     }
   }

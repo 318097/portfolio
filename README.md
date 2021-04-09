@@ -2,6 +2,20 @@
 
 - [Github Pages](https://318097.github.io/portfolio/)
 
+## Todo
+
+- [ ] Hook timeline query
+- [ ] Add custom message for projects
+- [ ] Add blogs section - auto fetch rss feed
+- [ ] Add Codedrops section
+- [ ] Add WIP section - Atom, React UI, Snake, Notes App, Codedrops
+- [ ] SSR
+- [ ] Responsive
+- [ ] Analytics
+- [ ] Audio on clicks
+- [ ] Download resume
+- [ ] Deploy on netlify
+
 ## Designs
 
 ### Portfolio design 2 | 8-Feburary-2020
