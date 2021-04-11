@@ -1,20 +1,18 @@
 ## Personal Portfolio
 
-- [Github Pages](https://318097.github.io/portfolio/)
-
 ## Todo
 
-- [ ] Hook timeline query
+- [x] Deploy on netlify
 - [x] Add custom message for projects
 - [x] Add WIP section - Atom, React UI, Snake, Notes App, Codedrops
 - [ ] Add blogs section - auto fetch rss feed
+- [ ] Hook timeline query
 - [ ] Add Codedrops section
 - [ ] SSR
 - [ ] Responsive
 - [ ] Analytics
 - [ ] Audio on clicks
 - [ ] Download resume
-- [ ] Deploy on netlify
 
 ## Designs
 
