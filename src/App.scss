@@ -27,22 +27,27 @@ body {
         padding-left: 6px;
       }
     }
-    .theme-icon {
+    .action-container {
+      bottom: 6px;
+      right: 12px;
       position: absolute;
-      bottom: 7px;
-      right: 7px;
-      padding: 5px;
       z-index: 999;
-      font-size: 1.2rem;
-      border-radius: 50%;
-      background: $bar;
-      color: $feather;
-      cursor: pointer;
-      transition: 0.4s;
-      &:hover {
-        transform: scale(1.2);
-        background: $feather;
-        color: $bar;
+      display: flex;
+      flex-direction: column;
+      i {
+        padding: 5px;
+        font-size: 1.2rem;
+        border-radius: 50%;
+        background: $bar;
+        color: $feather;
+        cursor: pointer;
+        transition: 0.4s;
+        margin-top: 8px;
+        &:hover {
+          transform: scale(1.2);
+          background: $feather;
+          color: $bar;
+        }
       }
     }
     @media (max-width: 500px) {

@@ -13,6 +13,7 @@
 - [ ] Analytics
 - [ ] Audio on clicks
 - [ ] Download resume
+- [ ] Copy email on click
 
 ## Designs
 

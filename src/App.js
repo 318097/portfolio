@@ -1,11 +1,16 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Icon } from "@codedrops/react-ui";
+import ReactTooltip from "react-tooltip";
 
 import Navigation from "./components/Navigation";
 import Content from "./components/Content";
 import Background from "./components/themes/Background";
 import "./App.scss";
+import DATA from "./DATA";
+const {
+  basic: { resumeURL },
+} = DATA;
 
 const THEMES = ["CUSTOM-PARTICLES", "STACKED", "NEO", "DARK-NIGHT"];
 
@@ -69,10 +74,28 @@ class App extends Component {
                 setActiveSection={this.setActiveSection}
                 SECTIONS={SECTIONS}
               />
-              <i
-                onClick={this.handleThemeChange}
-                className="theme-icon fas fa-palette"
-              ></i>
+
+              <div className="action-container">
+                <i
+                  onClick={this.handleThemeChange}
+                  data-tip={"Theme"}
+                  data-effect="solid"
+                  className="theme-icon fas fa-palette"
+                ></i>
+                <a
+                  className="download-resume"
+                  data-tip={"Resume"}
+                  data-effect="solid"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={resumeURL}
+                  download
+                  // download={`Resume - Mehul Lakhanpal`}
+                >
+                  <i class="fas fa-save" />
+                </a>
+                <ReactTooltip />
+              </div>
             </Fragment>
           )}
           <Background theme={theme} />

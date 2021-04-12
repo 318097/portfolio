@@ -10,6 +10,8 @@ export default {
     city: "Bangalore",
     state: "Karnataka",
     pincode: "560005",
+    resumeURL:
+      "https://drive.google.com/file/d/1tTb61BV4G13r76xvqmnO-0ppcN7Kg4GO/view?usp=sharing",
     website: {
       url: "https://www.codedrops.tech",
       label: "www.codedrops.tech",
