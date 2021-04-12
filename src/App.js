@@ -17,7 +17,7 @@ const THEMES = [
   "STACKED",
   "NEO",
   "DARK-NIGHT",
-  "PARTICLES",
+  // "PARTICLES",
 ];
 
 const SECTIONS = [
