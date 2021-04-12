@@ -5,9 +5,9 @@ const {
   basic: { name },
 } = DATA;
 
-const Profile = forwardRef((props, ref) => (
-  <section ref={ref} id="profile" name="profile">
-    <h2>Profile</h2>
+const About = forwardRef((props, ref) => (
+  <section ref={ref} id="about" name="about">
+    <h2>About</h2>
     <p className="intro">
       Hi, I am <span className="highlight">{name}</span> from Bangalore, India
       with 2.5 years of work experience as a{" "}
@@ -21,4 +21,4 @@ const Profile = forwardRef((props, ref) => (
   </section>
 ));
 
-export default Profile;
+export default About;

@@ -5,7 +5,6 @@ export default {
     profession: "Full stack developer",
     email: "318097@gmail.com",
     mobile: "7760279446",
-    profile_image: ["profile.jpg"],
     address_1: "#46 Haines Road",
     address_2: "Frazer Town",
     city: "Bangalore",
@@ -16,49 +15,72 @@ export default {
       label: "www.codedrops.tech",
     },
   },
-  education: [
+  timeline: [
     {
-      course: "10th Standard",
-      university: "Indian Certificate of Secondary Examination (ICSE)",
+      other: "10th Standard",
+      sub_title: "Indian Certificate of Secondary Examination (ICSE)",
       score: "80%",
-      name: "St. Johns High School",
-      graduation_year: 2009,
+      title: "St. Johns High School",
+      end_date: "2009",
     },
     {
-      course: "12th Standard",
-      university: "Pre University Council (PUC)",
+      other: "12th Standard",
+      sub_title: "Pre University Council (PUC)",
       score: "56.4%",
-      name: "Sri Bhagwan Mahaveer Jain College",
-      graduation_year: 2011,
+      title: "Sri Bhagwan Mahaveer Jain College",
+      end_date: "2011",
     },
     {
-      course: "Bachelor in Engineering (CSE)",
-      university: "Visvesvaraya Technological University, Belgavi (VTU)",
+      other: "Bachelor in Engineering (CSE)",
+      sub_title: "Visvesvaraya Technological University, Belgavi (VTU)",
       score: "52.1%",
-      name: "T John Institute of Technology",
-      graduation_year: 2016,
-    },
-  ],
-  work: [
-    {
-      name: "Toddle",
-      location: "Bangalore",
-      role: "Front end Engineer",
-      start_date: "03-02-2020",
-      end_date: "",
-      projects: [],
+      title: "T John Institute of Technology",
+      end_date: "2016",
     },
     {
-      name: "Clipboard Health",
-      location: "San Francisco",
-      role: "Full stack developer",
-      start_date: "17-06-2019",
-      end_date: "4-10-2019",
-      projects: [
+      type: "work",
+      title: "Toddle",
+      other: "Bangalore",
+      sub_title: "Front end Engineer",
+      start_date: "2020-02-03",
+      end_date: "present",
+      description: [
         {
-          name:
+          title: "",
+          content: [
+            "Built reusable components and front-end libraries for future use.",
+            "Translated designs and wire-frames into high quality code.",
+          ],
+        },
+      ],
+    },
+    {
+      type: "work",
+      title: "Mobil Biker Cafe",
+      sub_title: "Freelancing",
+      start_date: "2020-07",
+      end_date: "2020-09",
+      description: [
+        {
+          title: "",
+          content: [
+            "Developed the Mobile Biker Cafe application helping bikers to get the latest offers, events & ideas.",
+          ],
+        },
+      ],
+    },
+    {
+      type: "work",
+      title: "Clipboard Health",
+      other: "San Francisco",
+      sub_title: "Full stack developer",
+      start_date: "2019-06-17",
+      end_date: "2019-10-04",
+      description: [
+        {
+          title:
             "A staffing application to help nurses and hospitals fill part-time shifts.",
-          description: [
+          content: [
             "Built multiple full-stack web features in Node and React.",
             "Added features to our cross-platform mobile apps with Ionic.",
             "Updated & refactored legacy JavaScript code from ES5 to ES6+.",
@@ -67,38 +89,39 @@ export default {
       ],
     },
     {
-      name: "Ideaplunge Solutions",
-      location: "India",
-      role: "Front end developer",
-      start_date: "1-02-2018",
-      end_date: "1-01-2019",
-      projects: [
+      type: "work",
+      title: "Ideaplunge Solutions",
+      other: "India",
+      sub_title: "Front end developer",
+      start_date: "2018-02-01",
+      end_date: "2019-12-31",
+      description: [
         {
-          name: "Sankalp",
-          description: [
+          title: "Sankalp",
+          content: [
             "Created a custom drill-down feature in amCharts to automatically create new charts by clicking on sections of an existing chart.",
           ],
           stack: ["Mongodb", "Nodejs", "Angular"],
         },
         {
-          name: "Essilor & Shimadzu",
-          description: [
+          title: "Essilor & Shimadzu",
+          content: [
             "Developed a custom CMS application in Angular 2+ that allowed us to rebuild a complex frontend by making changes to a backend JSON file. This included dynamically rendering forms and accepting that data via a REST API.",
             "Designed the CMS to be modular so that it could be re - used across two of our different clients, Essilor and Shimazdu.",
           ],
           stack: ["Mongodb", "Nodejs", "Angular"],
         },
         {
-          name: "P&G Reports",
-          description: [
+          title: "P&G Reports",
+          content: [
             "Implemented cross-browser compatibility (IE, Firefox, etc) and responsive design fixes.",
             "Implemented data management and fetching for reports using @ngrx.",
           ],
           stack: ["Mongodb", "Nodejs", "Angular"],
         },
         {
-          name: "CPS",
-          description: [
+          title: "CPS",
+          content: [
             "Finished remaining backend REST API endpoints and refactored existing code to be more maintainable and readable.",
           ],
           stack: ["Mongodb", "Nodejs", "Angular"],
@@ -106,15 +129,16 @@ export default {
       ],
     },
     {
-      name: "Net Analytiks",
-      location: "India",
+      type: "work",
+      title: "Net Analytiks",
+      other: "India",
       role: "Full stack developer",
-      start_date: "1-08-2017",
-      end_date: "15-12-2017",
-      projects: [
+      start_date: "2017-08-01",
+      end_date: "2017-12-15",
+      description: [
         {
-          name: "iWish",
-          description: [
+          title: "iWish",
+          content: [
             "Developed REST APIs endpoints",
             "Worked on the responsiveness of the application",
             "Built a complex frontend using vanilla Javascript",
@@ -132,21 +156,6 @@ export default {
     },
     {
       visible: true,
-      name: "Express.js",
-      highlight: true,
-    },
-    {
-      visible: true,
-      name: "Mongo DB",
-      highlight: true,
-    },
-    {
-      visible: true,
-      name: "React",
-      highlight: true,
-    },
-    {
-      visible: true,
       name: "Angular",
     },
     {
@@ -159,7 +168,13 @@ export default {
     },
     {
       visible: true,
+      name: "Express.js",
+      highlight: true,
+    },
+    {
+      visible: true,
       name: "Javascript",
+      highlight: true,
     },
     {
       visible: true,
@@ -172,11 +187,17 @@ export default {
     },
     {
       visible: true,
+      name: "Mongo DB",
+      highlight: true,
+    },
+    {
+      visible: true,
       name: "Ant Design",
     },
     {
       visible: true,
       name: "Heroku",
+      highlight: true,
     },
     {
       visible: true,
@@ -188,10 +209,6 @@ export default {
     },
     {
       visible: true,
-      name: "Typescript",
-    },
-    {
-      visible: true,
       name: "Socket.IO",
     },
     {
@@ -200,7 +217,8 @@ export default {
     },
     {
       visible: true,
-      name: "Jest",
+      name: "Graph QL",
+      highlight: true,
     },
     {
       visible: true,
@@ -208,15 +226,25 @@ export default {
     },
     {
       visible: true,
-      name: "RxJS",
+      name: "React",
+      highlight: true,
     },
     {
       visible: true,
-      name: "SQL",
+      name: "RxJs",
+    },
+    {
+      visible: true,
+      name: "My SQL",
     },
     {
       visible: true,
       name: "PHP",
+    },
+    {
+      visible: true,
+      name: "Apollo Client",
+      highlight: true,
     },
   ],
   social: [

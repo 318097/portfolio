@@ -10,10 +10,10 @@ import "./App.scss";
 const THEMES = ["CUSTOM-PARTICLES", "STACKED", "NEO", "DARK-NIGHT"];
 
 const SECTIONS = [
-  { label: "Profile", value: "profile" },
-  { label: "Work", value: "work" },
+  { label: "About", value: "about" },
+  { label: "Timeline", value: "work" },
   { label: "Side Projects", value: "side_projects" },
-  { label: "Skills", value: "skills" },
+  { label: "Tech", value: "skills" },
   { label: "Contact", value: "contact" },
 ];
 
@@ -23,7 +23,7 @@ class App extends Component {
 
     const savedTheme = localStorage.getItem("theme");
     this.state = {
-      activeSection: "profile",
+      activeSection: "about",
       currentBackgroundIndex: savedTheme
         ? THEMES.indexOf(savedTheme)
         : THEMES.length - 1,

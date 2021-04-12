@@ -2,16 +2,21 @@ import React, { forwardRef, useState } from "react";
 import moment from "moment";
 import { Icon, Timeline } from "@codedrops/react-ui";
 import DATA from "../DATA";
-const { work } = DATA;
+const { timeline } = DATA;
 
-const formatDate = (date) =>
-  date ? moment(date, "DD-MM-YYYY").format("MMM, YY") : "Present";
+const getDateRange = ({ start_date, end_date }) => {
+  if (!start_date) return end_date;
+
+  return `${moment(start_date).format("MMM, YY")} - ${
+    end_date === "present" ? "Present" : moment(end_date).format("MMM, YY")
+  }`;
+};
 
 const Work = forwardRef((props, ref) => (
-  <section ref={ref} id="work" name="work">
+  <section ref={ref} id="work" name="timeline">
     <h2>Work</h2>
     <Timeline
-      items={work}
+      items={timeline}
       renderItem={(item) => <TimelineItem item={item} />}
     />
   </section>
@@ -20,32 +25,39 @@ const Work = forwardRef((props, ref) => (
 const TimelineItem = ({ item }) => {
   const [expanded, setExpanded] = useState(false);
 
-  const { name, location, role, start_date, end_date, projects } = item;
+  const {
+    title,
+    other,
+    sub_title,
+    start_date,
+    end_date,
+    description = [],
+  } = item;
 
-  const date = `${formatDate(start_date)} - ${formatDate(end_date)}`;
+  const date = getDateRange({ start_date, end_date });
 
   return (
-    <div key={name} className="timeline-left-container">
+    <div key={title} className="timeline-left-container">
       <div className="timeline-card">
-        <h3 className="name">
-          {name}
-          <span className="location">{`(${location})`}</span>
+        <h3 className="title">
+          {title}
+          {other && <span className="location">{`(${other})`}</span>}
         </h3>
 
-        <h4 className="role">{role}</h4>
+        <h4 className="sub-title">{sub_title}</h4>
         <h4 className="date">{date}</h4>
 
-        {expanded && !!projects.length && (
-          <div className="project-container">
+        {expanded && !!description.length && (
+          <div className="description-container">
             {/* <h5 className="project-title">Projects</h5> */}
-            {projects.map(({ name: projectName, description }) => {
+            {description.map(({ title, content = [] }) => {
               return (
-                <div key={projectName}>
-                  <h4 className="project-name">{projectName}</h4>
-                  <div className="project-description">
-                    {description.map((list, i) => (
-                      <div className="project-description-item" key={i}>
-                        {`- ${list}`}
+                <div key={title}>
+                  <h4 className="description-title">{title}</h4>
+                  <div className="description-container">
+                    {content.map((item, i) => (
+                      <div className="description-item" key={i}>
+                        {`- ${item}`}
                       </div>
                     ))}
                   </div>
@@ -55,7 +67,7 @@ const TimelineItem = ({ item }) => {
             })}
           </div>
         )}
-        {!!projects.length && (
+        {!!description.length && (
           <Icon
             type="caret"
             size={10}

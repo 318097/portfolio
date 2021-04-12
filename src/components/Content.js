@@ -3,7 +3,7 @@ import posed from "react-pose";
 import { withRouter } from "react-router-dom";
 import Scroll from "react-scroll";
 import "./Content.scss";
-import Profile from "./Profile";
+import About from "./About";
 import Work from "./Timeline";
 import SideProjects from "./SideProjects";
 import Skills from "./Skills";
@@ -23,7 +23,7 @@ const Content = ({ location, setActiveSection, SECTIONS }) => {
   const scrollRef = useRef(null);
 
   const inputRefs = {
-    profile: useRef(null),
+    about: useRef(null),
     work: useRef(null),
     side_projects: useRef(null),
     skills: useRef(null),
@@ -52,7 +52,7 @@ const Content = ({ location, setActiveSection, SECTIONS }) => {
     if (!ref) return;
 
     const scrollPosition = ref.scrollTop;
-    let activeTab = "profile";
+    let activeTab = "about";
     SECTIONS.forEach((section) => {
       const offset = inputRefs[section.value].current.offsetTop;
       if (offset < scrollPosition + 30) activeTab = section.value;
@@ -63,7 +63,7 @@ const Content = ({ location, setActiveSection, SECTIONS }) => {
   return (
     <CustomDiv className="box">
       <div ref={scrollRef} id="ContainerElement" className="content">
-        <Profile ref={inputRefs.profile} />
+        <About ref={inputRefs.about} />
         <Work ref={inputRefs.work} />
         <SideProjects ref={inputRefs.side_projects} />
         <Skills ref={inputRefs.skills} />
