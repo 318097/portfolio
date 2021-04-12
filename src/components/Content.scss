@@ -51,6 +51,10 @@
   }
 }
 
+// .stacked-theme .box {
+
+// }
+
 .particles-theme .box {
   &::before {
     background: rgba($bar, 0.6);
@@ -191,7 +195,6 @@
         background: $iron;
         color: $bar;
         &:hover {
-          background: $yellow;
           border-color: $yellow;
         }
         &.highlight {
@@ -225,6 +228,7 @@
   .intro {
     max-width: 70%;
     margin: 0;
+    line-height: 1.8rem;
     .highlight {
       color: $bar;
       white-space: nowrap;
@@ -477,15 +481,23 @@
         padding: 20px 16px;
       }
       #about {
-        padding: 20px 0;
+        padding: 20px;
         min-height: 80%;
+        .intro {
+          max-width: 100%;
+        }
       }
       #side_projects {
         div.project-list {
           grid-auto-flow: rows;
           grid-template-columns: 1fr;
           .project-item {
+            padding: 12px 8px;
             height: auto;
+            .tagline,
+            .links-container {
+              margin-bottom: 10px;
+            }
           }
         }
       }

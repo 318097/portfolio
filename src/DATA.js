@@ -17,27 +17,6 @@ export default {
   },
   timeline: [
     {
-      other: "10th Standard",
-      sub_title: "Indian Certificate of Secondary Examination (ICSE)",
-      score: "80%",
-      title: "St. Johns High School",
-      end_date: "2009",
-    },
-    {
-      other: "12th Standard",
-      sub_title: "Pre University Council (PUC)",
-      score: "56.4%",
-      title: "Sri Bhagwan Mahaveer Jain College",
-      end_date: "2011",
-    },
-    {
-      other: "Bachelor in Engineering (CSE)",
-      sub_title: "Visvesvaraya Technological University, Belgavi (VTU)",
-      score: "52.1%",
-      title: "T John Institute of Technology",
-      end_date: "2016",
-    },
-    {
       type: "work",
       title: "Toddle",
       other: "Bangalore",
@@ -146,6 +125,27 @@ export default {
           stack: ["Mongodb", "Nodejs", "Javascript"],
         },
       ],
+    },
+    {
+      other: "Bachelor in Computer Science Engineering",
+      sub_title: "Visvesvaraya Technological University",
+      score: "52.1%",
+      title: "T John Institute of Technology",
+      end_date: "2016",
+    },
+    {
+      other: "12th Standard",
+      sub_title: "Pre University Council",
+      score: "56.4%",
+      title: "Sri Bhagwan Mahaveer Jain College",
+      end_date: "2011",
+    },
+    {
+      other: "10th Standard",
+      sub_title: "Indian Certificate of Secondary Examination",
+      score: "80%",
+      title: "St. Johns High School",
+      end_date: "2009",
     },
   ],
   skills: [
