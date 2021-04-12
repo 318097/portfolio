@@ -12,6 +12,15 @@
 }
 
 nav {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 50px;
+  background: url("../assets/backgrounds/stressed_linen.png");
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
   .item {
     font-family: font3;
     text-decoration: none;
@@ -40,5 +49,33 @@ nav {
   }
   .item.active-link:after {
     @include active-link;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  nav {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 40px;
+    flex-direction: row;
+    background: none;
+    .item {
+      transform: none;
+      position: relative;
+      color: $bar;
+      margin: 0;
+      &:hover,
+      .active-link {
+        transform: scale(1.1) rotate(0deg);
+      }
+    }
+  }
+  .dark-night-theme,
+  .custom-particles-theme {
+    nav .item {
+      color: $feather;
+    }
   }
 }

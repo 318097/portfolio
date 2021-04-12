@@ -5,11 +5,11 @@
 - [x] Deploy on netlify
 - [x] Add custom message for projects
 - [x] Add WIP section - Atom, React UI, Snake, Notes App, Codedrops
+- [x] Responsive
 - [ ] Add blogs section - auto fetch rss feed
 - [ ] Hook timeline query
 - [ ] Add Codedrops section
 - [ ] SSR
-- [ ] Responsive
 - [ ] Analytics
 - [ ] Audio on clicks
 - [ ] Download resume

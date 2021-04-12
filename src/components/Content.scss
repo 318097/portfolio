@@ -363,13 +363,13 @@
         bottom: 6px;
         left: 6px;
         color: $bar;
-        font-size: 12px;
+        font-size: 0.8rem;
       }
       .custom-messages {
         position: absolute;
         bottom: 6px;
         right: 6px;
-        font-size: 14px;
+        font-size: 0.8rem;
       }
 
       &:hover {
@@ -393,6 +393,7 @@
       justify-content: space-around;
       height: 90px;
       border: 3px solid $bar;
+      font-size: 1.2rem;
       &:hover {
         background: $bar;
         color: $white;
@@ -463,21 +464,47 @@
 
 @media screen and (max-width: 500px) {
   .box {
-    height: 94%;
-    left: 58%;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 90%;
+    flex: 1 1 auto;
+    margin: 0 20px 20px;
+    // height: 96%;
+    // left: 54%;
+    padding: 0;
     .content {
       section {
         min-height: 50%;
+        padding: 20px 16px;
+      }
+      #about {
+        padding: 20px 0;
+      }
+      #side_projects {
+        div.project-list {
+          grid-auto-flow: rows;
+          grid-template-columns: 1fr;
+          .project-item {
+            height: auto;
+          }
+        }
       }
       #skills {
         div.skill-list {
-          flex-direction: column;
-          margin: 10px;
-          display: flex;
-          div.skill {
-            flex: 1 1 auto;
-            width: 85%;
-            margin: 3px auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          .skill {
+            height: 60px;
+            font-size: 1rem;
+          }
+        }
+      }
+      #contact {
+        .contact-details {
+          p.email {
+            font-size: 1.6rem;
           }
         }
       }
