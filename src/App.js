@@ -12,7 +12,13 @@ const {
   basic: { resumeURL },
 } = DATA;
 
-const THEMES = ["CUSTOM-PARTICLES", "STACKED", "NEO", "DARK-NIGHT"];
+const THEMES = [
+  "CUSTOM-PARTICLES",
+  "STACKED",
+  "NEO",
+  "DARK-NIGHT",
+  "PARTICLES",
+];
 
 const SECTIONS = [
   { label: "About", value: "about" },

@@ -1,13 +1,13 @@
 import React from "react";
 
-// import ParticleJs from "./Particles";
+import ParticleJs from "./Particles";
 import CustomParticles from "./CustomParticles";
 import Stacked from "./Stacked";
 
 const Background = ({ theme }) => {
   switch (theme) {
-    // case "PARTICLES":
-    //   return <ParticleJs />;
+    case "PARTICLES":
+      return <ParticleJs />;
     case "CUSTOM-PARTICLES":
       return <CustomParticles />;
     case "STACKED":
