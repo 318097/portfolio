@@ -1,4 +1,6 @@
 import React, { forwardRef } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import * as lib from "@bit/codedrops.lib.utils";
 // import ReactMapGL from 'react-map-gl';
 import DATA from "../DATA";
 const {
@@ -28,29 +30,39 @@ const SocialIcons = ({ type }) => (
 //   zoom: 12,
 // };
 
-const Contact = forwardRef((props, ref) => (
-  <section ref={ref} id="contact" name="contact">
-    <h2>Contact</h2>
-    {/* <ReactMapGL
+const Contact = forwardRef((props, ref) => {
+  const copyEmail = () => {
+    lib.copyToClipboard(email);
+    toast("Copied!!");
+  };
+
+  return (
+    <section ref={ref} id="contact" name="contact">
+      <Toaster />
+      <h2>Contact</h2>
+      {/* <ReactMapGL
         mapboxApiAccessToken={'pk.eyJ1IjoiMzE4MDk3IiwiYSI6ImNqdDJhbzhqZDB6YjkzeWxqbXpqZWVyNGgifQ._HOcF0YmpvJ7eAl4JQtFqA'}
         {...viewport}
       /> */}
-    <div className="contact-details">
-      <div>
-        Reach out to me at:
-        <p className="email">{email}</p>
-      </div>
+      <div className="contact-details">
+        <div>
+          Reach out to me at:
+          <p className="email" onClick={copyEmail}>
+            {email}
+          </p>
+        </div>
 
-      <SocialIcons type="work" />
-      <SocialIcons type="casual" />
+        <SocialIcons type="work" />
+        <SocialIcons type="casual" />
 
-      <div className="website">
-        <a href={website.url} target="__blank">
-          {website.label}
-        </a>
+        <div className="website">
+          <a href={website.url} target="__blank">
+            {website.label}
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
-));
+    </section>
+  );
+});
 
 export default Contact;

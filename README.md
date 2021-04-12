@@ -6,6 +6,7 @@
 - [x] Add custom message for projects
 - [x] Add WIP section - Atom, React UI, Snake, Notes App, Codedrops
 - [x] Responsive
+- [x] Copy email on click
 - [ ] Add blogs section - auto fetch rss feed
 - [ ] Hook timeline query
 - [ ] Add Codedrops section
@@ -13,7 +14,7 @@
 - [ ] Analytics
 - [ ] Audio on clicks
 - [ ] Download resume
-- [ ] Copy email on click
+- [ ] Fix Map design
 
 ## Designs
 
