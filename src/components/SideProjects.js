@@ -51,6 +51,8 @@ const SideProjects = forwardRef((props, ref) => {
             links,
             customMessages,
             status,
+            social,
+            ...rest
           }) => {
             const filteredLinks = convertProductsListToArray(links).filter(
               (item) => item.platform !== "product"
@@ -82,6 +84,22 @@ const SideProjects = forwardRef((props, ref) => {
                 >
                   {links.product.label}
                 </Button>
+                {!!social && (
+                  <div className="social-links-container">
+                    {Object.values(social).map(
+                      ({ fontAwesome, label, url }) => (
+                        <a
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={label}
+                        >
+                          <i className={fontAwesome} />
+                        </a>
+                      )
+                    )}
+                  </div>
+                )}
                 <span
                   className="status"
                   style={{

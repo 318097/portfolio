@@ -349,6 +349,15 @@
         font-size: 0.8rem;
         font-family: font2;
       }
+      .social-links-container {
+        display: grid;
+        grid-auto-flow: column;
+        grid-column-gap: 12px;
+        margin-top: 20px;
+        i {
+          color: $bar;
+        }
+      }
       .status {
         position: absolute;
         bottom: 6px;
