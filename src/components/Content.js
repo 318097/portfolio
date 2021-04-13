@@ -8,6 +8,7 @@ import Work from "./Timeline";
 import SideProjects from "./SideProjects";
 import Skills from "./Skills";
 import Contact from "./Contact";
+import Articles from "./Articles";
 
 const { scroller } = Scroll;
 
@@ -26,6 +27,7 @@ const Content = ({ location, setActiveSection, SECTIONS }) => {
     about: useRef(null),
     work: useRef(null),
     side_projects: useRef(null),
+    articles: useRef(null),
     skills: useRef(null),
     contact: useRef(null),
   };
@@ -66,6 +68,7 @@ const Content = ({ location, setActiveSection, SECTIONS }) => {
         <About ref={inputRefs.about} />
         <Work ref={inputRefs.work} />
         <SideProjects ref={inputRefs.side_projects} />
+        <Articles ref={inputRefs.articles} />
         <Skills ref={inputRefs.skills} />
         <Contact ref={inputRefs.contact} />
       </div>

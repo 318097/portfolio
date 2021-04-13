@@ -384,6 +384,23 @@
   }
 }
 
+#articles {
+  .articles-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .link {
+      margin: 4px;
+      padding: 8px;
+      color: $watermelon;
+      &:hover {
+        transition: 0.4s;
+        background: $white;
+      }
+    }
+  }
+}
+
 #skills {
   div.skill-list {
     width: 100%;
