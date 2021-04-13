@@ -7,11 +7,11 @@
 - [x] Add WIP section - Atom, React UI, Snake, Notes App, Codedrops
 - [x] Responsive
 - [x] Copy email on click
+- [x] Analytics
 - [ ] Add blogs section - auto fetch rss feed
 - [ ] Hook timeline query
 - [ ] Add Codedrops section
 - [ ] SSR
-- [ ] Analytics
 - [ ] Audio on clicks
 - [ ] Download resume
 - [ ] Fix Map design
