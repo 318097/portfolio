@@ -88,18 +88,20 @@ class App extends Component {
                   data-effect="solid"
                   className="theme-icon fas fa-palette"
                 ></i>
-                <a
-                  className="download-resume"
-                  data-tip={"Resume"}
-                  data-effect="solid"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={resumeURL}
-                  download
-                  // download={`Resume - Mehul Lakhanpal`}
-                >
-                  <i class="fas fa-save" />
-                </a>
+                {resumeURL && (
+                  <a
+                    className="download-resume"
+                    data-tip={"Resume"}
+                    data-effect="solid"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={resumeURL}
+                    download
+                    // download={`Resume - Mehul Lakhanpal`}
+                  >
+                    <i class="fas fa-save" />
+                  </a>
+                )}
                 <ReactTooltip />
               </div>
             </Fragment>
