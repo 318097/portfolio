@@ -23,7 +23,7 @@ const THEMES = [
 const SECTIONS = [
   { label: "About", value: "about" },
   { label: "Timeline", value: "work" },
-  { label: "Side Projects", value: "side_projects" },
+  { label: "Projects", value: "side_projects" },
   { label: "Articles", value: "articles" },
   { label: "Tech", value: "skills" },
   { label: "Contact", value: "contact" },

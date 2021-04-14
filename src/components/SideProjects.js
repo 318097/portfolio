@@ -38,7 +38,7 @@ const SideProjects = forwardRef((props, ref) => {
 
   return (
     <section ref={ref} id="side_projects" name="side_projects">
-      <h2>Side Projects</h2>
+      <h2>Projects</h2>
 
       <div className="project-list">
         {sideProjects.map(

@@ -66,6 +66,7 @@ nav {
       position: relative;
       color: $bar;
       margin: 0;
+      padding: 4px 6px;
       &:hover,
       .active-link {
         transform: scale(1.1) rotate(0deg);

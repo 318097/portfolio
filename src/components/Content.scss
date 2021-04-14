@@ -390,12 +390,15 @@
     flex-direction: column;
     align-items: center;
     .link {
+      text-align: center;
+      text-decoration: none;
       margin: 4px;
       padding: 8px;
       color: $watermelon;
       &:hover {
         transition: 0.4s;
-        background: $white;
+        background: $featherDark;
+        border-radius: 2px;
       }
     }
   }
