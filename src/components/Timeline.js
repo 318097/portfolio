@@ -37,46 +37,44 @@ const TimelineItem = ({ item }) => {
   const date = getDateRange({ start_date, end_date });
 
   return (
-    <div key={title} className="timeline-left-container">
-      <div className="timeline-card">
-        <h3 className="title">
-          {title}
-          {other && <span className="location">{`(${other})`}</span>}
-        </h3>
+    <div key={title} className="timeline-card">
+      <h3 className="title">
+        {title}
+        {other && <span className="location">{`(${other})`}</span>}
+      </h3>
 
-        <h4 className="sub-title">{sub_title}</h4>
-        <h4 className="date">{date}</h4>
+      <h4 className="sub-title">{sub_title}</h4>
+      <h4 className="date">{date}</h4>
 
-        {expanded && !!description.length && (
-          <div className="description-container">
-            {/* <h5 className="project-title">Projects</h5> */}
-            {description.map(({ title, content = [] }) => {
-              return (
-                <div key={title}>
-                  <h4 className="description-title">{title}</h4>
-                  <div className="description-container">
-                    {content.map((item, i) => (
-                      <div className="description-item" key={i}>
-                        {`- ${item}`}
-                      </div>
-                    ))}
-                  </div>
-                  <br />
+      {expanded && !!description.length && (
+        <div className="description-container">
+          {/* <h5 className="project-title">Projects</h5> */}
+          {description.map(({ title, content = [] }) => {
+            return (
+              <div key={title}>
+                <h4 className="description-title">{title}</h4>
+                <div className="description-container">
+                  {content.map((item, i) => (
+                    <div className="description-item" key={i}>
+                      {`- ${item}`}
+                    </div>
+                  ))}
                 </div>
-              );
-            })}
-          </div>
-        )}
-        {!!description.length && (
-          <Icon
-            type="caret"
-            size={10}
-            className="expand-icon"
-            direction={expanded ? "up" : "down"}
-            onClick={() => setExpanded((prev) => !prev)}
-          />
-        )}
-      </div>
+                <br />
+              </div>
+            );
+          })}
+        </div>
+      )}
+      {!!description.length && (
+        <Icon
+          type="caret"
+          size={10}
+          className="expand-icon"
+          direction={expanded ? "up" : "down"}
+          onClick={() => setExpanded((prev) => !prev)}
+        />
+      )}
     </div>
   );
 };
