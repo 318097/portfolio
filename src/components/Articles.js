@@ -9,7 +9,7 @@ const Articles = forwardRef((props, ref) => {
 
   const fetchArticles = async () => {
     const DATA_URL =
-      "https://bubblegum-serverless.netlify.app/.netlify/functions/rssfeed";
+      "https://bubblegum-lambda.netlify.app/.netlify/functions/api/rssfeed";
 
     const response = await fetch(DATA_URL);
     const feed = await response.json();
