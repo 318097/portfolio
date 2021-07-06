@@ -24,16 +24,20 @@ const SideProjects = forwardRef((props, ref) => {
     fetchSideProjects();
   }, []);
 
-  const fetchSideProjects = () => {
+  const fetchSideProjects = async () => {
     const DATA_URL =
       "https://raw.githubusercontent.com/318097/code-drops/master/src/DATA.json";
-    fetch(DATA_URL)
-      .then((res) => res.json())
-      .then((data) =>
-        setSideProjects(
-          data.products.filter((product) => product.visibleOnPortfolio)
-        )
+
+    try {
+      const res = await fetch(DATA_URL);
+      const data = await res.json();
+      const { products = [] } = data || {};
+      setSideProjects(
+        products.filter(({ visibleOnPortfolio }) => visibleOnPortfolio)
       );
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -48,15 +52,18 @@ const SideProjects = forwardRef((props, ref) => {
             tagline,
             logo,
             video,
-            links,
+            links = {},
             customMessages,
             status,
             social,
             ...rest
           }) => {
+            const productLinkObj = links.product;
+
             const filteredLinks = convertProductsListToArray(links).filter(
               (item) => item.platform !== "product"
             );
+
             return (
               <div className="project-item" key={id}>
                 {logo && <img src={logo} alt="logo" className="logo" />}
@@ -79,11 +86,13 @@ const SideProjects = forwardRef((props, ref) => {
                     </>
                   ))}
                 </div>
-                <Button
-                  onClick={() => window.open(links.product.url, "__blank")}
-                >
-                  {links.product.label}
-                </Button>
+                {productLinkObj && (
+                  <Button
+                    onClick={() => window.open(productLinkObj.url, "__blank")}
+                  >
+                    {productLinkObj.label}
+                  </Button>
+                )}
                 {!!social && (
                   <div className="social-links-container">
                     {Object.values(social).map(
