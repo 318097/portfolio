@@ -14,7 +14,7 @@ const getDateRange = ({ start_date, end_date }) => {
 
 const Work = forwardRef((props, ref) => (
   <section ref={ref} id="work" name="timeline">
-    <h2>Work</h2>
+    <h2>Timeline</h2>
     <Timeline
       items={timeline}
       renderItem={(item) => <TimelineItem item={item} />}
