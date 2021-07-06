@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@bit/codedrops.lib.utils": "0.0.1",
-    "@codedrops/react-ui": "^1.0.0",
+    "@codedrops/lib": "^0.0.16",
+    "@codedrops/react-ui": "^3.0.12",
     "konva": "^3.1.6",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",

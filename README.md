@@ -8,14 +8,15 @@
 - [x] Responsive
 - [x] Copy email on click
 - [x] Analytics (Added on 13/04/2021)
+- [x] Add blogs section - auto fetch rss feed
 - [ ] SSR
 - [ ] Download resume
-- [x] Add blogs section - auto fetch rss feed
 - [ ] Hook timeline query
 - [ ] Add Codedrops section
 - [ ] Audio on clicks
 - [ ] Fix Map design
 - [ ] Add animations
+- [ ] Make gif for v3
 
 ## Designs
 

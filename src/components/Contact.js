@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import * as lib from "@bit/codedrops.lib.utils";
+import { copyToClipboard } from "@codedrops/lib";
 // import ReactMapGL from 'react-map-gl';
 import DATA from "../DATA";
 const {
@@ -32,7 +32,7 @@ const SocialIcons = ({ type }) => (
 
 const Contact = forwardRef((props, ref) => {
   const copyEmail = () => {
-    lib.copyToClipboard(email);
+    copyToClipboard(email);
     toast("Copied!!");
   };
 
