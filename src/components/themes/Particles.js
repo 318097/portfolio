@@ -1,6 +1,5 @@
 import React from "react";
 import Particles from "react-particles-js";
-// import { generateRandomNumber } from "../../utils";
 
 const DARK = {
   balls: "#242424",
