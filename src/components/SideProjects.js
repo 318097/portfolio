@@ -26,7 +26,7 @@ const SideProjects = forwardRef((props, ref) => {
 
   const fetchSideProjects = async () => {
     const DATA_URL =
-      "https://raw.githubusercontent.com/318097/code-drops/master/src/DATA.json";
+      "https://raw.githubusercontent.com/318097/bubblegum/master/server/PRODUCTS.json";
 
     try {
       const res = await fetch(DATA_URL);
