@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, memo } from "react";
 import DATA from "../DATA";
 const { skills } = DATA;
 
@@ -15,4 +15,4 @@ const Skills = forwardRef((props, ref) => (
   </section>
 ));
 
-export default Skills;
+export default memo(Skills);

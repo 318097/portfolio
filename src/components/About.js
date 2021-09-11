@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, memo } from "react";
 import { Icon } from "@codedrops/react-ui";
 import DATA from "../DATA";
 const {
@@ -22,4 +22,4 @@ const About = forwardRef((props, ref) => (
   </section>
 ));
 
-export default About;
+export default memo(About);

@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useState, memo } from "react";
 import moment from "moment";
 import { Icon, Timeline } from "@codedrops/react-ui";
 import DATA from "../DATA";
@@ -79,4 +79,4 @@ const TimelineItem = ({ item }) => {
   );
 };
 
-export default Work;
+export default memo(Work);

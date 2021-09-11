@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { forwardRef, useEffect, useState, memo } from "react";
 
 const Articles = forwardRef((props, ref) => {
   const [articles, setArticles] = useState([]);
@@ -33,4 +33,4 @@ const Articles = forwardRef((props, ref) => {
   );
 });
 
-export default Articles;
+export default memo(Articles);

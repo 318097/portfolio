@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { forwardRef, useEffect, useState, memo } from "react";
 import colors, { Button } from "@codedrops/react-ui";
 import ReactTooltip from "react-tooltip";
 
@@ -61,7 +61,6 @@ const SideProjects = forwardRef((props, ref) => {
             const filteredLinks = convertProductsListToArray(links).filter(
               (item) => item.platform !== "product"
             );
-            console.log("check::-");
 
             return (
               <div className="project-item" key={id}>
@@ -136,4 +135,4 @@ const SideProjects = forwardRef((props, ref) => {
   );
 });
 
-export default SideProjects;
+export default memo(SideProjects);

@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, memo } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { copyToClipboard } from "@codedrops/lib";
 // import ReactMapGL from 'react-map-gl';
@@ -65,4 +65,4 @@ const Contact = forwardRef((props, ref) => {
   );
 });
 
-export default Contact;
+export default memo(Contact);
