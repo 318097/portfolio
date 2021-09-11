@@ -33,7 +33,7 @@ const SideProjects = forwardRef((props, ref) => {
       const data = await res.json();
       const { products = [] } = data || {};
       setSideProjects(
-        products.filter(({ visibleOnPortfolio }) => visibleOnPortfolio)
+        products.filter(({ visibility }) => visibility.portfolio)
       );
     } catch (error) {
       console.error(error);
@@ -51,18 +51,17 @@ const SideProjects = forwardRef((props, ref) => {
             name,
             tagline,
             logo,
-            video,
             links = {},
             customMessages,
             status,
             social,
-            ...rest
           }) => {
             const productLinkObj = links.product;
 
             const filteredLinks = convertProductsListToArray(links).filter(
               (item) => item.platform !== "product"
             );
+            console.log("check::-");
 
             return (
               <div className="project-item" key={id}>
