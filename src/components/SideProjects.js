@@ -1,6 +1,7 @@
 import React, { forwardRef, useEffect, useState, memo } from "react";
 import colors, { Button } from "@codedrops/react-ui";
 import ReactTooltip from "react-tooltip";
+import { getProducts } from "@codedrops/lib/dist/downloads";
 
 const convertProductsListToArray = (links) => {
   return Object.entries(links)
@@ -25,13 +26,11 @@ const SideProjects = forwardRef((props, ref) => {
   }, []);
 
   const fetchSideProjects = async () => {
-    const DATA_URL =
-      "https://raw.githubusercontent.com/318097/bubblegum/master/server/PRODUCTS.json";
-
     try {
-      const res = await fetch(DATA_URL);
-      const data = await res.json();
-      const { products = [] } = data || {};
+      const products = await getProducts();
+
+      console.log("products::-", products);
+
       setSideProjects(
         products.filter(({ visibility }) => visibility.portfolio)
       );
