@@ -9,7 +9,7 @@ const About = forwardRef((props, ref) => (
   <section ref={ref} id="about" name="about">
     <h2>About</h2>
     <p className="intro">
-      Hi, I am <span className="highlight">{name}</span> from Bangalore, India
+      Hey, I am <span className="highlight">{name}</span> from Bangalore, India
       with 3+ years of experience as a{" "}
       <span className="highlight">Full-stack Developer</span>. I am working on a
       few side projects (some of them are live) and intend to create an impact
