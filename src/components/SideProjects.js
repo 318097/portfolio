@@ -29,7 +29,7 @@ const SideProjects = forwardRef((props, ref) => {
     try {
       const products = await getProducts();
 
-      console.log("products::-", products);
+      // console.log("products::-", products);
 
       setSideProjects(
         products.filter(({ visibility }) => visibility.portfolio)
