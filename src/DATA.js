@@ -24,6 +24,7 @@ export default {
       sub_title: "Front end Engineer",
       start_date: "2020-02-03",
       end_date: "present",
+      isOpen: true,
       description: [
         {
           title: "",

@@ -23,8 +23,6 @@ const Work = forwardRef((props, ref) => (
 ));
 
 const TimelineItem = ({ item }) => {
-  const [expanded, setExpanded] = useState(false);
-
   const {
     title,
     other,
@@ -32,7 +30,10 @@ const TimelineItem = ({ item }) => {
     start_date,
     end_date,
     description = [],
+    isOpen,
   } = item;
+
+  const [expanded, setExpanded] = useState(Boolean(isOpen));
 
   const date = getDateRange({ start_date, end_date });
 
