@@ -257,13 +257,6 @@ export default {
       visible: true,
     },
     {
-      name: "LINKEDIN",
-      url: "https://www.linkedin.com/in/318097/",
-      classname: "fab fa-linkedin",
-      type: "work",
-      visible: true,
-    },
-    {
       name: "HACKEREARTH",
       url: "https://www.hackerearth.com/@318097",
       classname: "",
@@ -309,6 +302,13 @@ export default {
       name: "TWITTER",
       url: "https://twitter.com/318097",
       classname: "fab fa-twitter",
+      type: "casual",
+      visible: true,
+    },
+    {
+      name: "LINKEDIN",
+      url: "https://www.linkedin.com/in/318097/",
+      classname: "fab fa-linkedin",
       type: "casual",
       visible: true,
     },

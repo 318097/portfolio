@@ -2,7 +2,7 @@
 
 .box {
   box-sizing: border-box;
-  padding: 20px 0 40px 0;
+  padding: 10px 0;
   position: absolute;
   height: 80vh;
   width: 80vw;
@@ -103,10 +103,12 @@
     div.skill-list {
       div.skill {
         @include neo-shadow(4px);
+        background: $strokeOne;
+        color: $steel;
         &:hover,
         &.highlight {
-          background: $strokeOne;
-          color: $steel;
+          color: $bar;
+          background: none;
         }
       }
     }
@@ -117,10 +119,9 @@
     }
     div.social {
       a i {
-        color: $steel;
+        color: $charcoal;
         &:hover {
-          color: $bar;
-          transform: none;
+          color: $iron;
         }
       }
     }
@@ -225,13 +226,13 @@
 
 #about {
   .intro {
-    max-width: 70%;
+    max-width: 80%;
     margin: 0;
     line-height: 1.8rem;
     .highlight {
       color: $bar;
       white-space: nowrap;
-      padding: 0 1px;
+      padding: 0 4px;
       position: relative;
       &:after {
         position: absolute;
@@ -239,10 +240,11 @@
         content: "";
         left: 0;
         transform: translateY(-50%);
-        height: 80%;
+        height: 90%;
         width: 100%;
         z-index: -1;
-        background: $orange;
+        background: $watermelon;
+        border-radius: 2px;
       }
     }
     .icon {
@@ -448,16 +450,18 @@
     }
   }
   div.social {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
     a i {
       color: $bar;
-      margin: 0 10px;
       font-size: 1.6rem;
       transition: 0.2s;
-      &:hover {
-        color: $orange;
-        transform: scale(1.2);
-      }
+      // &:hover {
+      //   color: $orange;
+      //   transform: scale(1.2);
+      // }
     }
   }
   .website {
