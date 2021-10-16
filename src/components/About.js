@@ -20,7 +20,7 @@ const About = forwardRef((props, ref) => (
       </p>
       <p>
         In my free time I work on side projects & a bit of micro-blogging on web
-        development. My hobies are <span className="highlight">coding</span>
+        development. My hobbies are <span className="highlight">coding</span>
         <Icon size={18} type="tag" className="mr-2" />&
         <span className="highlight ml-2">football</span>
         <Icon size={18} type="football" />
