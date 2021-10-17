@@ -1,16 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import classnames from "classnames";
 import "./Navigation.scss";
+import { SECTIONS } from "../constants";
 
-const Navigation = ({ activeSection, SECTIONS }) => (
+const Navigation = ({ activeSection }) => (
   <nav>
-    {SECTIONS.map((item) => (
+    {/* <span className="initials">ML</span> */}
+    {SECTIONS.map(({ label, value }) => (
       <Link
-        key={item.value}
-        className={`item ${activeSection === item.value ? "active-link" : ""}`}
-        to={`#${item.value}`}
+        key={value}
+        className={classnames("item", {
+          "active-link": activeSection === value,
+        })}
+        to={`#${value}`}
       >
-        {item.label.toUpperCase()}
+        {label.toUpperCase()}
       </Link>
     ))}
   </nav>

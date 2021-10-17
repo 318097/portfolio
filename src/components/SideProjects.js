@@ -18,7 +18,7 @@ const convertProductsListToArray = (links) => {
     .filter((item) => !!item.url);
 };
 
-const SideProjects = forwardRef((props, ref) => {
+const SideProjects = forwardRef(({ label, value }, ref) => {
   const [sideProjects, setSideProjects] = useState([]);
 
   useEffect(() => {
@@ -28,9 +28,6 @@ const SideProjects = forwardRef((props, ref) => {
   const fetchSideProjects = async () => {
     try {
       const products = await getProducts();
-
-      // console.log("products::-", products);
-
       setSideProjects(
         products.filter(({ visibility }) => visibility.portfolio)
       );
@@ -40,8 +37,8 @@ const SideProjects = forwardRef((props, ref) => {
   };
 
   return (
-    <section ref={ref} id="side_projects" name="side_projects">
-      <h2>Projects</h2>
+    <section ref={ref} id={value} name={value}>
+      <h2>{label}</h2>
 
       <div className="project-list">
         {sideProjects.map(

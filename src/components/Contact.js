@@ -11,7 +11,7 @@ const {
 const SocialIcons = ({ type }) => (
   <div className="social">
     {social
-      .filter((item) => item.visible && item.type === type)
+      .filter(({ item }) => item.visible && item.type === type)
       .map(({ name, url, classname }) => (
         <a key={name} title={name} href={url} target="__blank">
           <i className={classname}></i>
@@ -30,16 +30,16 @@ const SocialIcons = ({ type }) => (
 //   zoom: 12,
 // };
 
-const Contact = forwardRef((props, ref) => {
+const Contact = forwardRef(({ label, value }, ref) => {
   const copyEmail = () => {
     copyToClipboard(email);
     toast("Copied!!");
   };
 
   return (
-    <section ref={ref} id="contact" name="contact">
+    <section ref={ref} id={value} name={value}>
       <Toaster />
-      <h2>Contact</h2>
+      <h2>{label}</h2>
       {/* <ReactMapGL
         mapboxApiAccessToken={'pk.eyJ1IjoiMzE4MDk3IiwiYSI6ImNqdDJhbzhqZDB6YjkzeWxqbXpqZWVyNGgifQ._HOcF0YmpvJ7eAl4JQtFqA'}
         {...viewport}

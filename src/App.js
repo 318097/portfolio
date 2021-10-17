@@ -2,43 +2,26 @@ import React, { Component, Fragment } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Icon } from "@codedrops/react-ui";
 import ReactTooltip from "react-tooltip";
-
+import classnames from "classnames";
 import Navigation from "./components/Navigation";
 import Content from "./components/Content";
 import Background from "./components/themes/Background";
 import "./App.scss";
 import DATA from "./DATA";
+import { THEMES } from "./constants";
 const {
   basic: { resumeURL },
 } = DATA;
-
-const THEMES = [
-  "CUSTOM-PARTICLES",
-  "STACKED",
-  "NEO",
-  "DARK-NIGHT",
-  // "PARTICLES",
-];
-
-const SECTIONS = [
-  { label: "About", value: "about" },
-  { label: "Timeline", value: "work" },
-  { label: "Projects", value: "side_projects" },
-  { label: "Articles", value: "articles" },
-  { label: "Tech", value: "skills" },
-  { label: "Contact", value: "contact" },
-];
-
 class App extends Component {
   constructor(props) {
     super(props);
 
     const savedTheme = localStorage.getItem("theme");
+    const currentBackgroundIndex = savedTheme ? THEMES.indexOf(savedTheme) : 0;
+
     this.state = {
       activeSection: "about",
-      currentBackgroundIndex: savedTheme
-        ? THEMES.indexOf(savedTheme)
-        : THEMES.length - 1,
+      currentBackgroundIndex,
       loading: true,
     };
   }
@@ -68,7 +51,7 @@ class App extends Component {
     const themeWrapperClass = theme ? `${theme.toLowerCase()}-theme` : "";
     return (
       <BrowserRouter>
-        <div className={`app react-ui ${themeWrapperClass}`}>
+        <div className={classnames("app", "react-ui", themeWrapperClass)}>
           {loading ? (
             <div className="loader">
               <Icon size={70} type="binary-code-2" />
@@ -76,11 +59,8 @@ class App extends Component {
             </div>
           ) : (
             <Fragment>
-              <Navigation activeSection={activeSection} SECTIONS={SECTIONS} />
-              <Content
-                setActiveSection={this.setActiveSection}
-                SECTIONS={SECTIONS}
-              />
+              <Navigation activeSection={activeSection} />
+              <Content setActiveSection={this.setActiveSection} />
 
               <div className="action-container">
                 <i

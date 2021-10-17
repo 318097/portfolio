@@ -5,6 +5,7 @@
   "dependencies": {
     "@codedrops/lib": "0.0.35",
     "@codedrops/react-ui": "^3.0.15",
+    "classnames": "^2.3.1",
     "konva": "^3.1.6",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",

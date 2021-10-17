@@ -5,9 +5,9 @@ import { Icon } from "@codedrops/react-ui";
 //   basic: { name },
 // } = DATA;
 
-const About = forwardRef((props, ref) => (
-  <section ref={ref} id="about" name="about">
-    <h2>About</h2>
+const About = forwardRef(({ label, value }, ref) => (
+  <section ref={ref} id={value} name={value}>
+    <h2>{label}</h2>
     <div className="intro">
       <p>
         Hey 👋 I am <span className="highlight ml-2">Mehul Lakhanpal</span>, a

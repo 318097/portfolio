@@ -83,7 +83,7 @@
     background: $bg;
     clip-path: none;
   }
-  #work {
+  #timeline {
     .timeline {
       .timeline-card {
         @include neo-shadow;
@@ -99,7 +99,7 @@
       }
     }
   }
-  #skills {
+  #tech {
     div.skill-list {
       div.skill {
         @include neo-shadow(4px);
@@ -156,7 +156,7 @@
       }
     }
   }
-  #work {
+  #timeline {
     .timeline {
       .timeline-block {
         border-left-color: white;
@@ -188,14 +188,14 @@
       background: rgba($iron, 0.1);
     }
   }
-  #skills {
+  #tech {
     div.skill-list {
       div.skill {
         border-color: $iron;
         background: $iron;
         color: $bar;
         &:hover {
-          border-color: $yellow;
+          opacity: 0.8;
         }
         &.highlight {
           background: $yellow;
@@ -258,7 +258,7 @@
   }
 }
 
-#work {
+#timeline {
   .timeline {
     margin: 0 auto;
     width: 100%;
@@ -410,7 +410,7 @@
   }
 }
 
-#skills {
+#tech {
   div.skill-list {
     width: 100%;
     display: grid;
@@ -484,6 +484,10 @@
         z-index: -1;
         background: $yellow;
       }
+      // &:after:hover {
+      //   opacity: 0.1;
+      //   background: blue;
+      // }
     }
   }
 }
@@ -534,7 +538,7 @@
           }
         }
       }
-      #skills {
+      #tech {
         div.skill-list {
           display: grid;
           grid-template-columns: 1fr 1fr;

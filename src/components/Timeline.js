@@ -1,21 +1,23 @@
 import React, { forwardRef, useState, memo } from "react";
 import moment from "moment";
-import { Icon, Timeline } from "@codedrops/react-ui";
+import { Icon, Timeline as ReactTimeline } from "@codedrops/react-ui";
 import DATA from "../DATA";
 const { timeline } = DATA;
 
 const getDateRange = ({ start_date, end_date }) => {
   if (!start_date) return end_date;
 
-  return `${moment(start_date).format("MMM, YY")} - ${
-    end_date === "present" ? "Present" : moment(end_date).format("MMM, YY")
-  }`;
+  const start = moment(start_date).format("MMM, YY");
+  const end =
+    end_date === "present" ? "Present" : moment(end_date).format("MMM, YY");
+
+  return `${start} - ${end}`;
 };
 
-const Work = forwardRef((props, ref) => (
-  <section ref={ref} id="work" name="timeline">
-    <h2>Timeline</h2>
-    <Timeline
+const Timeline = forwardRef(({ label, value }, ref) => (
+  <section ref={ref} id={value} name={value}>
+    <h2>{label}</h2>
+    <ReactTimeline
       items={timeline}
       renderItem={(item) => <TimelineItem item={item} />}
     />
@@ -49,7 +51,6 @@ const TimelineItem = ({ item }) => {
 
       {expanded && !!description.length && (
         <div className="description-container">
-          {/* <h5 className="project-title">Projects</h5> */}
           {description.map(({ title, content = [] }) => {
             return (
               <div key={title}>
@@ -80,4 +81,4 @@ const TimelineItem = ({ item }) => {
   );
 };
 
-export default memo(Work);
+export default memo(Timeline);
