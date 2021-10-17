@@ -11,7 +11,7 @@ const {
 const SocialIcons = ({ type }) => (
   <div className="social">
     {social
-      .filter(({ item }) => item.visible && item.type === type)
+      .filter((item) => item.visible && item.type === type)
       .map(({ name, url, classname }) => (
         <a key={name} title={name} href={url} target="__blank">
           <i className={classname}></i>
