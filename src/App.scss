@@ -3,13 +3,33 @@
 
 html {
   font-size: 16px;
+  line-height: 20px;
   @media (max-width: 500px) {
     font-size: 14px;
+    line-height: 18px;
   }
 }
 
 body {
   .app {
+    .container-root {
+      display: flex;
+      height: 100%;
+      .content-root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex: 1 1 auto;
+        padding: 20px;
+      }
+      @media (max-width: 500px) {
+        flex-direction: column;
+        .content-root {
+          padding: 0 14px 14px;
+        }
+      }
+    }
     .loader {
       font-size: 2rem;
       top: 50%;
@@ -49,11 +69,6 @@ body {
           color: $bar;
         }
       }
-    }
-    @media (max-width: 500px) {
-      flex-direction: column;
-      align-items: center;
-      height: 100%;
     }
   }
 }

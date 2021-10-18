@@ -52,41 +52,42 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className={classnames("app", "react-ui", themeWrapperClass)}>
-          {loading ? (
+          <div className="container-root">
+            <Navigation activeSection={activeSection} />
+            <div className="content-root">
+              <Content setActiveSection={this.setActiveSection} />
+            </div>
+          </div>
+
+          {loading && (
             <div className="loader">
               <Icon size={70} type="binary-code-2" />
               <span className="text">Loading..</span>
             </div>
-          ) : (
-            <Fragment>
-              <Navigation activeSection={activeSection} />
-              <Content setActiveSection={this.setActiveSection} />
-
-              <div className="action-container">
-                <i
-                  onClick={this.handleThemeChange}
-                  data-tip={"Theme"}
-                  data-effect="solid"
-                  className="theme-icon fas fa-palette"
-                ></i>
-                {resumeURL && (
-                  <a
-                    className="download-resume"
-                    data-tip={"Resume"}
-                    data-effect="solid"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={resumeURL}
-                    download
-                    // download={`Resume - Mehul Lakhanpal`}
-                  >
-                    <i class="fas fa-save" />
-                  </a>
-                )}
-                <ReactTooltip />
-              </div>
-            </Fragment>
           )}
+          <div className="action-container">
+            <i
+              onClick={this.handleThemeChange}
+              data-tip={"Theme"}
+              data-effect="solid"
+              className="theme-icon fas fa-palette"
+            ></i>
+            {resumeURL && (
+              <a
+                className="download-resume"
+                data-tip={"Resume"}
+                data-effect="solid"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={resumeURL}
+                download
+                // download={`Resume - Mehul Lakhanpal`}
+              >
+                <i class="fas fa-save" />
+              </a>
+            )}
+            <ReactTooltip />
+          </div>
           <Background theme={theme} />
         </div>
       </BrowserRouter>

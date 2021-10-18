@@ -46,8 +46,8 @@ const Contact = forwardRef(({ label, value }, ref) => {
       /> */}
       <div className="contact-details">
         <div>
-          Reach out to me at:
-          <p className="email" onClick={copyEmail}>
+          <span> Reach out to me at:</span>
+          <p className="email pt-2" onClick={copyEmail}>
             {email}
           </p>
         </div>

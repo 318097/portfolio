@@ -62,7 +62,6 @@ const TimelineItem = ({ item }) => {
                     </div>
                   ))}
                 </div>
-                <br />
               </div>
             );
           })}

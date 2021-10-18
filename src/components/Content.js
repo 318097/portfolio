@@ -56,7 +56,7 @@ const Content = ({ location, setActiveSection }) => {
     let activeTab = "about";
     SECTIONS.forEach((section) => {
       const offset = inputRefs[section.value].current.offsetTop;
-      if (offset < scrollPosition + 30) activeTab = section.value;
+      if (offset < scrollPosition + 200) activeTab = section.value;
     });
     setActiveSection(activeTab);
   };

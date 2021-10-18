@@ -12,15 +12,13 @@
 }
 
 nav {
-  position: absolute;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  flex: 0 0 auto;
   width: 50px;
   background: url("../assets/backgrounds/stressed_linen.png");
   align-items: center;
   justify-content: center;
-  z-index: 1;
   .item {
     font-family: font3;
     text-decoration: none;
@@ -55,12 +53,10 @@ nav {
 @media screen and (max-width: 500px) {
   nav {
     width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 40px;
+    height: auto;
     flex-direction: row;
     background: none;
+    padding-top: 8px;
     .item {
       transform: none;
       position: relative;

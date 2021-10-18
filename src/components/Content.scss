@@ -2,16 +2,9 @@
 
 .box {
   box-sizing: border-box;
+  height: 100%;
   padding: 10px 0;
-  position: absolute;
-  height: 90vh;
-  width: 90vw;
-  max-width: 800px;
-  top: 50%;
-  left: 54%;
-  transform: translate(-50%, -50%);
   clip-path: polygon(0 0, 100% 2%, 96% 99%, 2% 100%);
-  z-index: 2;
   .content {
     height: 100%;
     width: 100%;
@@ -78,10 +71,9 @@
   }
   @include neo-shadow;
   clip-path: none;
-  border-radius: 48% 46% 1% 53% / 2% 2% 42% 2%;
+  border-radius: 1%;
   &:before {
-    background: $bg;
-    clip-path: none;
+    display: none;
   }
   #timeline {
     .timeline {
@@ -105,7 +97,6 @@
         @include neo-shadow(4px);
         background: $strokeOne;
         color: $steel;
-        &:hover,
         &.highlight {
           color: $bar;
           background: none;
@@ -238,18 +229,8 @@
       white-space: nowrap;
       padding: 0 4px;
       position: relative;
-      &:after {
-        position: absolute;
-        top: 50%;
-        content: "";
-        left: 0;
-        transform: translateY(-50%);
-        height: 90%;
-        width: 100%;
-        z-index: -1;
-        background: $watermelon;
-        border-radius: 2px;
-      }
+      background: $watermelon;
+      border-radius: 2px;
     }
     .icon {
       font-size: 70%;
@@ -269,7 +250,7 @@
     }
     .timeline-card {
       position: relative;
-      padding: 20px;
+      padding: 16px;
       h3 {
         font-size: 1.2rem;
         span.location {
@@ -475,6 +456,7 @@
       text-decoration: none;
       position: relative;
       color: $bar;
+      z-index: 0;
       &:after {
         content: "";
         position: absolute;
@@ -507,14 +489,6 @@
 
 @media screen and (max-width: 500px) {
   .box {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-    width: 90%;
-    flex: 1 1 auto;
-    margin: 0 20px 20px;
-    padding: 0;
     .content {
       section {
         padding: 20px 16px;
