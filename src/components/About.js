@@ -10,7 +10,7 @@ const About = forwardRef(({ label, value }, ref) => (
     <h2>{label}</h2>
     <div className="intro">
       <p>
-        Hey 👋 I am <span className="highlight ml-2">Mehul Lakhanpal</span>, a
+        Hi 👋 I am <span className="highlight ml-2">Mehul Lakhanpal</span>, a
         <span className="highlight ml-2">Full-stack Developer</span> 💻 from
         <span className="highlight ml-2">Bangalore, India</span> 🇮🇳
       </p>
