@@ -1,22 +1,7 @@
-import React, { forwardRef, useEffect, useState, memo } from "react";
+import React, { forwardRef, useEffect, useState, memo, Fragment } from "react";
 import colors, { Button } from "@codedrops/react-ui";
 import ReactTooltip from "react-tooltip";
-import { getProducts } from "@codedrops/lib/dist/downloads";
-
-const convertProductsListToArray = (links) => {
-  return Object.entries(links)
-    .map(([platform, value]) => {
-      const x = {
-        ...value,
-        platform,
-      };
-      if (!x.label)
-        x.label = `${platform[0].toUpperCase()}${platform.slice(1)}`;
-
-      return x;
-    })
-    .filter((item) => !!item.url);
-};
+import { getAndFormatProducts } from "@codedrops/lib/dist/downloads";
 
 const SideProjects = forwardRef(({ label, value }, ref) => {
   const [sideProjects, setSideProjects] = useState([]);
@@ -27,10 +12,12 @@ const SideProjects = forwardRef(({ label, value }, ref) => {
 
   const fetchSideProjects = async () => {
     try {
-      const products = await getProducts();
-      setSideProjects(
-        products.filter(({ visibility }) => visibility.portfolio)
-      );
+      const { others } = await getAndFormatProducts({
+        appId: "PORTFOLIO",
+        visibilityKey: "portfolio",
+        trackingInfo: { utm_medium: "side_projects" },
+      });
+      setSideProjects(others);
     } catch (error) {
       console.error(error);
     }
@@ -47,28 +34,22 @@ const SideProjects = forwardRef(({ label, value }, ref) => {
             name,
             tagline,
             logo,
-            links = {},
+            linkList = [],
             customMessages,
             status,
             social,
+            ctaLabel = "Visit",
+            ctaUrl,
           }) => {
-            const productLinkObj = links.product;
-
-            const filteredLinks = convertProductsListToArray(links).filter(
-              (item) => item.platform !== "product"
-            );
-
             return (
               <div className="project-item" key={id}>
                 {logo && <img src={logo} alt="logo" className="logo" />}
                 <div className="name">{name}</div>
                 <div className="tagline">{tagline}</div>
                 <div className="links-container">
-                  {filteredLinks.map(({ platform, label, url }, idx) => (
-                    <>
-                      {idx > 0 && idx < filteredLinks.length && (
-                        <span>&#8226;</span>
-                      )}
+                  {linkList.map(({ platform, label, url }, idx) => (
+                    <Fragment key={idx}>
+                      {idx > 0 && idx < linkList.length && <span>&#8226;</span>}
                       <a
                         key={platform}
                         className="link"
@@ -77,14 +58,12 @@ const SideProjects = forwardRef(({ label, value }, ref) => {
                       >
                         {label}
                       </a>
-                    </>
+                    </Fragment>
                   ))}
                 </div>
-                {productLinkObj && (
-                  <Button
-                    onClick={() => window.open(productLinkObj.url, "__blank")}
-                  >
-                    {productLinkObj.label}
+                {ctaUrl && (
+                  <Button onClick={() => window.open(ctaUrl, "__blank")}>
+                    {ctaLabel}
                   </Button>
                 )}
                 {!!social && (
@@ -92,6 +71,7 @@ const SideProjects = forwardRef(({ label, value }, ref) => {
                     {Object.values(social).map(
                       ({ fontAwesome, label, url }) => (
                         <a
+                          key={label}
                           href={url}
                           target="_blank"
                           rel="noopener noreferrer"

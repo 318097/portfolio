@@ -1,9 +1,10 @@
 {
   "name": "portfolio",
+  "description": "Personal portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@codedrops/lib": "0.0.35",
+    "@codedrops/lib": "0.0.49",
     "@codedrops/react-ui": "^3.0.15",
     "classnames": "^2.3.1",
     "konva": "^3.1.6",

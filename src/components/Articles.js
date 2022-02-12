@@ -25,7 +25,7 @@ const Articles = forwardRef(({ label, value }, ref) => {
       <div className="articles-container">
         {articles.map(({ title, link, createdAt }) => {
           return (
-            <a className="link" href={link} target="__blank">
+            <a className="link" href={link} key={title} target="__blank">
               {title}
             </a>
           );
