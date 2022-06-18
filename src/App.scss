@@ -12,24 +12,15 @@ html {
 
 body {
   .app {
-    .container-root {
-      display: flex;
-      height: 100%;
-      .content-root {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        flex: 1 1 auto;
-        padding: 20px;
-      }
-      @media (max-width: 500px) {
-        flex-direction: column;
-        .content-root {
-          padding: 0 14px 14px;
-        }
-      }
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    flex: 1 1 auto;
+    @media (max-width: 500px) {
+      flex-direction: column;
     }
+
     .loader {
       font-size: 2rem;
       top: 50%;

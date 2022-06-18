@@ -9,18 +9,12 @@
   }
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 @font-face {
   font-family: font1;
   src: url("./assets/fonts/AmaticSC-Bold.ttf");
 }
 @font-face {
   font-family: font2;
-  // src: url("./assets/fonts/Righteous/Righteous-Regular.ttf");
-  // src: url("./assets/fonts/Fredoka_One/FredokaOne-Regular.ttf");
   src: url("./assets/fonts/Concert_One/ConcertOne-Regular.ttf");
 }
 @font-face {
@@ -49,4 +43,8 @@ h3 {
 h4 {
   margin: 5px;
   font-size: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #272727 !important;
 }

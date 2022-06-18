@@ -1,24 +1,22 @@
 @import "@codedrops/react-ui/dist/styles/colors.scss";
 
-.box {
-  box-sizing: border-box;
-  height: 100%;
-  padding: 10px 0;
-  clip-path: polygon(0 0, 100% 2%, 96% 99%, 2% 100%);
-  max-width: 850px;
-  .content {
-    height: 100%;
-    width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+.box-container {
+  max-height: 100%;
+  flex: 1 1 auto;
+  overflow-y: auto;
+
+  .box {
+    max-width: 800px;
+    margin: 0 auto;
+    // clip-path: polygon(0 0, 100% 2%, 96% 99%, 2% 100%);
     section {
-      min-height: 100%;
+      min-height: 100vh;
       width: 100%;
-      padding: 40px 20px;
+      padding: 20% 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      box-sizing: border-box;
+      justify-content: center;
       & > h2 {
         font-family: font1;
         text-decoration: overline;
@@ -31,23 +29,7 @@
       }
     }
   }
-  &::before {
-    content: "";
-    height: 100%;
-    width: 100%;
-    opacity: 0.9;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    // background: url("../assets/backgrounds/funky-lines.png");
-    background: url("../assets/backgrounds/ep_naturalwhite.png");
-  }
 }
-
-// .stacked-theme .box {
-
-// }
 
 .particles-theme .box {
   &::before {
@@ -136,11 +118,6 @@
     }
   }
 
-  clip-path: none;
-  border-radius: 0;
-  &::before {
-    display: none;
-  }
   color: $feather;
   #about {
     .intro {
@@ -159,6 +136,7 @@
       }
       .timeline-card {
         border: 4px solid $cdGreen;
+        border-radius: 4px;
         box-shadow: 4px 4px $primary;
         color: $white;
         background: rgba($cdGreen, 0.05);
@@ -427,9 +405,8 @@
   }
   p.email {
     margin: 0;
-    text-transform: uppercase;
     font-size: 2rem;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     cursor: pointer;
     &:hover {
       transition: 0.4s;
@@ -438,17 +415,16 @@
   }
   div.social {
     margin-bottom: 8px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 4px;
+    display: flex;
+    gap: 12px;
     a i {
       color: $bar;
       font-size: 1.6rem;
       transition: 0.2s;
-      // &:hover {
-      //   color: $orange;
-      //   transform: scale(1.2);
-      // }
+      &:hover {
+        color: $orange;
+        transform: scale(1.2);
+      }
     }
   }
   .website {
@@ -490,7 +466,7 @@
 
 @media screen and (max-width: 500px) {
   .box {
-    .content {
+    .box {
       section {
         padding: 20px 16px;
       }

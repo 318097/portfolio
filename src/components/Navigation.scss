@@ -9,31 +9,25 @@
   bottom: 4px;
   right: 0;
   background: $yellow;
+  border-radius: 2px;
 }
 
 nav {
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
-  width: 50px;
-  background: url("../assets/backgrounds/stressed_linen.png");
   align-items: center;
   justify-content: center;
   .item {
     font-family: font3;
     text-decoration: none;
     color: $white;
-    text-align: center;
-    margin: 40px 0;
-    transform: rotate(-90deg);
-    transition: 0.8s;
+    position: relative;
+    transition: 0.4s;
     padding: 4px 8px;
     cursor: pointer;
-    display: inline-block;
-    width: max-content;
-    &:hover,
     .active-link {
-      transform: scale(1.2) rotate(-80deg);
+      transform: scale(1.2) rotate(-8deg);
     }
     &:after {
       content: "";

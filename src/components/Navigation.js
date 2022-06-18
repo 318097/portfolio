@@ -6,7 +6,6 @@ import { SECTIONS } from "../constants";
 
 const Navigation = ({ activeSection }) => (
   <nav>
-    {/* <span className="initials">ML</span> */}
     {SECTIONS.map(({ label, value }) => (
       <Link
         key={value}

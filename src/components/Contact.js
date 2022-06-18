@@ -8,10 +8,10 @@ const {
   social,
 } = DATA;
 
-const SocialIcons = ({ type }) => (
+const SocialIcons = () => (
   <div className="social">
     {social
-      .filter((item) => item.visible && item.type === type)
+      .filter((item) => item.visible)
       .map(({ name, url, classname }) => (
         <a key={name} title={name} href={url} target="__blank">
           <i className={classname}></i>
@@ -45,21 +45,18 @@ const Contact = forwardRef(({ label, value }, ref) => {
         {...viewport}
       /> */}
       <div className="contact-details">
-        <div>
-          <span> Reach out to me at:</span>
-          <p className="email pt-2" onClick={copyEmail}>
-            {email}
-          </p>
-        </div>
+        <span classname="mb-8"> Reach out to me at:</span>
+        <p className="email pt-2" onClick={copyEmail}>
+          {email}
+        </p>
 
-        <SocialIcons type="work" />
-        <SocialIcons type="casual" />
+        <SocialIcons />
 
-        <div className="website">
+        {/* <div className="website">
           <a href={website.url} target="__blank">
             {website.label}
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

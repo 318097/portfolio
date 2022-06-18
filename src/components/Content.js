@@ -62,21 +62,29 @@ const Content = ({ location, setActiveSection }) => {
   };
 
   return (
-    <CustomDiv className="box">
-      <div ref={scrollRef} id="ContainerElement" className="content">
+    <div className="box-container" ref={scrollRef} id="ContainerElement">
+      <CustomDiv className="box">
         {SECTIONS.map(({ label, value }) => {
           const props = { ref: inputRefs[value], key: value, value, label };
 
-          if (value === "about") return <About {...props} />;
-          else if (value === "timeline") return <Timeline {...props} />;
-          else if (value === "side_projects")
-            return <SideProjects {...props} />;
-          else if (value === "articles") return <Articles {...props} />;
-          else if (value === "tech") return <Skills {...props} />;
-          else if (value === "contact") return <Contact {...props} />;
+          // eslint-disable-next-line default-case
+          switch (value) {
+            case "about":
+              return <About {...props} />;
+            case "timeline":
+              return <Timeline {...props} />;
+            case "side_projects":
+              return <SideProjects {...props} />;
+            case "articles":
+              return <Articles {...props} />;
+            case "tech":
+              return <Skills {...props} />;
+            case "contact":
+              return <Contact {...props} />;
+          }
         })}
-      </div>
-    </CustomDiv>
+      </CustomDiv>
+    </div>
   );
 };
 

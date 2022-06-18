@@ -30,7 +30,7 @@ class App extends Component {
     setTimeout(() => this.setState({ loading: false }), 300);
   }
 
-  setActiveSection = (section) => this.setState({ activeSection: section });
+  setActiveSection = (activeSection) => this.setState({ activeSection });
 
   handleThemeChange = () => {
     const { currentBackgroundIndex } = this.state;
@@ -52,13 +52,8 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className={classnames("app", "react-ui", themeWrapperClass)}>
-          <div className="container-root">
-            <Navigation activeSection={activeSection} />
-            <div className="content-root">
-              <Content setActiveSection={this.setActiveSection} />
-            </div>
-          </div>
-
+          <Navigation activeSection={activeSection} />
+          <Content setActiveSection={this.setActiveSection} />
           {loading && (
             <div className="loader">
               <Icon size={70} type="binary-code-2" />
@@ -71,8 +66,9 @@ class App extends Component {
               data-tip={"Theme"}
               data-effect="solid"
               className="theme-icon fas fa-palette"
-            ></i>
-            {resumeURL && (
+            />
+
+            {/* {resumeURL && (
               <a
                 className="download-resume"
                 data-tip={"Resume"}
@@ -85,7 +81,7 @@ class App extends Component {
               >
                 <i class="fas fa-save" />
               </a>
-            )}
+            )} */}
             <ReactTooltip />
           </div>
           <Background theme={theme} />
