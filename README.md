@@ -1,6 +1,6 @@
 ## Personal Portfolio
 
-## Todo
+### Todo
 
 - [x] Deploy on netlify
 - [x] Add custom message for projects
@@ -18,12 +18,28 @@
 - [ ] Add animations
 - [ ] Make gif for v3
 
-## Designs
+### Versions
 
-### Portfolio design 2 | 8-Feburary-2020
+### v4.0 | 18-06-2022
 
-![Preview 1](designs/portfolio-v2-8-feb-2020.gif)
+![v4.0](designs/portfolio-v4-18-06-2022.gif)
 
-### Portfolio design 1 | 28-August-2019
+---
 
-![Preview 1](designs/portfolio-v1-28-aug-2019.gif)
+### v3.0 | 18-06-2022
+
+![v3.1](designs/portfolio-v3.1-18-06-2022.gif)
+![v3.2](designs/portfolio-v3.2-18-06-2022.gif)
+![v3.3](designs/portfolio-v3.3-18-06-2022.gif)
+
+---
+
+### v2.0 | 08-02-2020
+
+![v2.0](designs/portfolio-v2-08-02-2020.gif)
+
+---
+
+### v1.0 | 28-08-2019
+
+![v1.0](designs/portfolio-v1-28-08-2019.gif)
