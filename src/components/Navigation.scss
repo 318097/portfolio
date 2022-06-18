@@ -4,7 +4,6 @@
   content: "";
   display: block;
   height: 4px;
-  // width: 50%;
   position: absolute;
   bottom: 4px;
   right: 0;
@@ -24,7 +23,7 @@ nav {
   .nav-item {
     // font-family: font3;
     text-decoration: none;
-    color: $white;
+    color: $charcoal;
     position: relative;
     transition: 0.4s;
     padding: 4px 8px;
@@ -50,7 +49,7 @@ nav {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   nav {
     width: 100%;
     height: auto;

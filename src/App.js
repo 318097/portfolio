@@ -47,7 +47,8 @@ class App extends Component {
 
   render() {
     const { loading, activeSection, currentBackgroundIndex } = this.state;
-    const theme = THEMES[currentBackgroundIndex];
+    // const theme = THEMES[currentBackgroundIndex];
+    const theme = THEMES[0];
     const themeWrapperClass = theme ? `${theme.toLowerCase()}-theme` : "";
     return (
       <BrowserRouter>

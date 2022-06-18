@@ -12,7 +12,7 @@
     section {
       min-height: 100vh;
       width: 100%;
-      padding: 20% 0;
+      padding: 20% 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -82,6 +82,10 @@
           padding-left: 4px;
         }
       }
+      .tagline {
+        font-size: 0.7rem;
+        color: $steel;
+      }
       h4.sub-title {
         font-size: 0.9rem;
         margin-bottom: 4px;
@@ -94,12 +98,14 @@
           font-size: 1rem;
           text-align: left;
           text-decoration: underline;
+          @include font-weight("semi-bold");
         }
         .description-container {
           margin-top: 8px;
           padding-left: 24px;
           .description-item {
             font-size: 1rem;
+            @include font-weight("medium");
           }
         }
       }
@@ -130,12 +136,12 @@
       border: 2px solid $bar;
       border-radius: 2px;
       position: relative;
-      .logo {
-        max-width: 28px;
-        position: absolute;
-        left: 4px;
-        top: 4px;
-      }
+      // .logo {
+      //   max-width: 28px;
+      //   position: absolute;
+      //   left: 4px;
+      //   top: 4px;
+      // }
       .name {
         font-size: 1.4rem;
         margin-bottom: 12px;
@@ -145,14 +151,21 @@
         font-size: 1rem;
         text-align: center;
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 28px;
         color: $iron;
+        @include font-weight("semi-bold");
+      }
+      .release-date {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        font-size: 10px;
       }
       .links-container {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 28px;
+        margin-bottom: 20px;
         a {
           font-size: 0.8rem;
           text-decoration: none;
@@ -165,6 +178,7 @@
       }
       .button {
         font-size: 0.8rem;
+        padding: 16px 24px;
         // font-family: font2;
       }
       // .social-links-container {
@@ -261,6 +275,8 @@
   .email {
     font-size: 2rem;
     cursor: pointer;
+    transition: 0.2s;
+    @include text-shadow($steel);
     @include font-weight("bold");
     &:hover {
       transition: 0.4s;
@@ -333,14 +349,6 @@
 // }
 
 .neo-theme .box {
-  @mixin neo-shadow($size: 8px) {
-    $negativeSize: -$size;
-    box-shadow: $size $size $size rgba($color: $bar, $alpha: 0.2),
-      $negativeSize $negativeSize $size $white;
-    border: none;
-  }
-  @include neo-shadow;
-  border-radius: 1%;
   #timeline {
     .timeline {
       .timeline-card {
@@ -371,10 +379,10 @@
     }
   }
   #contact {
-    p.email {
-      color: $bar;
+    .email:hover {
+      @include text-shadow();
     }
-    div.social {
+    div.social-icons {
       a i {
         color: $charcoal;
         font-size: 22px;
@@ -477,48 +485,51 @@
 
 /* Themes end */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .box {
-    .box {
-      section {
-        padding: 20px 16px;
-      }
-      #about {
-        padding: 20px;
-        min-height: 80%;
-        .intro {
-          max-width: 100%;
+    section {
+      padding: 20px 16px;
+    }
+    #about {
+      padding: 20px;
+      min-height: 80%;
+    }
+    #timeline {
+      .timeline {
+        width: 90%;
+        .timeline-block {
+          padding-bottom: 20px;
         }
       }
-      #side-projects {
-        div.project-list {
-          grid-auto-flow: rows;
-          grid-template-columns: 1fr;
-          .project-item {
-            padding: 12px 8px;
-            height: auto;
-            .tagline,
-            .links-container {
-              margin-bottom: 10px;
-            }
+    }
+    #side-projects {
+      div.project-list {
+        grid-template-columns: 300px;
+        justify-content: center;
+        .project-item {
+          // padding: 12px 8px;
+          height: 260px;
+          .tagline,
+          .links-container {
+            margin-bottom: 10px;
           }
         }
       }
-      #tech {
-        div.skill-list {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          .skill {
-            height: 60px;
-            font-size: 1rem;
-          }
+    }
+    #tech {
+      div.skill-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .skill {
+          height: 80px;
+          font-size: 1rem;
         }
       }
-      #contact {
-        .contact-details {
-          p.email {
-            font-size: 1.6rem;
-          }
+    }
+    #contact {
+      .contact-details {
+        .email {
+          font-size: 1.6rem;
         }
       }
     }

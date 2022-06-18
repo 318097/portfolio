@@ -9,3 +9,14 @@
     font-weight: 500;
   }
 }
+
+@mixin text-shadow($color: $iron) {
+  text-shadow: 2px 2px $color;
+}
+
+@mixin neo-shadow($size: 8px) {
+  $negativeSize: -$size;
+  box-shadow: $size $size $size rgba($color: $bar, $alpha: 0.2),
+    $negativeSize $negativeSize $size $white;
+  border: none;
+}

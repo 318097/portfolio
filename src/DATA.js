@@ -14,16 +14,21 @@ export default {
       type: "work",
       title: "Toddle",
       other: "Bangalore",
-      sub_title: "Front end Engineer",
+      tagline:
+        "Toddle is an all-in-one teaching & learning platform for IB PYP, IB MYP, IB DP, UbD, and other progressive schools",
+      sub_title: "Senior Front end Engineer",
       start_date: "2020-02-03",
       end_date: "present",
       isOpen: true,
       description: [
         {
-          title: "",
           content: [
-            "Built reusable components and front-end libraries for future use.",
-            "Translated designs and wire-frames into high quality code.",
+            "Built reusable React UI components to be used for the entire team & future use",
+            "Built modules by converting Figma designs & wireframes into high-quality React code",
+            "Revamped the user permission & settings architecture including support for old architecture for incremental rollout",
+            "Added archiving feature for users across the entire frontend web platform",
+            "Made dynamic forms & UI using JSON configuration",
+            "Designed newsletters on SendGrid from Figma template which was send to the entire userbase",
           ],
         },
       ],
@@ -31,14 +36,16 @@ export default {
     {
       type: "work",
       title: "Mobil Biker Cafe",
+      tagline:
+        "A mobile friendly application helping bikers to get the latest offers, events & ideas",
       sub_title: "Freelancing",
       start_date: "2020-07",
       end_date: "2020-09",
       description: [
         {
-          title: "",
           content: [
-            "Developed the Mobile Biker Cafe application helping bikers to get the latest offers, events & ideas.",
+            "Built 80% of the application in a week’s time because of  time contstraints using React, Node & My SQL",
+            "Hosted the application on Microsoft Azure",
           ],
         },
       ],
@@ -47,17 +54,17 @@ export default {
       type: "work",
       title: "Clipboard Health",
       other: "San Francisco",
+      tagline:
+        "A staffing application to help nurses and hospitals fill part-time shifts",
       sub_title: "Full stack developer",
       start_date: "2019-06-17",
       end_date: "2019-10-04",
       description: [
         {
-          title:
-            "A staffing application to help nurses and hospitals fill part-time shifts.",
           content: [
-            "Built multiple full-stack web features in Node and React.",
-            "Added features to our cross-platform mobile apps with Ionic.",
-            "Updated & refactored legacy JavaScript code from ES5 to ES6+.",
+            "Built multiple full-stack web features in Node and React",
+            "Added features to our cross-platform mobile apps with Ionic",
+            "Updated & refactored legacy JavaScript code from ES5 to ES6+",
           ],
         },
       ],
@@ -66,6 +73,7 @@ export default {
       type: "work",
       title: "Ideaplunge Solutions",
       other: "India",
+      tagline: "A software development consultancy",
       sub_title: "Front end developer",
       start_date: "2018-02-01",
       end_date: "2019-12-31",
@@ -106,6 +114,7 @@ export default {
       type: "work",
       title: "Net Analytiks",
       other: "India",
+      tagline: "A software development consultancy",
       role: "Full stack developer",
       start_date: "2017-08-01",
       end_date: "2017-12-15",

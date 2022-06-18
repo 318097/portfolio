@@ -32,6 +32,7 @@ const TimelineItem = ({ item }) => {
     end_date,
     description = [],
     isOpen,
+    tagline,
   } = item;
 
   const [expanded, setExpanded] = useState(Boolean(isOpen));
@@ -44,6 +45,7 @@ const TimelineItem = ({ item }) => {
         {title}
         {other && <span className="location">{`(${other})`}</span>}
       </h3>
+      <h5 className="tagline">{tagline}</h5>
 
       <h4 className="sub-title">{sub_title}</h4>
       <h4 className="date">{date}</h4>

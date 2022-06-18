@@ -2,8 +2,8 @@ const SECTIONS = [
   { label: "About", value: "about" },
   { label: "Work", value: "timeline" },
   { label: "Side Projects", value: "side-projects" },
-  { label: "Tech stack", value: "tech" },
-  { label: "Blogs", value: "articles" },
+  { label: "Tech", value: "tech" },
+  { label: "Blog", value: "articles" },
   { label: "Contact", value: "contact" },
 ];
 

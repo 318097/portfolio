@@ -17,12 +17,13 @@ const About = forwardRef(({ label, value }, ref) => (
       <p className="current-employer">
         I am currently employed at
         <span className="highlight">Toddle</span>
-        as Senior Front-end Engineer
+        as a Senior Front-end Engineer
       </p>
       <p>
-        I mostly spend my leisure time on side projects. I love to play
-        <span className="highlight ml-2">football</span>
-        <Icon size={18} type="football" />
+        I spend most of my leisure time on side projects, otherwise I love to
+        play
+        <span className="highlight ml-2">soccer</span>
+        <Icon size={18} type="football" /> , movies, PS or books
       </p>
     </div>
   </section>
