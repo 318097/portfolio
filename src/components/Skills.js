@@ -5,7 +5,6 @@ const { skills } = DATA;
 
 const Skills = forwardRef(({ label, value }, ref) => (
   <section ref={ref} id={value} name={value}>
-    <h2>{label}</h2>
     <div className="skill-list">
       {skills.map(({ name, highlight }) => (
         <div

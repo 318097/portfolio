@@ -9,7 +9,7 @@ const Navigation = ({ activeSection }) => (
     {SECTIONS.map(({ label, value }) => (
       <Link
         key={value}
-        className={classnames("item", {
+        className={classnames("nav-item", {
           "active-link": activeSection === value,
         })}
         to={`#${value}`}

@@ -73,7 +73,7 @@ const Content = ({ location, setActiveSection }) => {
               return <About {...props} />;
             case "timeline":
               return <Timeline {...props} />;
-            case "side_projects":
+            case "side-projects":
               return <SideProjects {...props} />;
             case "articles":
               return <Articles {...props} />;

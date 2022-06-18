@@ -1,13 +1,14 @@
-@import "@codedrops/react-ui/dist/styles/colors.scss";
+@import "./global.scss";
 
 @mixin active-link {
   content: "";
   display: block;
   height: 4px;
-  width: 50%;
+  // width: 50%;
   position: absolute;
   bottom: 4px;
   right: 0;
+  opacity: 1;
   background: $yellow;
   border-radius: 2px;
 }
@@ -18,20 +19,25 @@ nav {
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  .item {
-    font-family: font3;
+  gap: 8px;
+  padding: 0 30px;
+  .nav-item {
+    // font-family: font3;
     text-decoration: none;
     color: $white;
     position: relative;
     transition: 0.4s;
     padding: 4px 8px;
     cursor: pointer;
-    .active-link {
-      transform: scale(1.2) rotate(-8deg);
+    @include font-weight("bold");
+    &.active-link,
+    &:hover {
+      transform: scale(1.2);
     }
     &:after {
       content: "";
-      width: 0;
+      width: 50%;
+      opacity: 0;
       transition: 0.7s;
     }
 
@@ -39,7 +45,7 @@ nav {
       @include active-link;
     }
   }
-  .item.active-link:after {
+  .nav-item.active-link:after {
     @include active-link;
   }
 }
@@ -51,7 +57,7 @@ nav {
     flex-direction: row;
     background: none;
     padding-top: 8px;
-    .item {
+    .nav-item {
       transform: none;
       position: relative;
       color: $bar;
@@ -66,7 +72,7 @@ nav {
   }
   .dark-night-theme,
   .custom-particles-theme {
-    nav .item {
+    nav .nav-item {
       color: $feather;
     }
   }

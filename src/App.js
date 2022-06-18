@@ -60,7 +60,8 @@ class App extends Component {
               <span className="text">Loading..</span>
             </div>
           )}
-          <div className="action-container">
+
+          {/* <div className="action-container">
             <i
               onClick={this.handleThemeChange}
               data-tip={"Theme"}
@@ -68,7 +69,7 @@ class App extends Component {
               className="theme-icon fas fa-palette"
             />
 
-            {/* {resumeURL && (
+            {resumeURL && (
               <a
                 className="download-resume"
                 data-tip={"Resume"}
@@ -81,9 +82,9 @@ class App extends Component {
               >
                 <i class="fas fa-save" />
               </a>
-            )} */}
-            <ReactTooltip />
-          </div>
+            )}
+          </div> */}
+          <ReactTooltip />
           <Background theme={theme} />
         </div>
       </BrowserRouter>

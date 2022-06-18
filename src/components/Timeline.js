@@ -16,7 +16,6 @@ const getDateRange = ({ start_date, end_date }) => {
 
 const Timeline = forwardRef(({ label, value }, ref) => (
   <section ref={ref} id={value} name={value}>
-    <h2>{label}</h2>
     <ReactTimeline
       items={timeline}
       renderItem={(item) => <TimelineItem item={item} />}
@@ -50,18 +49,18 @@ const TimelineItem = ({ item }) => {
       <h4 className="date">{date}</h4>
 
       {expanded && !!description.length && (
-        <div className="description-container">
+        <div className="work-description">
           {description.map(({ title, content = [] }) => {
             return (
               <div key={title}>
                 <h4 className="description-title">{title}</h4>
-                <div className="description-container">
+                <ul className="description-container">
                   {content.map((item, i) => (
-                    <div className="description-item" key={i}>
-                      {`- ${item}`}
-                    </div>
+                    <li className="description-item" key={item}>
+                      {item}
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             );
           })}

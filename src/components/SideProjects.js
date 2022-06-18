@@ -15,7 +15,7 @@ const SideProjects = forwardRef(({ label, value }, ref) => {
       const { others } = await getAndFormatProducts({
         appId: "PORTFOLIO",
         visibilityKey: "portfolio",
-        trackingInfo: { utm_medium: "side_projects" },
+        trackingInfo: { utm_medium: "side-projects" },
       });
       setSideProjects(others);
     } catch (error) {
@@ -25,8 +25,6 @@ const SideProjects = forwardRef(({ label, value }, ref) => {
 
   return (
     <section ref={ref} id={value} name={value}>
-      <h2>{label}</h2>
-
       <div className="project-list">
         {sideProjects.map(
           ({
@@ -43,7 +41,7 @@ const SideProjects = forwardRef(({ label, value }, ref) => {
           }) => {
             return (
               <div className="project-item" key={id}>
-                {logo && <img src={logo} alt="logo" className="logo" />}
+                {/* {logo && <img src={logo} alt="logo" className="logo" />} */}
                 <div className="name">{name}</div>
                 <div className="tagline">{tagline}</div>
                 <div className="links-container">
@@ -66,7 +64,7 @@ const SideProjects = forwardRef(({ label, value }, ref) => {
                     {ctaLabel}
                   </Button>
                 )}
-                {!!social && (
+                {/* {!!social && (
                   <div className="social-links-container">
                     {Object.values(social).map(
                       ({ fontAwesome, label, url }) => (
@@ -82,16 +80,16 @@ const SideProjects = forwardRef(({ label, value }, ref) => {
                       )
                     )}
                   </div>
-                )}
-                <span
+                )} */}
+                {/* <span
                   className="status"
                   style={{
                     color: status === "LIVE" ? colors.green : colors.watermelon,
                   }}
                 >
                   {status}
-                </span>
-                {customMessages && (
+                </span> */}
+                {/* {customMessages && (
                   <span
                     className="custom-messages"
                     data-tip={customMessages[0]}
@@ -100,7 +98,7 @@ const SideProjects = forwardRef(({ label, value }, ref) => {
                   >
                     <i className="fas fa-comment-alt"></i>
                   </span>
-                )}
+                )} */}
                 <ReactTooltip />
               </div>
             );

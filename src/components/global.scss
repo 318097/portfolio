@@ -1,0 +1,11 @@
+@import "@codedrops/react-ui/dist/styles/colors.scss";
+
+@mixin font-weight($weight: "regular") {
+  @if $weight == "semi-bold" {
+    font-weight: 600;
+  } @else if $weight == "bold" {
+    font-weight: 700;
+  } @else {
+    font-weight: 500;
+  }
+}

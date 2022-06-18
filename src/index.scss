@@ -1,26 +1,17 @@
 @import "@codedrops/react-ui/dist/styles/colors.scss";
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@font-face {
-  font-family: font1;
-  src: url("./assets/fonts/AmaticSC-Bold.ttf");
-}
-@font-face {
-  font-family: font2;
-  src: url("./assets/fonts/Concert_One/ConcertOne-Regular.ttf");
-}
-@font-face {
-  font-family: font3;
-  src: url("./assets/fonts/Concert_One/ConcertOne-Regular.ttf");
-}
+// @font-face {
+//   font-family: font1;
+//   src: url("./assets/fonts/AmaticSC-Bold.ttf");
+// }
+// @font-face {
+//   font-family: font2;
+//   src: url("./assets/fonts/Concert_One/ConcertOne-Regular.ttf");
+// }
+// @font-face {
+//   font-family: font3;
+//   src: url("./assets/fonts/Concert_One/ConcertOne-Regular.ttf");
+// }
 
 h1,
 h2,
@@ -45,6 +36,6 @@ h4 {
   font-size: 0.8rem;
 }
 
-::-webkit-scrollbar-track {
-  background: #272727 !important;
+html ::-webkit-scrollbar-track {
+  background: transparent;
 }

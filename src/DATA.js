@@ -163,26 +163,11 @@ export default {
     },
     {
       visible: true,
-      name: "Express.js",
-      highlight: true,
-    },
-    {
-      visible: true,
-      name: "Javascript",
-      highlight: true,
-    },
-    {
-      visible: true,
-      name: "Redux",
-      highlight: true,
-    },
-    {
-      visible: true,
       name: "Angular Material",
     },
     {
       visible: true,
-      name: "Mongo DB",
+      name: "JavaScript",
       highlight: true,
     },
     {
@@ -193,6 +178,10 @@ export default {
       visible: true,
       name: "Heroku",
       highlight: true,
+    },
+    {
+      visible: true,
+      name: "My SQL",
     },
     {
       visible: true,
@@ -226,7 +215,13 @@ export default {
     },
     {
       visible: true,
-      name: "My SQL",
+      name: "Redux",
+      highlight: true,
+    },
+    {
+      visible: true,
+      name: "Express.js",
+      highlight: true,
     },
     {
       visible: true,
@@ -235,6 +230,11 @@ export default {
     {
       visible: true,
       name: "Apollo Client",
+      highlight: true,
+    },
+    {
+      visible: true,
+      name: "Mongo DB",
       highlight: true,
     },
   ],
@@ -255,7 +255,7 @@ export default {
       name: "MEDIUM",
       url: "https://medium.com/@ml318097",
       classname: "fab fa-medium",
-      visible: true,
+      visible: false,
     },
     {
       name: "DEV.TO",
@@ -267,7 +267,7 @@ export default {
       name: "PRODUCT HUNT",
       url: "https://www.producthunt.com/@ml318097",
       classname: "fab fa-product-hunt",
-      visible: true,
+      visible: false,
     },
     {
       name: "TWITTER",

@@ -9,7 +9,7 @@ const {
 } = DATA;
 
 const SocialIcons = () => (
-  <div className="social">
+  <div className="social-icons">
     {social
       .filter((item) => item.visible)
       .map(({ name, url, classname }) => (
@@ -38,19 +38,25 @@ const Contact = forwardRef(({ label, value }, ref) => {
 
   return (
     <section ref={ref} id={value} name={value}>
-      <Toaster />
-      <h2>{label}</h2>
+      <div>
+        <Toaster />
+      </div>
       {/* <ReactMapGL
         mapboxApiAccessToken={'pk.eyJ1IjoiMzE4MDk3IiwiYSI6ImNqdDJhbzhqZDB6YjkzeWxqbXpqZWVyNGgifQ._HOcF0YmpvJ7eAl4JQtFqA'}
         {...viewport}
       /> */}
       <div className="contact-details">
-        <span classname="mb-8"> Reach out to me at:</span>
-        <p className="email pt-2" onClick={copyEmail}>
-          {email}
-        </p>
+        <div className="block">
+          <span> Reach me at</span>
+          <span className="email" onClick={copyEmail}>
+            {email}
+          </span>
+        </div>
 
-        <SocialIcons />
+        <div className="block">
+          <span className="mb-12"> Social profiles</span>
+          <SocialIcons />
+        </div>
 
         {/* <div className="website">
           <a href={website.url} target="__blank">

@@ -20,8 +20,6 @@ const Articles = forwardRef(({ label, value }, ref) => {
 
   return (
     <section ref={ref} id={value} name={value}>
-      <h2>{label}</h2>
-
       <div className="articles-container">
         {articles.map(({ title, link, createdAt }) => {
           return (
