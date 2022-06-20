@@ -8,7 +8,6 @@
   .box {
     max-width: 800px;
     margin: 0 auto;
-    // clip-path: polygon(0 0, 100% 2%, 96% 99%, 2% 100%);
     section {
       min-height: 100vh;
       width: 100%;
@@ -17,16 +16,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      // & > h2 {
-      //   // font-family: font1;
-      //   text-decoration: overline;
-      //   margin-bottom: 20px;
-      // }
-      & > div,
-      .intro {
-        font-size: 1.2rem;
-        // font-family: font2;
-      }
     }
   }
 }
@@ -35,15 +24,16 @@
   .intro {
     margin: 0;
     p {
-      line-height: normal;
+      line-height: 150%;
+      font-size: 1.4rem;
       @include font-weight();
     }
     p.basic {
-      font-size: 36px;
+      font-size: 2.4rem;
     }
 
     p.current-employer {
-      font-size: 30px;
+      font-size: 1.8rem;
     }
 
     .highlight {
@@ -53,11 +43,6 @@
       border-radius: 2px;
       margin: 0 2px;
       @include font-weight("bold");
-    }
-    .icon {
-      font-size: 70%;
-      position: relative;
-      bottom: 2px;
     }
   }
 }
@@ -84,11 +69,11 @@
       }
       .tagline {
         font-size: 0.7rem;
+        line-height: 0.9rem;
         color: $steel;
       }
       h4.sub-title {
         font-size: 0.9rem;
-        margin-bottom: 4px;
       }
       h4.date {
         font-size: 0.8rem;
@@ -276,7 +261,7 @@
     font-size: 2rem;
     cursor: pointer;
     transition: 0.2s;
-    @include text-shadow($steel);
+    // @include text-shadow($steel);
     @include font-weight("bold");
     &:hover {
       transition: 0.4s;
@@ -380,7 +365,8 @@
   }
   #contact {
     .email:hover {
-      @include text-shadow();
+      // @include text-shadow();
+      color: $bar;
     }
     div.social-icons {
       a i {
@@ -504,11 +490,13 @@
     }
     #side-projects {
       div.project-list {
-        grid-template-columns: 300px;
-        justify-content: center;
+        grid-template-columns: 1fr;
         .project-item {
-          // padding: 12px 8px;
-          height: 260px;
+          padding: 16px 8px;
+          height: 160px;
+          .name {
+            margin-bottom: 4px;
+          }
           .tagline,
           .links-container {
             margin-bottom: 10px;
