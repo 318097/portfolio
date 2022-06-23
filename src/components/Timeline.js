@@ -4,12 +4,12 @@ import { Icon, Timeline as ReactTimeline } from "@codedrops/react-ui";
 import DATA from "../DATA";
 const { timeline } = DATA;
 
-const getDateRange = ({ start_date, end_date }) => {
-  if (!start_date) return end_date;
+const getDateRange = ({ startDate, endDate }) => {
+  if (!startDate) return endDate;
 
-  const start = moment(start_date).format("MMM, YY");
+  const start = moment(startDate).format("MMM, YY");
   const end =
-    end_date === "present" ? "Present" : moment(end_date).format("MMM, YY");
+    endDate === "present" ? "Present" : moment(endDate).format("MMM, YY");
 
   return `${start} - ${end}`;
 };
@@ -27,9 +27,9 @@ const TimelineItem = ({ item }) => {
   const {
     title,
     other,
-    sub_title,
-    start_date,
-    end_date,
+    subTitle,
+    startDate,
+    endDate,
     description = [],
     isOpen,
     tagline,
@@ -37,7 +37,7 @@ const TimelineItem = ({ item }) => {
 
   const [expanded, setExpanded] = useState(Boolean(isOpen));
 
-  const date = getDateRange({ start_date, end_date });
+  const date = getDateRange({ startDate, endDate });
 
   return (
     <div key={title} className="timeline-card">
@@ -47,7 +47,7 @@ const TimelineItem = ({ item }) => {
       </h3>
       <h5 className="tagline">{tagline}</h5>
 
-      <h4 className="sub-title">{sub_title}</h4>
+      <h4 className="sub-title">{subTitle}</h4>
       <h4 className="date">{date}</h4>
 
       {expanded && !!description.length && (

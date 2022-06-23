@@ -13,18 +13,18 @@ const About = forwardRef(({ label, value }, ref) => (
         <span className="highlight ml-2">Full-stack Developer</span> 💻 from
         <span className="highlight ml-2">Bangalore, India</span> 🇮🇳
       </p>
-
       <p className="current-employer">
         I am currently employed at
         <span className="highlight">Toddle</span>
-        as a Senior Front-end Engineer
+        as a Senior Front-end Engineer & project mentor at 'Hey Coach'
       </p>
       <p>
-        I spend most of my leisure time on side projects, otherwise I love to
-        play
+        In my off time, I am mostly on{" "}
+        <span className="highlight">side projects</span>, otherwise play
         <span className="highlight ml-2">soccer</span>
         <Icon size={18} type="football" /> , movies, PS or books
       </p>
+      <p>Hit me up for interesting opportunities or collaboration</p>
     </div>
   </section>
 ));

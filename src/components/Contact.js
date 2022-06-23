@@ -8,10 +8,10 @@ const {
   social,
 } = DATA;
 
-const SocialIcons = () => (
+const SocialIcons = ({ type }) => (
   <div className="social-icons">
     {social
-      .filter((item) => item.visible)
+      .filter((item) => item.visible && (type ? item.type === type : true))
       .map(({ name, url, classname }) => (
         <a key={name} title={name} href={url} target="__blank">
           <i className={classname}></i>
@@ -38,9 +38,7 @@ const Contact = forwardRef(({ label, value }, ref) => {
 
   return (
     <section ref={ref} id={value} name={value}>
-      <div>
-        <Toaster />
-      </div>
+      <Toaster />
       {/* <ReactMapGL
         mapboxApiAccessToken={'pk.eyJ1IjoiMzE4MDk3IiwiYSI6ImNqdDJhbzhqZDB6YjkzeWxqbXpqZWVyNGgifQ._HOcF0YmpvJ7eAl4JQtFqA'}
         {...viewport}
@@ -55,7 +53,12 @@ const Contact = forwardRef(({ label, value }, ref) => {
 
         <div className="block">
           <span className="mb-12"> Social profiles</span>
-          <SocialIcons />
+          <SocialIcons type="social" />
+        </div>
+
+        <div className="block">
+          <span className="mb-12">Work profiles</span>
+          <SocialIcons type="work" />
         </div>
 
         {/* <div className="website">

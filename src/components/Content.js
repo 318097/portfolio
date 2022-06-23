@@ -22,7 +22,7 @@ const CustomDiv = posed.div({
 });
 
 const scrollProps = {
-  duration: 1500,
+  duration: 900,
   delay: 100,
   smooth: true,
   containerId: "ContainerElement",
@@ -46,7 +46,7 @@ const Content = ({ location, setActiveSection }) => {
     const elementId = location.hash.slice(1);
     scroller.scrollTo(elementId, scrollProps);
     setActiveSection(elementId);
-  }, [location]);
+  }, [location.hash]);
 
   const handleScroll = () => {
     const ref = scrollRef.current;
