@@ -18,7 +18,7 @@ export default {
         "Toddle is an all-in-one teaching & learning platform for IB PYP, IB MYP, IB DP, UbD, and other progressive schools",
       subTitle: "Senior Frontend Engineer",
       startDate: "2020-02-03",
-      endDate: "present",
+      endDate: "2022-11-18",
       isOpen: true,
       description: [
         {
