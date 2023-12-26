@@ -12,6 +12,26 @@ export default {
   timeline: [
     {
       type: "work",
+      title: "CoinSwitch",
+      other: "Bangalore",
+      tagline:
+        "CoinSwitch is India’s leading crypto app with over 18 million users",
+      subTitle: "Software Development Engineer 3",
+      startDate: "2023-02-28",
+      endDate: "present",
+      isOpen: true,
+      description: [
+        {
+          content: [
+            "Implemented JSON parser which converts complex & long JSON into simplified JSON for SDUI of our mobile application reducing the complexity by 10x, improving developer efficiency & minimizing human errors by 90%",
+            "Build the entire KYC flow & profile section for the Indian Stocks app (Lemonn) of CoinSwitch using the JSON builder mentioned above",
+            "Migration script on AWS Lambda to sync Dynamo DB data between different environments",
+          ],
+        },
+      ],
+    },
+    {
+      type: "work",
       title: "Toddle",
       other: "Bangalore",
       tagline:
