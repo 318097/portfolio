@@ -10,16 +10,16 @@ const About = forwardRef(({ label, value }, ref) => (
     <div className="intro">
       <p className="basic">
         Hey 👋 I am <span className="highlight ml-2">Mehul Lakhanpal</span>, a
-        <span className="highlight ml-2">Full-stack Developer</span> 💻 from
+        <span className="highlight ml-2">Full-stack Developer</span> 💻 with ~6
+        years of experience from
         <span className="highlight ml-2">Bangalore, India</span> 🇮🇳
       </p>
       <p>
-        In my off time, I am mostly on{" "}
-        <span className="highlight">side projects</span>, otherwise play
-        <span className="highlight ml-2">soccer</span>
-        <Icon size={18} type="football" /> , movies, PS or books
+        Currently I am building <span className="highlight ml-2">Code404</span>.
+        I have also launched 1 VS Code extension, 4 Chrome extensions & few web
+        apps.
       </p>
-      <p>Hit me up for interesting opportunities or collaboration</p>
+      <p>Hit me up for interesting opportunities/collaboration.</p>
     </div>
   </section>
 ));

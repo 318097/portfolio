@@ -18,7 +18,7 @@ export default {
         "CoinSwitch is India’s leading crypto app with over 18 million users",
       subTitle: "Software Development Engineer 3",
       startDate: "2023-02-28",
-      endDate: "present",
+      endDate: "2024-01-12",
       isOpen: true,
       description: [
         {

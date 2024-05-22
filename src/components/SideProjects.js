@@ -33,8 +33,27 @@ const SideProjects = forwardRef(({ label, value }, ref) => {
 
   return (
     <section ref={ref} id={value} name={value}>
+      <ProjectsGroup
+        projects={sideProjects.filter((project) => project.isProduct)}
+        title="#Products"
+      />
+      <br />
+      <br />
+      <br />
+      <ProjectsGroup
+        projects={sideProjects.filter((project) => !project.isProduct)}
+        title="#OtherProjects"
+      />
+    </section>
+  );
+});
+
+const ProjectsGroup = ({ projects, title }) => {
+  return (
+    <div className="project-group">
+      <h3>{title}</h3>
       <div className="project-list">
-        {sideProjects.map(
+        {projects.map(
           ({
             id,
             name,
@@ -122,8 +141,8 @@ const SideProjects = forwardRef(({ label, value }, ref) => {
           }
         )}
       </div>
-    </section>
+    </div>
   );
-});
+};
 
 export default memo(SideProjects);
