@@ -24,7 +24,6 @@
   .intro {
     margin: 0;
     p {
-      line-height: 150%;
       font-size: 1.4rem;
       @include font-weight();
     }
@@ -60,25 +59,21 @@
       position: relative;
       padding: 28px 16px;
       h3 {
-        font-size: 1.2rem;
-        span.location {
-          font-size: 1rem;
-          color: $charcoal;
-          padding-left: 4px;
-        }
+        font-size: 1.1rem;
+        // span.location {
+        //   color: $steel;
+        //   padding-left: 4px;
+        // }
       }
       .tagline {
         font-size: 0.9rem;
-        line-height: 1.3rem;
-        color: $steel;
-      }
-      h5.sub-title {
-        font-size: 0.8rem;
-      }
-      h5.date {
-        font-size: 0.8rem;
+        font-weight: normal;
       }
       .work-description {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
         .description-title {
           font-size: 1rem;
           text-align: left;
@@ -86,8 +81,11 @@
           @include font-weight("semi-bold");
         }
         .description-container {
-          margin-top: 8px;
+          margin: 0;
           padding-left: 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
           .description-item {
             font-size: 1rem;
             @include font-weight("medium");
@@ -134,15 +132,15 @@
       //   top: 4px;
       // }
       .name {
-        font-size: 1.4rem;
-        margin-bottom: 12px;
+        font-size: 1.2rem;
+        margin-bottom: 4px;
         @include font-weight("bold");
       }
       .tagline {
-        font-size: 1rem;
+        font-size: 0.8rem;
         text-align: center;
         width: 100%;
-        margin-bottom: 28px;
+        margin-bottom: 20px;
         color: $iron;
         @include font-weight("semi-bold");
       }

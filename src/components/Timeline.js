@@ -43,12 +43,12 @@ const TimelineItem = ({ item }) => {
     <div key={title} className="timeline-card">
       <h3 className="title">
         {title}
-        {other && expanded && <span className="location">{`(${other})`}</span>}
+        {/* {other && expanded && <span className="location">{`(${other})`}</span>} */}
       </h3>
       <h3 className="tagline">{tagline}</h3>
-      <div style={{ margin: "12px 0" }}>
-        <h5 className="sub-title">{subTitle}</h5>
-        <h5 className="date">{date}</h5>
+      <div style={{ marginTop: "2px" }}>
+        <h4 className="sub-title">{subTitle}</h4>
+        <h4 className="date">{date}</h4>
       </div>
 
       {expanded && !!description.length && (
