@@ -12,6 +12,47 @@ export default {
   timeline: [
     {
       type: "work",
+      title: "Nexthink",
+      other: "Bangalore",
+      tagline: "The Digital Employee Experience Platform",
+      subTitle: "Full-Stack Developer",
+      startDate: "2024-03-23",
+      endDate: "present",
+      isOpen: true,
+      description: [
+        {
+          content: [
+            "Built and maintained Nexthink.com using Next.js, React, and Hygraph, focusing on performance, SEO, responsiveness, and multi-region localization.",
+            "Developed and documented reusable UI components (e.g., Snackbar, LinkedIn Carousel) using Storybook.",
+            "Integrated SmartRecruiters with Algolia via Netlify functions and cron jobs.",
+            "Set up Vercel + Hygraph monitoring with Teams alerts; resolved GTM tracking issues.",
+          ],
+        },
+      ],
+    },
+    {
+      type: "work",
+      title: "Obviously AI",
+      other: "Bangalore",
+      tagline:
+        "A no-code AI platform that enables users to build fast, accurate predictive models and conversational AI tools without writing code",
+      subTitle: "Freelancing",
+      startDate: "2024-08-12",
+      endDate: "2025-01-12",
+      isOpen: false,
+      description: [
+        {
+          content: [
+            "Set up the foundational Vue 3 codebase, including configuration, ESLint, and Prettier for consistent code quality.",
+            "Customized PrimeVue components to match design guidelines, ensuring a polished and cohesive UI.",
+            "Designed and built a chat interface for the RAG (Retrieval-Augmented Generation) system, integrated into the core product.",
+            "Contributed to improving overall code quality, maintainability, and team development workflows.",
+          ],
+        },
+      ],
+    },
+    {
+      type: "work",
       title: "CoinSwitch",
       other: "Bangalore",
       tagline:
@@ -23,9 +64,9 @@ export default {
       description: [
         {
           content: [
-            "Implemented JSON parser which converts complex & long JSON into simplified JSON for SDUI of our mobile application reducing the complexity by 10x, improving developer efficiency & minimizing human errors by 90%",
-            "Build the entire KYC flow & profile section for the Indian Stocks app (Lemonn) of CoinSwitch using the JSON builder mentioned above",
-            "Migration script on AWS Lambda to sync Dynamo DB data between different environments",
+            "Built a JSON parser to simplify complex JSON for a Server-Driven UI, reducing UI configuration complexity by 10x and minimizing human error by 90%.",
+            "Developed the KYC flow and profile section for the Lemonn app using the JSON builder with Node.js and React Native.",
+            "Created an AWS Lambda migration script to sync DynamoDB data across multiple environments.",
           ],
         },
       ],
@@ -35,20 +76,19 @@ export default {
       title: "Toddle",
       other: "Bangalore",
       tagline:
-        "Toddle is an all-in-one teaching & learning platform for IB PYP, IB MYP, IB DP, UbD, and other progressive schools",
-      subTitle: "Senior Frontend Engineer",
+        "A collaborative teaching platform used by educators worldwide to streamline curriculum planning, teaching, and assessments",
+      subTitle: "Senior Product Engineer",
       startDate: "2020-02-03",
       endDate: "2022-11-18",
       isOpen: true,
       description: [
         {
           content: [
-            "Revamped user-level permission & application settings architecture retaining backward compatibility due to incremental rollout",
-            "Added ”‘archiving” feature for users across the entire frontend web platform while retaining the existing user flow",
-            "Made dynamic forms (multi-page onboarding form) & UI (NLF, Search with tags) based on JSON configuration",
-            "Built reusable core React UI components to be used by the entire team which helps in boosting the team’s productivity & speed up the development process",
-            "Designed & developed highly scalable dynamic template-based components",
-            "Built multiple modules by converting Figma designs & wireframes into high-quality React code",
+            "Revamped user permissions and app settings architecture, ensuring backward compatibility for smooth incremental rollout.",
+            "Implemented a global user archiving feature across the frontend while preserving existing user flows.",
+            "Developed dynamic forms (e.g., multi-page onboarding) and UI components (e.g., search with tags) driven by JSON configurations.",
+            "Built scalable, reusable React components adopted across teams, significantly improving development speed and consistency.",
+            "Translated Figma designs into pixel-perfect, production-ready React modules for various platform features.",
           ],
         },
       ],
@@ -57,16 +97,16 @@ export default {
       type: "work",
       title: "Mobil Biker Cafe",
       tagline:
-        "A mobile friendly application helping bikers to get the latest offers, events & ideas",
+        "A responsive web application assisting bikers to be updated with the latest offers, events & ideas",
       subTitle: "Freelancing",
       startDate: "2020-07",
       endDate: "2020-09",
       description: [
         {
           content: [
-            "Designed & built 80% of the application in a week using React, Node & My SQL (knex)",
-            "Provided support for new requests & bugs until perfection",
-            "Hosted & deployed the application on Microsoft Azure via a VM",
+            "Designed and built 80% of the app in one week using React, Node.js, and MySQL (Knex.js).",
+            "Provided ongoing support for feature requests and bug fixes to ensure smooth user experience.",
+            "Deployed and hosted the application on Microsoft Azure using a virtual machine.",
           ],
         },
       ],
@@ -77,15 +117,15 @@ export default {
       other: "San Francisco",
       tagline:
         "A staffing application to help nurses and hospitals fill part-time shifts",
-      subTitle: "Full stack developer",
+      subTitle: "Full-Stack Developer",
       startDate: "2019-06-17",
       endDate: "2019-10-04",
       description: [
         {
           content: [
-            "Built multiple full-stack web features in Node, React & MongoDB",
-            "Added features to cross-platform mobile apps with Ionic",
-            "Updated & refactored legacy JavaScript code from ES5 to ES6+",
+            "Built and shipped multiple full-stack web features using Node.js, React, and MongoDB.",
+            "Contributed to cross-platform mobile apps by adding new features with Ionic.",
+            "Refactored legacy JavaScript codebase from ES5 to ES6+, improving maintainability and performance.",
           ],
         },
       ],
@@ -95,35 +135,18 @@ export default {
       title: "Ideaplunge Solutions",
       other: "India",
       tagline:
-        "A software development consultancy focusing on Admin portal & CMS for enterprises",
-      subTitle: "Front end developer",
+        "Service-based consultancy building admin portals and CMS platforms for enterprise clients",
+      subTitle: "Frontend developer",
       startDate: "2018-02-01",
       endDate: "2019-12-31",
       description: [
         {
-          title: "Center for Digital Financial Inclusion (CDFI) - Sankalp",
           content: [
-            "Created a custom drill-down feature in amCharts to automatically create new charts by clicking on sections of an existing chart",
-          ],
-        },
-        {
-          title: "Essilor & Shimadzu",
-          content: [
-            "Developed a custom CMS application in Angular 2+ that allowed us to rebuild a complex frontend by making changes to a backend JSON file. This included dynamically rendering forms and accepting that data via a REST API.",
-            "Designed the CMS to be modular so that it could be reused across two of our different clients, Essilor and Shimazdu",
-          ],
-        },
-        {
-          title: "P&G Reports",
-          content: [
-            "Implemented cross-browser compatibility (IE, Firefox, etc) and responsive design fixes",
-            "Implemented data management and fetching for reports using @ngrx",
-          ],
-        },
-        {
-          title: "CPS",
-          content: [
-            "Finished remaining backend REST API endpoints and refactored existing code to be more maintainable and readable",
+            "CDFI: Built a custom drill-down chart feature using amCharts, enabling dynamic chart generation on user interaction.",
+            "Essilor & Shimadzu: Developed a reusable modular CMS in Angular 2+ that dynamically rendered UI components and forms from backend JSON configurations.",
+            "Designed the CMS architecture to support multiple clients, reducing development overhead and improving scalability.",
+            "P&G: Implemented responsive design and cross-browser compatibility (IE, Firefox, etc.) for an internal reporting tool.",
+            "Managed report data fetching and state using @ngrx, enhancing performance and maintainability.",
           ],
         },
       ],
@@ -133,16 +156,15 @@ export default {
       title: "Net Analytiks",
       other: "India",
       tagline: "A software development consultancy",
-      role: "Full stack developer",
+      subTitle: "Full-Stack Intern",
       startDate: "2017-08-01",
       endDate: "2017-12-15",
       description: [
         {
-          title: "iWish",
           content: [
-            "Developed REST APIs endpoints using Node, Express & MongoDB to be utilized by frontend application",
-            "Built a complex frontend using vanilla JavaScript",
-            "Initiated migration towards Angular.js for the admin application",
+            "iWish Bids: Developed REST API endpoints using Node.js, Express, and MongoDB for a reverse bidding platform.",
+            "Built a feature-rich frontend using vanilla JavaScript, improving UI responsiveness and user interaction.",
+            "Initiated the migration to AngularJS for the admin dashboard to enhance maintainability and scalability.",
           ],
         },
       ],
